@@ -1084,3 +1084,167 @@ footer img {
     width: 142px;
   }
 }
+
+/* mascot cleanup + hover greeting animation update */
+.hero-visual-mockup {
+  min-height: 680px;
+}
+
+.mascot-interactive {
+  position: relative;
+  z-index: 3;
+  width: min(590px, 94vw);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  isolation: isolate;
+}
+
+.hero-3d-mascot {
+  width: 100%;
+  max-width: 590px;
+  transform: translateX(0) translateY(0) rotate(-2deg) rotateY(-7deg) scale(1.01);
+  transform-origin: 56% 78%;
+  filter:
+    drop-shadow(0 40px 52px rgba(47,72,120,.18))
+    drop-shadow(0 18px 30px rgba(71,108,181,.14));
+  animation: mascotIdleFloat 5.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+.hero-visual-mockup::after {
+  width: 40%;
+  height: 26px;
+  bottom: 8%;
+  right: 26%;
+}
+
+.mascot-speech {
+  position: absolute;
+  left: -2%;
+  top: 9%;
+  display: grid;
+  gap: 2px;
+  padding: 12px 16px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.94);
+  border: 1.5px solid rgba(71,108,181,.12);
+  box-shadow: 0 16px 36px rgba(47,72,120,.12);
+  color: var(--deep-blue);
+  opacity: 0;
+  transform: translateY(10px) scale(.94);
+  transition: opacity .28s ease, transform .28s ease;
+  pointer-events: none;
+}
+
+.mascot-speech::after {
+  content: "";
+  position: absolute;
+  left: 26px;
+  bottom: -10px;
+  width: 18px;
+  height: 18px;
+  background: rgba(255,255,255,.94);
+  border-right: 1.5px solid rgba(71,108,181,.12);
+  border-bottom: 1.5px solid rgba(71,108,181,.12);
+  transform: rotate(45deg);
+}
+
+.mascot-speech span {
+  font-size: 13px;
+  font-weight: 950;
+  color: var(--blue);
+  letter-spacing: .02em;
+}
+
+.mascot-speech strong {
+  font-size: 18px;
+  font-weight: 950;
+  white-space: nowrap;
+}
+
+.mascot-interactive:hover .mascot-speech,
+.mascot-interactive:focus-within .mascot-speech {
+  opacity: 1;
+  transform: translateY(-4px) scale(1);
+}
+
+.mascot-interactive:hover .hero-3d-mascot,
+.mascot-interactive:focus-within .hero-3d-mascot {
+  animation: mascotGreeting 1.45s ease-in-out infinite;
+}
+
+.hero-visual-mockup:hover .floating-orb,
+.hero-visual-mockup:hover .floating-spark {
+  animation-duration: 2.8s;
+}
+
+@keyframes mascotIdleFloat {
+  0%, 100% {
+    transform: translateX(0) translateY(0) rotate(-2deg) rotateY(-7deg) scale(1.01);
+  }
+  50% {
+    transform: translateX(-1%) translateY(-18px) rotate(1deg) rotateY(-4deg) scale(1.03);
+  }
+}
+
+@keyframes mascotGreeting {
+  0%, 100% {
+    transform: translateX(0) translateY(-2px) rotate(-5deg) rotateY(-8deg) scale(1.02);
+  }
+  20% {
+    transform: translateX(-1%) translateY(-16px) rotate(1deg) rotateY(-4deg) scale(1.04);
+  }
+  40% {
+    transform: translateX(0) translateY(-10px) rotate(-7deg) rotateY(-7deg) scale(1.03);
+  }
+  60% {
+    transform: translateX(1%) translateY(-18px) rotate(3deg) rotateY(-3deg) scale(1.05);
+  }
+  80% {
+    transform: translateX(0) translateY(-8px) rotate(-4deg) rotateY(-6deg) scale(1.03);
+  }
+}
+
+@media (max-width: 1040px) {
+  .hero-visual-mockup {
+    min-height: 520px;
+  }
+
+  .mascot-interactive {
+    width: min(520px, 96vw);
+  }
+
+  .hero-3d-mascot {
+    max-width: 520px;
+  }
+
+  .mascot-speech {
+    left: 2%;
+    top: 8%;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-visual-mockup {
+    min-height: 420px;
+  }
+
+  .mascot-interactive {
+    width: min(420px, 104vw);
+  }
+
+  .hero-3d-mascot {
+    max-width: 420px;
+  }
+
+  .mascot-speech {
+    left: 6%;
+    top: 4%;
+    padding: 10px 12px;
+  }
+
+  .mascot-speech strong {
+    font-size: 15px;
+  }
+}

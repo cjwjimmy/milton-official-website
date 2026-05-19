@@ -113,7 +113,13 @@ function App() {
 
         <div className="hero-visual hero-visual-mockup" aria-label="Milton 3D 品牌主視覺">
           <div className="hero-glow" aria-hidden="true" />
-          <img className="hero-3d-mascot" src="/assets/milton-3d-floating-mascot-transparent.png" alt="Milton 3D 麋鹿品牌主視覺" />
+          <div className="mascot-interactive" aria-label="Milton 3D 麋鹿品牌主視覺，滑鼠移上去會打招呼">
+            <div className="mascot-speech" aria-hidden="true">
+              <span>👋 Say Hi!</span>
+              <strong>歡迎來到 Milton</strong>
+            </div>
+            <img className="hero-3d-mascot" src="/assets/milton-3d-floating-mascot-transparent.png" alt="Milton 3D 麋鹿品牌主視覺" />
+          </div>
           <div className="floating-dot-grid" aria-hidden="true" />
           <div className="floating-orb orb-one" aria-hidden="true" />
           <div className="floating-orb orb-two" aria-hidden="true" />
