@@ -16,3 +16,9 @@
 - `REVIEW_APP_URL`：目前接到 https://milton-vocab-app.vercel.app/
 - `LINE_URL`：目前是 #，之後可換成 LINE 官方帳號連結
 - 電話與地址文案
+
+
+## v2 update
+- 課程介紹改成捲動式詳細課程區
+- 包含：兒童美語、幼兒美語、課後輔導、主題探索課程
+- 上方課程快速導覽可直接跳到各課程

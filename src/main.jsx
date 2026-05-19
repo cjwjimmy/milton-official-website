@@ -58,15 +58,78 @@ function App() {
 
       <section id="courses" className="section courses-section">
         <div className="section-label">Courses</div>
-        <div className="section-heading">
+        <div className="section-heading course-heading">
           <h2>課程介紹</h2>
-          <p>依照孩子年齡與英文程度規劃課程，循序建立聽說讀寫能力。</p>
+          <p>依照孩子的年齡、學校進度與英文程度安排課程，從基礎語感、聽說讀寫到課後學習支持，建立穩定的英文能力與學習自信。</p>
         </div>
-        <div className="course-grid">
-          <article><GraduationCap /><h3>幼兒美語</h3><p>透過歌曲、故事、遊戲與生活主題，建立英文聲音感與開口習慣。</p></article>
-          <article><BookOpen /><h3>國小美語</h3><p>結合教材進度、單字拼寫、聽力理解與句型練習，穩定累積英文能力。</p></article>
-          <article><PencilLine /><h3>自然發音</h3><p>訓練字母音、拼讀能力與發音規則，幫助孩子看字能讀、聽音能拼。</p></article>
-          <article><MessageCircle /><h3>口說表達</h3><p>透過問答、角色扮演與主題發表，培養孩子敢說、會說的信心。</p></article>
+
+        <div className="course-tabs" aria-label="課程快速導覽">
+          <a href="#course-kids">兒童美語</a>
+          <a href="#course-preschool">幼兒美語</a>
+          <a href="#course-after-school">課後輔導</a>
+          <a href="#course-theme">主題探索課程</a>
+        </div>
+
+        <div className="course-detail-list">
+          <article id="course-kids" className="course-detail-card">
+            <div className="course-number">01</div>
+            <div className="course-copy">
+              <span className="course-age">國小階段｜6–12 歲</span>
+              <h3>兒童美語</h3>
+              <p>以聽說讀寫整合為核心，搭配主題單字、句型練習、自然發音與閱讀理解，幫助孩子穩定銜接學校英文與長期語言能力。</p>
+              <ul>
+                <li>聽力與口說互動練習</li>
+                <li>自然發音與拼讀基礎</li>
+                <li>單字、句型、閱讀與寫作整合</li>
+                <li>搭配 Milton Review Mission 回家複習</li>
+              </ul>
+            </div>
+          </article>
+
+          <article id="course-preschool" className="course-detail-card">
+            <div className="course-number">02</div>
+            <div className="course-copy">
+              <span className="course-age">幼兒階段｜3–6 歲</span>
+              <h3>幼兒美語</h3>
+              <p>透過歌曲、故事、遊戲、圖像與生活主題建立英文聲音感，讓孩子在輕鬆安全的環境中自然接觸英文，培養開口與模仿能力。</p>
+              <ul>
+                <li>英文兒歌與故事引導</li>
+                <li>生活主題字彙啟蒙</li>
+                <li>遊戲式互動與肢體反應</li>
+                <li>建立孩子對英文的好感與自信</li>
+              </ul>
+            </div>
+          </article>
+
+          <article id="course-after-school" className="course-detail-card">
+            <div className="course-number">03</div>
+            <div className="course-copy">
+              <span className="course-age">國小課後｜依年級分組</span>
+              <h3>課後輔導</h3>
+              <p>協助孩子完成學校作業、複習課堂內容與建立讀書習慣。老師會依照孩子的學習狀況給予提醒、陪伴與整理，讓家長更安心。</p>
+              <ul>
+                <li>學校作業陪伴與訂正</li>
+                <li>英文與學科基礎複習</li>
+                <li>學習習慣與時間管理</li>
+                <li>定期回饋孩子學習狀況</li>
+              </ul>
+            </div>
+          </article>
+
+          <article id="course-theme" className="course-detail-card">
+            <div className="course-number">04</div>
+            <div className="course-copy">
+              <span className="course-age">主題式學習｜依課程主題開班</span>
+              <h3>主題探索課程</h3>
+              <p>以孩子感興趣的主題出發，結合英文、閱讀、文化、創作與表達，讓英文成為探索世界的工具，而不是只停留在考試科目。</p>
+              <ul>
+                <li>節慶文化與生活英文</li>
+                <li>故事閱讀與創意表達</li>
+                <li>主題活動與小作品</li>
+                <li>培養好奇心與國際視野</li>
+              </ul>
+            </div>
+          </article>
         </div>
       </section>
 
