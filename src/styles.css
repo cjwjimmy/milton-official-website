@@ -1342,3 +1342,83 @@ footer img {
     right: 1%;
   }
 }
+
+/* ===== Hover-only speech update ===== */
+.mascot-half-stage,
+.mascot-interactive,
+.hero-3d-mascot-half,
+.hero-3d-mascot {
+  background: transparent !important;
+}
+
+.hero-visual-mockup {
+  overflow: visible !important;
+}
+
+.mascot-speech-prominent {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(18px) scale(.92) rotate(-3deg) !important;
+  transition: opacity .28s ease, transform .35s ease, visibility .28s ease !important;
+}
+
+.mascot-interactive:hover .mascot-speech-prominent,
+.mascot-interactive:focus-visible .mascot-speech-prominent,
+.mascot-interactive:focus-within .mascot-speech-prominent {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(-10px) scale(1) rotate(0deg) !important;
+}
+
+.mascot-speech-prominent span,
+.mascot-speech-prominent strong {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .22s ease, transform .34s ease;
+}
+
+.mascot-interactive:hover .mascot-speech-prominent span,
+.mascot-interactive:hover .mascot-speech-prominent strong,
+.mascot-interactive:focus-visible .mascot-speech-prominent span,
+.mascot-interactive:focus-visible .mascot-speech-prominent strong,
+.mascot-interactive:focus-within .mascot-speech-prominent span,
+.mascot-interactive:focus-within .mascot-speech-prominent strong {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mascot-interactive:hover .mascot-speech-prominent span,
+.mascot-interactive:focus-visible .mascot-speech-prominent span,
+.mascot-interactive:focus-within .mascot-speech-prominent span {
+  transition-delay: .06s;
+}
+
+.mascot-interactive:hover .mascot-speech-prominent strong,
+.mascot-interactive:focus-visible .mascot-speech-prominent strong,
+.mascot-interactive:focus-within .mascot-speech-prominent strong {
+  transition-delay: .12s;
+}
+
+.mascot-interactive:hover .hero-3d-mascot-half,
+.mascot-interactive:focus-visible .hero-3d-mascot-half,
+.mascot-interactive:focus-within .hero-3d-mascot-half {
+  animation: mascotWaveHi 1.25s ease-in-out infinite !important;
+}
+
+@keyframes mascotWaveHi {
+  0%, 100% {
+    transform: translateX(2%) translateY(0) rotate(-3deg) rotateY(-7deg) scale(1.02);
+  }
+  15% {
+    transform: translateX(1.5%) translateY(-6px) rotate(1deg) rotateY(-4deg) scale(1.03);
+  }
+  35% {
+    transform: translateX(2.8%) translateY(-16px) rotate(4deg) rotateY(-3deg) scale(1.05);
+  }
+  55% {
+    transform: translateX(1.4%) translateY(-5px) rotate(-1deg) rotateY(-8deg) scale(1.03);
+  }
+  75% {
+    transform: translateX(2.6%) translateY(-14px) rotate(3deg) rotateY(-4deg) scale(1.045);
+  }
+}

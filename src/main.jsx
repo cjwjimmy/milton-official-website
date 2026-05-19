@@ -111,7 +111,7 @@ function App() {
           <div className="hero-glow" aria-hidden="true" />
           <div className="mascot-interactive mascot-half-stage" aria-label="Milton 3D 麋鹿品牌主視覺，滑鼠移上去會打招呼" tabIndex="0">
             <div className="mascot-speech mascot-speech-prominent" aria-hidden="true">
-              <span>👋 Hi.</span>
+              <span>👋 Hi,</span>
               <strong>Welcome to Milton</strong>
             </div>
             <img className="hero-3d-mascot hero-3d-mascot-half" src="/assets/milton-3d-floating-mascot-transparent.png" alt="Milton 3D 麋鹿品牌主視覺" />
