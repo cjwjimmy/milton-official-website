@@ -1085,143 +1085,217 @@ footer img {
   }
 }
 
-/* mascot cleanup + hover greeting animation update */
+/* ===== Half-body mascot + prominent 3D greeting update ===== */
+.hero-visual,
 .hero-visual-mockup {
-  min-height: 680px;
+  overflow: visible;
 }
 
-.mascot-interactive {
+.hero-visual-mockup {
+  min-height: 680px;
+  align-items: end;
+}
+
+.mascot-half-stage {
   position: relative;
-  z-index: 3;
-  width: min(590px, 94vw);
-  display: grid;
-  place-items: center;
-  cursor: pointer;
+  z-index: 4;
+  width: min(640px, 95vw);
+  display: flex;
+  align-items: end;
+  justify-content: center;
   isolation: isolate;
 }
 
-.hero-3d-mascot {
+.hero-3d-mascot-half {
   width: 100%;
-  max-width: 590px;
-  transform: translateX(0) translateY(0) rotate(-2deg) rotateY(-7deg) scale(1.01);
-  transform-origin: 56% 78%;
-  filter:
-    drop-shadow(0 40px 52px rgba(47,72,120,.18))
-    drop-shadow(0 18px 30px rgba(71,108,181,.14));
-  animation: mascotIdleFloat 5.2s ease-in-out infinite;
-  will-change: transform;
+  max-width: 620px;
+  transform-origin: 52% 88%;
+  transform: translateX(2%) translateY(0) rotate(-3deg) rotateY(-7deg) scale(1.02);
+  filter: drop-shadow(0 34px 52px rgba(47, 72, 120, .26));
+  animation: mascotHalfFloat 4.4s ease-in-out infinite;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
-.hero-visual-mockup::after {
-  width: 40%;
-  height: 26px;
-  bottom: 8%;
-  right: 26%;
-}
-
-.mascot-speech {
+.mascot-speech-prominent {
   position: absolute;
   left: -2%;
-  top: 9%;
-  display: grid;
-  gap: 2px;
-  padding: 12px 16px;
-  border-radius: 20px;
-  background: rgba(255,255,255,.94);
-  border: 1.5px solid rgba(71,108,181,.12);
-  box-shadow: 0 16px 36px rgba(47,72,120,.12);
-  color: var(--deep-blue);
-  opacity: 0;
-  transform: translateY(10px) scale(.94);
-  transition: opacity .28s ease, transform .28s ease;
+  top: 7%;
+  z-index: 7;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 22px 16px;
+  min-width: 270px;
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92));
+  border: 1px solid rgba(71,108,181,.18);
+  box-shadow: 0 22px 44px rgba(47,72,120,.14), 0 8px 18px rgba(47,72,120,.08);
+  transform: translateY(0) rotate(-2deg);
+  animation: speechFloat 4.2s ease-in-out infinite;
   pointer-events: none;
 }
 
-.mascot-speech::after {
-  content: "";
+.mascot-speech-prominent::after {
+  content: '';
   position: absolute;
-  left: 26px;
-  bottom: -10px;
-  width: 18px;
-  height: 18px;
-  background: rgba(255,255,255,.94);
-  border-right: 1.5px solid rgba(71,108,181,.12);
-  border-bottom: 1.5px solid rgba(71,108,181,.12);
+  left: 34px;
+  bottom: -11px;
+  width: 24px;
+  height: 24px;
+  background: rgba(255,255,255,.96);
+  border-right: 1px solid rgba(71,108,181,.14);
+  border-bottom: 1px solid rgba(71,108,181,.14);
   transform: rotate(45deg);
+  box-shadow: 12px 10px 22px rgba(47,72,120,.05);
 }
 
-.mascot-speech span {
-  font-size: 13px;
-  font-weight: 950;
-  color: var(--blue);
-  letter-spacing: .02em;
+.mascot-speech-prominent span {
+  font-size: 19px;
+  font-weight: 1000;
+  color: #f0aa18;
+  letter-spacing: .01em;
+  text-shadow: 0 1px 0 #fff6da, 0 2px 0 #f8deb2, 0 4px 12px rgba(240,170,24,.16);
 }
 
-.mascot-speech strong {
-  font-size: 18px;
-  font-weight: 950;
+.mascot-speech-prominent strong {
+  font-size: clamp(28px, 2.8vw, 40px);
+  line-height: 1.02;
+  font-weight: 1000;
+  color: var(--deep-blue);
+  letter-spacing: -.04em;
   white-space: nowrap;
+  text-shadow:
+    0 1px 0 #ffffff,
+    0 2px 0 #d7e3ff,
+    0 3px 0 #c7d8ff,
+    0 4px 0 #b8cbf7,
+    0 12px 20px rgba(47,72,120,.18);
 }
 
-.mascot-interactive:hover .mascot-speech,
-.mascot-interactive:focus-within .mascot-speech {
-  opacity: 1;
-  transform: translateY(-4px) scale(1);
+.mascot-interactive:hover .hero-3d-mascot-half,
+.mascot-interactive:focus-visible .hero-3d-mascot-half,
+.mascot-interactive:focus-within .hero-3d-mascot-half {
+  animation: mascotSayHi 1.2s ease-in-out infinite;
 }
 
-.mascot-interactive:hover .hero-3d-mascot,
-.mascot-interactive:focus-within .hero-3d-mascot {
-  animation: mascotGreeting 1.45s ease-in-out infinite;
+.mascot-interactive:hover .mascot-speech-prominent,
+.mascot-interactive:focus-visible .mascot-speech-prominent,
+.mascot-interactive:focus-within .mascot-speech-prominent {
+  transform: translateY(-8px) rotate(0deg) scale(1.04);
+  box-shadow: 0 30px 56px rgba(47,72,120,.18), 0 10px 22px rgba(47,72,120,.12);
+}
+
+.mascot-interactive:hover .mascot-speech-prominent strong,
+.mascot-interactive:focus-visible .mascot-speech-prominent strong,
+.mascot-interactive:focus-within .mascot-speech-prominent strong {
+  animation: hiTextPulse .95s ease-in-out infinite alternate;
 }
 
 .hero-visual-mockup:hover .floating-orb,
 .hero-visual-mockup:hover .floating-spark {
-  animation-duration: 2.8s;
+  animation-duration: 2.6s;
 }
 
-@keyframes mascotIdleFloat {
+.floating-dot-grid {
+  right: 3%;
+  top: 52%;
+  opacity: .86;
+}
+
+.orb-one {
+  left: 10%;
+  top: 14%;
+}
+
+.orb-two {
+  left: 15%;
+  bottom: 9%;
+}
+
+.orb-three {
+  right: 11%;
+  top: 22%;
+}
+
+.spark-one {
+  left: 6%;
+  top: 41%;
+}
+
+.spark-two {
+  right: 17%;
+  top: 34%;
+}
+
+@keyframes mascotHalfFloat {
   0%, 100% {
-    transform: translateX(0) translateY(0) rotate(-2deg) rotateY(-7deg) scale(1.01);
+    transform: translateX(2%) translateY(0) rotate(-3deg) rotateY(-7deg) scale(1.02);
   }
   50% {
-    transform: translateX(-1%) translateY(-18px) rotate(1deg) rotateY(-4deg) scale(1.03);
+    transform: translateX(1.5%) translateY(-15px) rotate(1deg) rotateY(-4deg) scale(1.04);
   }
 }
 
-@keyframes mascotGreeting {
+@keyframes speechFloat {
   0%, 100% {
-    transform: translateX(0) translateY(-2px) rotate(-5deg) rotateY(-8deg) scale(1.02);
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-.5deg);
+  }
+}
+
+@keyframes mascotSayHi {
+  0%, 100% {
+    transform: translateX(2%) translateY(0) rotate(-3deg) rotateY(-7deg) scale(1.03);
   }
   20% {
-    transform: translateX(-1%) translateY(-16px) rotate(1deg) rotateY(-4deg) scale(1.04);
+    transform: translateX(2.8%) translateY(-14px) rotate(2deg) rotateY(-5deg) scale(1.05);
   }
-  40% {
-    transform: translateX(0) translateY(-10px) rotate(-7deg) rotateY(-7deg) scale(1.03);
+  45% {
+    transform: translateX(1.2%) translateY(-6px) rotate(-1deg) rotateY(-8deg) scale(1.03);
   }
-  60% {
-    transform: translateX(1%) translateY(-18px) rotate(3deg) rotateY(-3deg) scale(1.05);
+  70% {
+    transform: translateX(2.4%) translateY(-16px) rotate(2.4deg) rotateY(-4deg) scale(1.06);
   }
-  80% {
-    transform: translateX(0) translateY(-8px) rotate(-4deg) rotateY(-6deg) scale(1.03);
+}
+
+@keyframes hiTextPulse {
+  from {
+    text-shadow:
+      0 1px 0 #ffffff,
+      0 2px 0 #d7e3ff,
+      0 3px 0 #c7d8ff,
+      0 4px 0 #b8cbf7,
+      0 12px 20px rgba(47,72,120,.18);
+  }
+  to {
+    text-shadow:
+      0 1px 0 #ffffff,
+      0 2px 0 #e1ebff,
+      0 3px 0 #cfddff,
+      0 5px 0 #bfd0ff,
+      0 16px 26px rgba(47,72,120,.22);
   }
 }
 
 @media (max-width: 1040px) {
   .hero-visual-mockup {
-    min-height: 520px;
+    min-height: 540px;
   }
 
-  .mascot-interactive {
-    width: min(520px, 96vw);
+  .mascot-half-stage {
+    width: min(560px, 98vw);
   }
 
-  .hero-3d-mascot {
-    max-width: 520px;
+  .hero-3d-mascot-half {
+    max-width: 540px;
   }
 
-  .mascot-speech {
-    left: 2%;
-    top: 8%;
+  .mascot-speech-prominent {
+    left: 4%;
+    top: 6%;
   }
 }
 
@@ -1230,21 +1304,41 @@ footer img {
     min-height: 420px;
   }
 
-  .mascot-interactive {
+  .mascot-half-stage {
     width: min(420px, 104vw);
   }
 
-  .hero-3d-mascot {
+  .hero-3d-mascot-half {
     max-width: 420px;
+    transform: translateX(0) translateY(0) rotate(-2deg) scale(1.02);
   }
 
-  .mascot-speech {
-    left: 6%;
-    top: 4%;
-    padding: 10px 12px;
+  .mascot-speech-prominent {
+    left: 2%;
+    top: 2%;
+    min-width: 208px;
+    padding: 12px 14px 11px;
+    border-radius: 20px;
   }
 
-  .mascot-speech strong {
+  .mascot-speech-prominent::after {
+    left: 24px;
+    width: 18px;
+    height: 18px;
+    bottom: -9px;
+  }
+
+  .mascot-speech-prominent span {
     font-size: 15px;
+  }
+
+  .mascot-speech-prominent strong {
+    font-size: 24px;
+    white-space: normal;
+  }
+
+  .floating-dot-grid {
+    top: 60%;
+    right: 1%;
   }
 }
