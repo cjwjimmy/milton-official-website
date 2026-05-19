@@ -985,3 +985,102 @@ nav {
   .orb-two { right: 9%; top: 16%; }
   .orb-three { left: 14%; bottom: 14%; }
 }
+
+
+/* transparent blue header/footer logo + extra playful 3D floating tune */
+.brand img {
+  width: clamp(220px, 17vw, 270px);
+  max-width: 100%;
+  height: auto;
+  border-radius: 0;
+  object-fit: contain;
+}
+
+footer img {
+  width: 164px;
+  height: auto;
+  border-radius: 0;
+  object-fit: contain;
+}
+
+.hero-3d-mascot {
+  animation: mascotFloatExtraPlayful 4.2s ease-in-out infinite;
+}
+
+.hero-glow {
+  animation: glowPulsePlayful 4.8s ease-in-out infinite;
+}
+
+.hero-visual-mockup::after {
+  animation: shadowFloatExtraPlayful 4.2s ease-in-out infinite;
+}
+
+.orb-one {
+  width: 32px;
+  height: 32px;
+}
+
+.orb-two {
+  width: 20px;
+  height: 20px;
+}
+
+.orb-three {
+  width: 24px;
+  height: 24px;
+}
+
+.spark-one {
+  font-size: 30px;
+}
+
+.spark-two {
+  font-size: 24px;
+}
+
+@keyframes mascotFloatExtraPlayful {
+  0%, 100% {
+    transform: translateX(2%) translateY(0) rotate(-4deg) rotateY(-8deg) scale(1.02);
+  }
+  20% {
+    transform: translateX(1%) translateY(-12px) rotate(-1deg) rotateY(-5deg) scale(1.04);
+  }
+  45% {
+    transform: translateX(1.4%) translateY(-28px) rotate(3deg) rotateY(-2deg) scale(1.05);
+  }
+  70% {
+    transform: translateX(2.6%) translateY(-14px) rotate(0deg) rotateY(-4deg) scale(1.04);
+  }
+}
+
+@keyframes shadowFloatExtraPlayful {
+  0%, 100% { transform: rotate(-3deg) scale(1); opacity: .82; }
+  45% { transform: rotate(-2deg) scale(.84); opacity: .40; }
+}
+
+@keyframes glowPulsePlayful {
+  0%, 100% {
+    transform: scale(1);
+    opacity: .88;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: .72;
+  }
+}
+
+@media (max-width: 1040px) {
+  .brand img {
+    width: clamp(192px, 26vw, 240px);
+  }
+}
+
+@media (max-width: 680px) {
+  .brand img {
+    width: 168px;
+  }
+
+  footer img {
+    width: 142px;
+  }
+}

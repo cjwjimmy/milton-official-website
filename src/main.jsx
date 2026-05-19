@@ -79,7 +79,7 @@ function App() {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Milton Home">
-          <img src="/assets/milton-logo-horizontal.jpg" alt="Milton 麋爾頓美語" />
+          <img src="/assets/milton-logo-horizontal-blue.png" alt="Milton 麋爾頓美語" />
         </a>
         <nav>
           <a href="#about">關於 Milton</a>
@@ -199,7 +199,7 @@ function App() {
       </section>
 
       <footer>
-        <img src="/assets/milton-logo-horizontal.jpg" alt="Milton 麋爾頓美語" />
+        <img src="/assets/milton-logo-horizontal-blue.png" alt="Milton 麋爾頓美語" />
         <p>© {new Date().getFullYear()} 英語學習的好夥伴. All rights reserved.</p>
       </footer>
     </main>
