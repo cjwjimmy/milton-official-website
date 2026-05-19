@@ -94,14 +94,14 @@ function App() {
       <section id="top" className="hero hero-3d">
         <div className="hero-bg-mark" aria-hidden="true">Milton</div>
         <div className="hero-content">
-          <div className="eyebrow"><Sparkles size={18} /> Milton Kids Academy</div>
-          <h1>讓孩子在自然、有趣的探索中愛上英文</h1>
+          <div className="eyebrow"><Sparkles size={18} /> 英語學習的好夥伴</div>
+          <h1>在 Milton，英文成為孩子的超能力</h1>
           <p>
             麋爾頓美語陪伴孩子從聽、說、讀、寫開始，透過主題式課程、
             自然發音與回家複習系統，建立穩定的英文學習習慣。
           </p>
           <div className="hero-actions">
-            <a className="primary-btn" href="#courses">探索課程 <ArrowRight size={18} /></a>
+            <a className="primary-btn" href="#courses">課程介紹 <ArrowRight size={18} /></a>
             <a className="secondary-btn" href={REVIEW_APP_URL}>進入學生作業系統</a>
           </div>
           <div className="hero-points">
@@ -111,15 +111,10 @@ function App() {
           </div>
         </div>
 
-        <div className="hero-visual" aria-label="Milton 品牌主視覺">
-          <div className="floating-shape shape-one" />
-          <div className="floating-shape shape-two" />
-          <div className="mascot-orbit">
-            <img src="/assets/milton-logo-full.jpg" alt="Milton 麋爾頓美語主視覺 Logo" />
-          </div>
-          <div className="floating-note note-a"><BookOpen size={18} /> English</div>
-          <div className="floating-note note-b"><Compass size={18} /> Explore</div>
-          <div className="floating-note note-c"><Headphones size={18} /> Review</div>
+        <div className="hero-visual hero-visual-mockup" aria-label="Milton 3D 品牌主視覺">
+          <div className="hero-glow" aria-hidden="true" />
+          <img className="hero-3d-mascot" src="/assets/milton-3d-floating-mascot.png" alt="Milton 3D 麋鹿品牌主視覺" />
+          <div className="floating-dot-grid" aria-hidden="true" />
         </div>
       </section>
 
@@ -200,7 +195,7 @@ function App() {
 
       <footer>
         <img src="/assets/milton-logo-horizontal.jpg" alt="Milton 麋爾頓美語" />
-        <p>© {new Date().getFullYear()} Milton Kids Academy. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} 英語學習的好夥伴. All rights reserved.</p>
       </footer>
     </main>
   );

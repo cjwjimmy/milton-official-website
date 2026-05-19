@@ -16,3 +16,10 @@
 - `REVIEW_APP_URL`：學生作業系統網址
 - `LINE_URL`：LINE 官方帳號連結
 - 電話與地址文案
+
+
+## 3D floating logo update
+- 首頁 Header 仍使用原本橫式品牌 Logo
+- Hero 右側使用 `public/assets/milton-3d-floating-mascot.png`
+- 已加入 CSS 浮動動畫、陰影與背景光暈，讓 Logo 主視覺有 3D 浮動感
+- 保留捲動式課程探索區
