@@ -1,24 +1,18 @@
-# Milton 官方形象網站 v1
+# Milton 官方形象網站：3D Hero + 捲動式課程探索版
 
-這是 Milton 麋爾頓美語官方形象網站第一版。
+這是一包可以直接上傳 GitHub / Vercel 的網站檔案。
 
-## 目前包含
-- 首頁主視覺
-- 關於 Milton
-- 課程介紹
-- 教學特色
-- 學生作業系統入口
-- 聯絡我們
+## 這版包含
+- Header 維持原本橫式品牌 Logo
+- 首頁 Hero 改成自然融入背景的品牌主視覺
+- 用 CSS 做出浮動與立體感，不使用卡片包住 Logo
+- 捲動式課程介紹
+- 課程分類：兒童美語、幼兒美語、課後輔導、主題探索課程
+- 學生作業系統入口，連到 https://milton-vocab-app.vercel.app/
 - 手機版 RWD
 
-## 之後需要替換
-在 `src/main.jsx` 內：
-- `REVIEW_APP_URL`：目前接到 https://milton-vocab-app.vercel.app/
-- `LINE_URL`：目前是 #，之後可換成 LINE 官方帳號連結
+## 之後可替換
+在 `src/main.jsx`：
+- `REVIEW_APP_URL`：學生作業系統網址
+- `LINE_URL`：LINE 官方帳號連結
 - 電話與地址文案
-
-
-## v2 update
-- 課程介紹改成捲動式詳細課程區
-- 包含：兒童美語、幼兒美語、課後輔導、主題探索課程
-- 上方課程快速導覽可直接跳到各課程
