@@ -69,7 +69,7 @@ function App() {
       id: 'course-theme',
       number: '04',
       age: '主題式學習｜依課程主題開班',
-      title: '主題探索課程',
+      title: '主題課程介紹',
       description: '以孩子感興趣的主題出發，結合英文、閱讀、文化、創作與表達，讓英文成為探索世界的工具，而不是只停留在考試科目。',
       points: ['節慶文化與生活英文', '故事閱讀與創意表達', '主題活動與小作品', '培養好奇心與國際視野']
     }
@@ -113,8 +113,13 @@ function App() {
 
         <div className="hero-visual hero-visual-mockup" aria-label="Milton 3D 品牌主視覺">
           <div className="hero-glow" aria-hidden="true" />
-          <img className="hero-3d-mascot" src="/assets/milton-3d-floating-mascot.png" alt="Milton 3D 麋鹿品牌主視覺" />
+          <img className="hero-3d-mascot" src="/assets/milton-3d-floating-mascot-transparent.png" alt="Milton 3D 麋鹿品牌主視覺" />
           <div className="floating-dot-grid" aria-hidden="true" />
+          <div className="floating-orb orb-one" aria-hidden="true" />
+          <div className="floating-orb orb-two" aria-hidden="true" />
+          <div className="floating-orb orb-three" aria-hidden="true" />
+          <div className="floating-spark spark-one" aria-hidden="true">✦</div>
+          <div className="floating-spark spark-two" aria-hidden="true">✦</div>
         </div>
       </section>
 
@@ -146,7 +151,7 @@ function App() {
           <a href="#course-kids">兒童美語</a>
           <a href="#course-preschool">幼兒美語</a>
           <a href="#course-after-school">課後輔導</a>
-          <a href="#course-theme">主題探索課程</a>
+          <a href="#course-theme">主題課程介紹</a>
         </div>
 
         <div className="course-detail-list">
