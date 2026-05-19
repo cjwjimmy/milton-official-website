@@ -125,13 +125,13 @@ function App() {
 
           <div className="mascot-stage" tabIndex="0" aria-label="Milton 3D 吉祥物，移到上面會打招呼">
             <div className="hover-greeting" aria-hidden="true">
-              <span className="hover-greeting-hi">Hi.</span>
+              <span className="hover-greeting-hi">Hi,</span>
               <strong className="hover-greeting-title">Welcome to Milton</strong>
             </div>
 
             <img
               className="mascot-half"
-              src="/assets/milton-3d-mascot-clean.png"
+              src="/assets/milton-3d-mascot-half-slim.png"
               alt="Milton 3D 麋鹿吉祥物"
             />
           </div>
