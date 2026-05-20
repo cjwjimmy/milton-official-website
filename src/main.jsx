@@ -23,7 +23,11 @@ import {
   Mic2,
   LibraryBig,
   Shapes,
-  UsersRound
+  UsersRound,
+  FlaskConical,
+  Palette,
+  Landmark,
+  Music4
 } from 'lucide-react';
 import './styles.css';
 
@@ -217,30 +221,52 @@ function PageHero({ label, title, desc, visual = null, className = '' }) {
   );
 }
 
-function PrimeHeroVisual({ abilities }) {
+function PrimeHeroVisual() {
   return (
-    <div className="prime-hero-visual" aria-hidden="true">
+    <div className="prime-hero-visual prime-hero-visual-image" aria-hidden="true">
       <div className="prime-hero-halo" />
       <div className="prime-hero-orb prime-orb-a" />
       <div className="prime-hero-orb prime-orb-b" />
       <div className="prime-hero-spark prime-spark-a">✦</div>
       <div className="prime-hero-spark prime-spark-b">✦</div>
       <div className="prime-dot-grid" />
-      <div className="prime-mascot-shell">
-        <img className="prime-hero-mascot" src="/assets/milton-3d-mascot-half-slim.png" alt="Prime 活用班 3D 品牌吉祥物" />
+      <div className="prime-hero-image-shell">
+        <img className="prime-hero-reference-image" src="/assets/prime-hero-learning-badges.png" alt="Prime 活用班示意圖：3D 吉祥物搭配 Listening、Speaking、Reading、Writing 四大能力" />
       </div>
-      {abilities.map((item, index) => {
-        const Icon = item.icon;
-        return (
-          <article className={`prime-ability-badge badge-${index + 1}`} key={item.title}>
-            <div className="prime-ability-icon"><Icon size={18} /></div>
-            <div>
-              <strong>{item.title}</strong>
-              <p>{item.short}</p>
-            </div>
-          </article>
-        );
-      })}
+    </div>
+  );
+}
+
+function EslHeroVisual() {
+  const domains = [
+    { icon: FlaskConical, title: 'Science', subtitle: '科學探索', className: 'domain-a' },
+    { icon: Palette, title: 'Arts', subtitle: '藝術創作', className: 'domain-b' },
+    { icon: Landmark, title: 'Humanities', subtitle: '人文文化', className: 'domain-c' },
+    { icon: Music4, title: 'Music', subtitle: '音樂節奏', className: 'domain-d' }
+  ];
+
+  return (
+    <div className="esl-hero-visual" aria-hidden="true">
+      <div className="esl-hero-halo" />
+      <div className="prime-hero-orb prime-orb-a" />
+      <div className="prime-hero-orb prime-orb-b" />
+      <div className="prime-hero-spark prime-spark-a">✦</div>
+      <div className="prime-hero-spark prime-spark-b">✦</div>
+      <div className="prime-dot-grid" />
+      <div className="esl-orbit-line orbit-line-a" />
+      <div className="esl-orbit-line orbit-line-b" />
+      <div className="esl-mascot-shell">
+        <img className="esl-hero-mascot" src="/assets/milton-3d-mascot-clean.png" alt="ESL 實作班 3D 品牌吉祥物" />
+      </div>
+      {domains.map(({ icon: Icon, title, subtitle, className }) => (
+        <article className={`esl-domain-badge ${className}`} key={title}>
+          <div className="esl-domain-icon"><Icon size={20} /></div>
+          <div>
+            <strong>{title}</strong>
+            <p>{subtitle}</p>
+          </div>
+        </article>
+      ))}
     </div>
   );
 }
@@ -259,7 +285,7 @@ function PrimePage() {
         title="Prime 活用班｜聽說讀寫核心能力建構"
         desc="Prime 活用班是 Milton 兒童美語的核心能力課程，透過螺旋式學習架構，幫助孩子穩固聽、說、讀、寫基礎，逐步建立長期英文能力。"
         className="prime-page-hero"
-        visual={<PrimeHeroVisual abilities={abilities} />}
+        visual={<PrimeHeroVisual />}
       />
       <section className="section course-page-section">
         <div className="soft-section-head">
@@ -299,7 +325,7 @@ function EslPage() {
   ];
   return (
     <>
-      <PageHero label="ESL Program" title="ESL 實作班｜Social Science × Project-Based Learning" desc="ESL 實作班在核心美語能力之上，加入跨域主題探索與專題實作，讓孩子在英文情境中累積知識、組織想法並勇敢表達。" />
+      <PageHero label="ESL Program" title="ESL 實作班｜Social Science × Project-Based Learning" desc="ESL 實作班在核心美語能力之上，加入跨域主題探索與專題實作，讓孩子在英文情境中累積知識、組織想法並勇敢表達。" className="esl-page-hero" visual={<EslHeroVisual />} />
       <section className="section course-page-section"><div className="soft-section-head"><div className="section-label">Course Core</div><h2>用英文學知識，也用英文表達想法</h2><p>ESL 課程重視從 Input 到 Output 的完整學習歷程，孩子透過主題輸入、口語演練、任務實作與成果發表，逐步建立自信表達能力。</p></div><div className="page-feature-grid">{features.map((item) => <SoftCard key={item.title} {...item} />)}</div></section>
       <section className="section course-page-section alt-bg"><div className="monthly-cycle"><div><div className="section-label">Learning Cycle</div><h2>主題式學習循環</h2><p>以主題作為學習核心，先累積詞彙、句型與背景知識，再透過討論、操作與專題任務，讓孩子將所學轉化成具體表達。</p></div><div className="cycle-steps"><article><span>01</span><h3>Input 累積</h3><p>主題詞彙、背景知識、聽讀理解與高頻口說練習。</p></article><article><span>02</span><h3>Practice 演練</h3><p>小組討論、情境任務、角色演練與老師引導回饋。</p></article><article><span>03</span><h3>Output 展現</h3><p>專題成果、口語發表、海報展示或主題作品分享。</p></article></div></div></section>
       <section className="section photo-section"><div className="soft-section-head"><div className="section-label">Classroom Moments</div><h2>上課照片位置</h2><p>以下先放一般上課照片佔位圖，未來可以替換成小組討論、實驗觀察、主題作品或成果發表照片。</p></div><PhotoGallery photos={eslPhotos} /></section>
