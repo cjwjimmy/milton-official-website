@@ -14,48 +14,153 @@ import {
   Lightbulb,
   Clock3,
   BookOpen,
-  Globe2
+  Globe2,
+  Layers3,
+  Compass,
+  PenTool,
+  Presentation,
+  Home,
+  Brain,
+  Baby,
+  GraduationCap
 } from 'lucide-react';
 import './styles.css';
 
 const REVIEW_APP_URL = 'https://milton-vocab-app.vercel.app/';
 const LINE_URL = '#';
 
-const courses = [
+const philosophies = [
   {
-    id: 'course-kids',
-    title: '兒童美語',
-    age: '6–12 歲',
-    desc: '以聽、說、讀、寫整合為核心，幫助孩子穩定銜接學校英文與長期語言能力。',
-    points: ['主題單字與句型練習', '自然發音與拼讀基礎', '閱讀理解與表達整合']
+    title: '適性發展',
+    desc: '尊重每位孩子的獨特性，挖掘潛能並給予最合適的學習養分。',
+    icon: Compass
   },
   {
-    id: 'course-preschool',
-    title: '幼兒美語',
-    age: '3–6 歲',
-    desc: '透過歌曲、故事、遊戲與生活主題，建立孩子對英文的聲音感與開口自信。',
-    points: ['兒歌故事引導', '生活字彙啟蒙', '遊戲式互動學習']
+    title: '獨立自主',
+    desc: '培養解決問題的能力與主動學習的態度，讓孩子成為學習的主人。',
+    icon: Brain
   },
   {
-    id: 'course-after-school',
-    title: '課後輔導',
-    age: '依年級分組',
-    desc: '協助孩子完成作業、整理學習節奏，培養穩定的學習習慣與時間管理能力。',
-    points: ['作業陪伴與訂正', '學校進度複習', '建立自主學習習慣']
-  },
-  {
-    id: 'course-theme',
-    title: '主題探索課程',
-    age: '依主題開班',
-    desc: '結合英文、閱讀、文化與創作，讓孩子透過感興趣的主題拓展視野與表達力。',
-    points: ['節慶文化與生活英文', '故事閱讀與創意表達', '主題活動與小作品']
+    title: '樂在學習',
+    desc: '營造充滿好奇與探索的環境，讓美語成為開啟世界的快樂鑰匙。',
+    icon: Sparkles
   }
 ];
 
-function CourseCard({ title, age, desc, points }) {
+const roadmap = [
+  {
+    title: '幼兒美語',
+    subtitle: 'Preschoolers',
+    age: 'Age 4–5',
+    desc: '從五感探索與日常聽說開始，建立孩子對美語的好感度。',
+    icon: Baby
+  },
+  {
+    title: '兒童美語',
+    subtitle: 'Young Learners',
+    age: 'Age 6–12',
+    desc: '整合聽、說、讀、寫，搭配多元探索、跨域學習與閱讀素養。',
+    icon: School
+  },
+  {
+    title: '進階美語',
+    subtitle: 'Advanced',
+    age: 'Age 13–15',
+    desc: '銜接學術英語、檢定證照與寫作養成，規劃長期學習歷程。',
+    icon: GraduationCap
+  }
+];
+
+const courseTracks = [
+  {
+    title: 'Prime 活用班',
+    tag: '核心能力建構',
+    desc: '以聽說讀寫為主軸，透過主題式對話、字彙練習、自然發音與漸進閱讀，幫助孩子穩固語言基礎。',
+    points: ['螺旋式能力建構，循序漸進', '自然發音與漸進式閱讀', '全美語浸潤式學習環境']
+  },
+  {
+    title: 'ESL 實作班',
+    tag: '跨域探索與表達',
+    desc: '在核心美語能力之上加入 Social Science 主題探索，讓孩子用英文理解世界、組織想法並勇敢表達。',
+    points: ['CLIL 精神：用英文學知識', 'Theme-Based Learning 主題式學習', 'Project-Based Learning 成果發表']
+  }
+];
+
+const materials = [
+  {
+    title: "Let's Go",
+    desc: '主題式建構語法與生活會話，讓孩子在情境中自然使用英文。'
+  },
+  {
+    title: 'Phonics World',
+    desc: '從字母到拼讀，漸進式堆疊自然發音能力。'
+  },
+  {
+    title: 'Levelled Readers',
+    desc: '由繪本、故事到科普文本，透過分級閱讀建立語感。'
+  },
+  {
+    title: '自編教材',
+    desc: '課堂練習、親師聯絡與回家任務連結教室與家庭，完整累積學習軌跡。'
+  }
+];
+
+const outputMethods = [
+  {
+    title: '創意簡報',
+    desc: '上台介紹主題，訓練膽量、台風與口語表達。'
+  },
+  {
+    title: '實驗觀察',
+    desc: '整理資訊與觀察內容，將抽象知識具象化。'
+  },
+  {
+    title: '角色扮演',
+    desc: '模擬真實情境對話，讓英文從課本走進生活。'
+  }
+];
+
+const afterSchool = [
+  '學校作業陪伴與訂正',
+  '學科能力複習與基礎穩固',
+  '素養閱讀與邏輯思考',
+  '生活教育與自主習慣',
+  '親師溝通與學習紀錄'
+];
+
+const prepItems = [
+  {
+    title: '美語先修',
+    desc: '建立字母辨識、字母發音與初階拼讀能力，為英文學習打底。'
+  },
+  {
+    title: '正音先修',
+    desc: '透過發音位置、符號辨識與書寫練習，協助孩子穩定銜接小學。'
+  },
+  {
+    title: '數學讀題',
+    desc: '練習理解題意、整理資訊與邏輯思考，降低小一學科適應壓力。'
+  },
+  {
+    title: '科技與素養',
+    desc: '結合生活科學、動手操作與共讀引導，培養探索與表達能力。'
+  }
+];
+
+function SoftCard({ icon: Icon, title, desc }) {
   return (
-    <article className="course-card-soft">
-      <div className="course-badge">{age}</div>
+    <article className="soft-feature-card">
+      <Icon />
+      <h3>{title}</h3>
+      <p>{desc}</p>
+    </article>
+  );
+}
+
+function TrackCard({ title, tag, desc, points }) {
+  return (
+    <article className="track-card">
+      <span>{tag}</span>
       <h3>{title}</h3>
       <p>{desc}</p>
       <ul>
@@ -77,8 +182,9 @@ function App() {
 
         <nav>
           <a href="#about">關於 Milton</a>
-          <a href="#courses">課程介紹</a>
-          <a href="#features">教學特色</a>
+          <a href="#roadmap">學習路徑</a>
+          <a href="#courses">課程架構</a>
+          <a href="#after-school">課後輔導</a>
           <a href="#review">學生入口</a>
           <a href="#contact">聯絡我們</a>
         </nav>
@@ -92,26 +198,26 @@ function App() {
         <div className="hero-copy">
           <div className="section-kicker">
             <span className="kicker-line" />
-            <span>英語學習的好夥伴</span>
+            <span>適性發展・獨立自主・樂在學習</span>
             <span className="kicker-line" />
           </div>
 
-          <h1>在 Milton，<br />英文成為孩子的超能力</h1>
+          <h1>在 Milton，<br />英文成為孩子探索世界的力量</h1>
           <p>
-            我們相信，學英文不該只是考試，
-            而是讓孩子在未來世界中，自信表達、勇敢探索的力量。
+            麋爾頓美語以專業美語教學、課業輔導與行政溝通三方支持，
+            為孩子建立穩定、快樂且有方向的學習環境。
           </p>
 
           <div className="hero-actions">
-            <a className="primary-btn" href="#courses">課程介紹 <ArrowRight size={18} /></a>
+            <a className="primary-btn" href="#courses">課程架構 <ArrowRight size={18} /></a>
             <a className="secondary-btn" href={REVIEW_APP_URL}>學生作業系統 <ArrowRight size={18} /></a>
-            <a className="accent-btn" href="#contact">預約試聽 <ArrowRight size={18} /></a>
+            <a className="accent-btn" href="#contact">預約了解 <ArrowRight size={18} /></a>
           </div>
 
           <div className="hero-points soft-points">
-            <span><CheckCircle2 size={18} /> 小班制互動學習</span>
-            <span><CheckCircle2 size={18} /> 聽說讀寫整合</span>
-            <span><CheckCircle2 size={18} /> 線上回家複習</span>
+            <span><CheckCircle2 size={18} /> 全方位美語能力</span>
+            <span><CheckCircle2 size={18} /> 閱讀素養與跨域探索</span>
+            <span><CheckCircle2 size={18} /> 學習軌跡持續累積</span>
           </div>
         </div>
 
@@ -140,89 +246,181 @@ function App() {
 
       <section id="about" className="section about-section">
         <div className="soft-section-head">
-          <div className="section-label">關於 Milton</div>
-          <h2>用心陪伴每一位孩子，在快樂中建立真正的英文能力</h2>
+          <div className="section-label">Education Philosophy</div>
+          <h2>教育理念</h2>
           <p>
-            Milton 麋爾頓美語致力於提供專業、系統化的英語學習環境，
-            讓孩子從語感、表達到應用能力都能穩定累積。
+            我們希望孩子不只是學會英文，更能在適合自己的節奏中，培養主動學習、解決問題與享受探索的能力。
           </p>
         </div>
 
-        <div className="about-features">
-          <div className="soft-feature-card">
-            <Users />
-            <h3>用心陪伴</h3>
-            <p>每位孩子都被看見，學習不再孤單。</p>
+        <div className="about-features philosophy-grid">
+          {philosophies.map((item) => <SoftCard key={item.title} {...item} />)}
+        </div>
+
+        <div className="team-strip">
+          <div>
+            <div className="section-label">Our Team</div>
+            <h3>專業教育團隊</h3>
+            <p>
+              結合專業美語教學、課業輔導與行政支援，讓孩子在學習、生活與親師溝通上都獲得完整照顧。
+            </p>
           </div>
-          <div className="soft-feature-card">
-            <Star />
-            <h3>專業教學</h3>
-            <p>展現師資與課程設計，有效提升語言能力。</p>
+          <div className="team-pill-list">
+            <span>資深美語教學</span>
+            <span>課業輔導支持</span>
+            <span>行政溝通照顧</span>
           </div>
-          <div className="soft-feature-card">
-            <BookOpen />
-            <h3>生活化學習</h3>
-            <p>連結生活情境，讓英文自然融入日常。</p>
-          </div>
-          <div className="soft-feature-card">
-            <Globe2 />
-            <h3>國際視野</h3>
-            <p>培養跨文化理解，迎向更寬廣的未來。</p>
-          </div>
+        </div>
+      </section>
+
+      <section id="roadmap" className="section roadmap-section">
+        <div className="soft-section-head">
+          <div className="section-label">Learning Roadmap</div>
+          <h2>從幼兒到國中，循序建立英文能力</h2>
+          <p>
+            依照孩子不同年齡與學習階段，規劃從美語啟蒙、聽說讀寫整合，到進階英文應用的完整路徑。
+          </p>
+        </div>
+
+        <div className="roadmap-grid">
+          {roadmap.map(({ icon: Icon, title, subtitle, age, desc }) => (
+            <article className="roadmap-card" key={title}>
+              <Icon />
+              <span>{age}</span>
+              <h3>{title}</h3>
+              <strong>{subtitle}</strong>
+              <p>{desc}</p>
+            </article>
+          ))}
         </div>
       </section>
 
       <section id="courses" className="section courses-section">
         <div className="soft-section-head course-section-head">
-          <div className="section-label">課程介紹</div>
-          <h2>依照年齡與學習需求，安排最適合孩子的英文課程</h2>
-          <p>包含兒童美語、幼兒美語、課後輔導與主題探索課程，幫助孩子在不同階段穩定成長。</p>
+          <div className="section-label">Course Architecture</div>
+          <h2>兩大美語課程主軸</h2>
+          <p>
+            以 Prime 活用班穩固語言核心，再透過 ESL 實作班延伸跨域探索與自信表達，形成由輸入到輸出的學習架構。
+          </p>
         </div>
 
-        <div className="course-grid">
-          {courses.map((course) => <CourseCard key={course.id} {...course} />)}
+        <div className="track-grid">
+          {courseTracks.map((track) => <TrackCard key={track.title} {...track} />)}
+        </div>
+
+        <div className="architecture-flow" aria-label="課程核心流程">
+          <div><Layers3 /><span>主題輸入</span></div>
+          <ArrowRight />
+          <div><Headphones /><span>聽讀累積</span></div>
+          <ArrowRight />
+          <div><MessageCircle /><span>口語演練</span></div>
+          <ArrowRight />
+          <div><Presentation /><span>專題輸出</span></div>
         </div>
       </section>
 
-      <section id="features" className="section feature-section">
-        <div className="soft-section-head compact-head">
-          <div className="section-label">教學特色</div>
-          <h2>讓學習進度被看見，也讓孩子願意持續練習</h2>
+      <section className="section materials-section">
+        <div className="soft-section-head">
+          <div className="section-label">Professional Materials</div>
+          <h2>多元專業教材與自編學習系統</h2>
+          <p>
+            從主教材、自然發音、分級讀本到自編教材，讓課堂學習與回家複習能夠穩定銜接。
+          </p>
         </div>
 
-        <div className="teaching-feature-list">
-          <div className="feature-row-item">
-            <Lightbulb />
-            <div>
-              <strong>老師可指派作業</strong>
-              <p>指定班級的 Level / Unit，學生只會看到老師安排的內容。</p>
-            </div>
+        <div className="material-grid">
+          {materials.map((item) => (
+            <article className="material-card" key={item.title}>
+              <BookOpen />
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section reading-section">
+        <div className="reading-panel">
+          <div>
+            <div className="section-label">Independent Readers</div>
+            <h2>閱讀領航：讓閱讀成為帶得走的能力</h2>
+            <p>
+              在 Milton，閱讀不只是技能，更是一種探索世界的習慣。透過廣泛閱讀、獨立閱讀與提問反思，孩子能從故事中學品格，也能從科普中拓展知識。
+            </p>
           </div>
-          <div className="feature-row-item">
-            <Headphones />
-            <div>
-              <strong>聽力拼字整合練習</strong>
-              <p>結合聽、說、拼寫與回家複習，讓孩子反覆熟悉課堂重點。</p>
-            </div>
+          <div className="reading-keywords">
+            <span>廣泛閱讀</span>
+            <span>獨立閱讀</span>
+            <span>批判思考</span>
+            <span>語感累積</span>
           </div>
-          <div className="feature-row-item">
-            <Clock3 />
-            <div>
-              <strong>適合低年級語速</strong>
-              <p>聽力已調整成較慢語速，幫助孩子聽清楚再拼字。</p>
-            </div>
+        </div>
+      </section>
+
+      <section className="section esl-section">
+        <div className="soft-section-head">
+          <div className="section-label">Theme-Based Learning & Project Output</div>
+          <h2>ESL 實作班：用英文拓展視野，自信開口表達</h2>
+          <p>
+            透過 Social Science 與 CLIL 精神，孩子在主題情境中累積知識與語言，最後以多元成果展現所學。
+          </p>
+        </div>
+
+        <div className="output-grid">
+          {outputMethods.map((item) => (
+            <article className="output-card" key={item.title}>
+              <PenTool />
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="after-school" className="section after-school-section">
+        <div className="after-school-panel">
+          <div>
+            <div className="section-label">After School Program</div>
+            <h2>課後輔導與生活陪伴</h2>
+            <p>
+              課後輔導不只協助完成作業，也透過學科複習、素養閱讀、生活教育與親師溝通，幫助孩子建立自主節奏與學習信心。
+            </p>
           </div>
+          <ul>
+            {afterSchool.map((item) => (
+              <li key={item}><CheckCircle2 size={18} /> {item}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section prep-section">
+        <div className="soft-section-head">
+          <div className="section-label">School Readiness</div>
+          <h2>小一銜接與先修規劃</h2>
+          <p>
+            針對準小一孩子的銜接需求，從美語、正音、數學讀題、科技素養與生活能力多面向準備，降低入學轉換的不安。
+          </p>
+        </div>
+
+        <div className="prep-grid">
+          {prepItems.map((item) => (
+            <article className="prep-card" key={item.title}>
+              <Home />
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </article>
+          ))}
         </div>
       </section>
 
       <section id="review" className="section review-section">
         <div className="review-panel">
           <div>
-            <div className="section-label">學生入口</div>
+            <div className="section-label">Student Review Mission</div>
             <h2>Milton Review Mission</h2>
             <p>
-              學生登入班級與姓名後，只會看到老師指定的 Level / Unit 作業。
-              完成後，老師可以在後台追蹤每一次的學習紀錄。
+              學生登入班級與姓名後，只會看到老師指定的 Level / Unit 作業。完成聽力拼字練習後，老師可在後台追蹤學習紀錄，讓回家複習更有方向。
             </p>
           </div>
           <a className="primary-btn" href={REVIEW_APP_URL}>進入學生作業系統 <ArrowRight size={18} /></a>
@@ -231,7 +429,7 @@ function App() {
 
       <section id="contact" className="section contact-section">
         <div className="soft-section-head compact-head">
-          <div className="section-label">聯絡我們</div>
+          <div className="section-label">Contact</div>
           <h2>歡迎預約了解課程</h2>
           <p>想了解孩子適合哪一個班級或課程，歡迎透過 LINE 或電話與我們聯繫。</p>
         </div>
@@ -257,7 +455,7 @@ function App() {
 
       <footer className="site-footer">
         <img src="/assets/milton-logo-horizontal-blue.png" alt="Milton 麋爾頓美語" />
-        <p>© {new Date().getFullYear()} Milton 麋爾頓美語. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Milton Kids Academy 麋爾頓美語. All rights reserved.</p>
       </footer>
     </main>
   );

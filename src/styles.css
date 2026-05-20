@@ -612,3 +612,303 @@ nav a:hover::after { transform: scaleX(1); }
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ===== Recruitment content update from 115-1 briefing ===== */
+.team-strip,
+.reading-panel,
+.after-school-panel {
+  margin-top: 34px;
+  padding: clamp(28px, 4vw, 44px);
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at right top, rgba(244, 197, 92, .24), transparent 28%),
+    linear-gradient(135deg, rgba(255,255,255,.82), rgba(237,243,255,.62));
+  box-shadow: var(--shadow-lg);
+}
+
+.team-strip {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.team-strip h3,
+.reading-panel h2,
+.after-school-panel h2 {
+  margin: 12px 0 12px;
+  color: var(--blue-deep);
+  font-size: clamp(30px, 4vw, 50px);
+  line-height: 1.12;
+  letter-spacing: -.04em;
+}
+
+.team-strip p,
+.reading-panel p,
+.after-school-panel p {
+  color: var(--muted);
+  line-height: 1.85;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.team-pill-list,
+.reading-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.team-pill-list span,
+.reading-keywords span {
+  display: inline-flex;
+  align-items: center;
+  padding: 13px 18px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.68);
+  color: var(--blue-deep);
+  font-weight: 950;
+  box-shadow: 0 12px 28px rgba(37, 61, 106, .08);
+}
+
+.roadmap-section {
+  background: linear-gradient(180deg, rgba(255,255,255,.5), rgba(255,250,240,.72));
+}
+
+.roadmap-grid,
+.track-grid,
+.material-grid,
+.output-grid,
+.prep-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.roadmap-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.track-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.material-grid,
+.prep-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.output-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.roadmap-card,
+.track-card,
+.material-card,
+.output-card,
+.prep-card {
+  position: relative;
+  overflow: hidden;
+  padding: 28px 24px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, .82);
+  box-shadow: var(--shadow-md);
+}
+
+.roadmap-card::after,
+.track-card::after,
+.material-card::after,
+.output-card::after,
+.prep-card::after {
+  content: "";
+  position: absolute;
+  right: -36px;
+  top: -36px;
+  width: 110px;
+  height: 110px;
+  border-radius: 999px;
+  background: rgba(244, 197, 92, .16);
+}
+
+.roadmap-card svg,
+.material-card svg,
+.output-card svg,
+.prep-card svg {
+  color: var(--blue);
+  width: 34px;
+  height: 34px;
+  margin-bottom: 16px;
+}
+
+.roadmap-card span,
+.track-card span {
+  display: inline-flex;
+  margin-bottom: 12px;
+  color: #d68800;
+  font-weight: 950;
+}
+
+.roadmap-card h3,
+.track-card h3,
+.material-card h3,
+.output-card h3,
+.prep-card h3 {
+  margin: 0 0 10px;
+  color: var(--blue-deep);
+  font-size: 1.55rem;
+  line-height: 1.2;
+}
+
+.roadmap-card strong {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--blue);
+}
+
+.roadmap-card p,
+.track-card p,
+.material-card p,
+.output-card p,
+.prep-card p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.85;
+}
+
+.track-card {
+  min-height: 100%;
+}
+
+.track-card ul,
+.after-school-panel ul {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.track-card li,
+.after-school-panel li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: var(--text);
+  font-weight: 850;
+  line-height: 1.65;
+}
+
+.track-card li svg,
+.after-school-panel li svg {
+  flex: none;
+  color: var(--blue);
+  margin-top: 3px;
+}
+
+.architecture-flow {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 26px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(71,108,181,.08), rgba(244,197,92,.16));
+}
+
+.architecture-flow > div {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--blue-deep);
+  font-weight: 950;
+}
+
+.architecture-flow svg {
+  color: var(--blue);
+  flex: none;
+}
+
+.materials-section {
+  background:
+    radial-gradient(circle at left top, rgba(71,108,181,.08), transparent 26%),
+    linear-gradient(180deg, #fff, rgba(255,250,240,.7));
+}
+
+.reading-section {
+  padding-top: 52px;
+  padding-bottom: 52px;
+}
+
+.reading-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.esl-section {
+  background: linear-gradient(180deg, rgba(237,243,255,.48), rgba(255,255,255,.62));
+}
+
+.after-school-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+  gap: 30px;
+  align-items: center;
+}
+
+.prep-section {
+  background:
+    radial-gradient(circle at right 15%, rgba(244,197,92,.2), transparent 26%),
+    linear-gradient(180deg, rgba(255,255,255,.7), rgba(237,243,255,.48));
+}
+
+@media (max-width: 1120px) {
+  .team-strip,
+  .reading-panel,
+  .after-school-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .roadmap-grid,
+  .output-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .material-grid,
+  .prep-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .architecture-flow {
+    border-radius: 28px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 720px) {
+  .track-grid,
+  .roadmap-grid,
+  .material-grid,
+  .output-grid,
+  .prep-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-strip,
+  .reading-panel,
+  .after-school-panel {
+    padding: 26px 20px;
+  }
+
+  .architecture-flow {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .architecture-flow > svg {
+    transform: rotate(90deg);
+  }
+}
