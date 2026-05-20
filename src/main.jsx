@@ -8,11 +8,8 @@ import {
   ArrowRight,
   MapPin,
   Phone,
-  Star,
   CheckCircle2,
   School,
-  Lightbulb,
-  Clock3,
   BookOpen,
   Globe2,
   Layers3,
@@ -26,8 +23,6 @@ import {
   Mic2,
   LibraryBig,
   Shapes,
-  Palette,
-  FlaskConical,
   UsersRound
 } from 'lucide-react';
 import './styles.css';
@@ -65,8 +60,8 @@ const courseTracks = [
 ];
 
 const materials = [
-  { title: 'Oxford University Press 系列教材', desc: '選用國際專業出版社之英語教材作為語言能力建構基礎，實際套書依班級與程度規劃。' },
-  { title: '分級閱讀與廣泛閱讀', desc: '透過不同難度與主題的文本，逐步養成閱讀理解、語感與自主閱讀習慣。' },
+  { title: 'Oxford University Press 系列教材', desc: '選用 Oxford University Press 出版之一系列專業英語教材作為能力建構基礎。' },
+  { title: '分級閱讀與廣泛閱讀', desc: '透過不同難度與主題的閱讀素材，逐步養成閱讀理解、語感與自主閱讀習慣。' },
   { title: '自編學習與回家練習系統', desc: '搭配課堂練習、親師聯絡與回家任務，連結教室與家庭，完整累積學習軌跡。' }
 ];
 
@@ -208,22 +203,86 @@ function PhotoGallery({ photos }) {
   return <div className="class-photo-grid">{photos.map((photo) => <figure className="class-photo-card" key={photo.src}><img src={photo.src} alt={photo.title} /><figcaption>{photo.title}<span>可替換成實際上課照片</span></figcaption></figure>)}</div>;
 }
 
-function PageHero({ label, title, desc, children }) {
-  return <section className="course-page-hero"><div className="section-label">{label}</div><h1>{title}</h1><p>{desc}</p><div className="course-page-actions"><a className="secondary-btn" href="#courses">回課程架構</a><a className="accent-btn" href="#contact">預約了解 <ArrowRight size={18} /></a></div>{children}</section>;
+function PageHero({ label, title, desc, visual = null, className = '' }) {
+  return (
+    <section className={`course-page-hero ${visual ? 'has-visual' : ''} ${className}`.trim()}>
+      <div className="course-page-hero-copy">
+        <div className="section-label">{label}</div>
+        <h1>{title}</h1>
+        <p>{desc}</p>
+        <div className="course-page-actions"><a className="secondary-btn" href="#courses">回課程架構</a><a className="accent-btn" href="#contact">預約了解 <ArrowRight size={18} /></a></div>
+      </div>
+      {visual ? <div className="course-page-hero-visual-wrap">{visual}</div> : null}
+    </section>
+  );
+}
+
+function PrimeHeroVisual({ abilities }) {
+  return (
+    <div className="prime-hero-visual" aria-hidden="true">
+      <div className="prime-hero-halo" />
+      <div className="prime-hero-orb prime-orb-a" />
+      <div className="prime-hero-orb prime-orb-b" />
+      <div className="prime-hero-spark prime-spark-a">✦</div>
+      <div className="prime-hero-spark prime-spark-b">✦</div>
+      <div className="prime-dot-grid" />
+      <div className="prime-mascot-shell">
+        <img className="prime-hero-mascot" src="/assets/milton-3d-mascot-half-slim.png" alt="Prime 活用班 3D 品牌吉祥物" />
+      </div>
+      {abilities.map((item, index) => {
+        const Icon = item.icon;
+        return (
+          <article className={`prime-ability-badge badge-${index + 1}`} key={item.title}>
+            <div className="prime-ability-icon"><Icon size={18} /></div>
+            <div>
+              <strong>{item.title}</strong>
+              <p>{item.short}</p>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  );
 }
 
 function PrimePage() {
   const abilities = [
-    { icon: Headphones, title: '聽力理解', desc: '透過主題情境與課堂互動，讓孩子逐步聽懂課堂指令、對話與重點字句。' },
-    { icon: Mic2, title: '口說表達', desc: '從高頻句型到主題式對話，累積敢開口、能回應、能表達的自信。' },
-    { icon: BookOpen, title: '自然發音', desc: '從字母聲音到拼讀規則，協助孩子建立讀字、拼字與閱讀的基礎。' },
-    { icon: LibraryBig, title: '漸進閱讀', desc: '以分級閱讀與廣泛閱讀累積語感，讓閱讀成為帶得走的能力。' }
+    { icon: Headphones, title: '聽力理解', short: '逐步聽懂指令、對話與重點字句。', desc: '透過主題情境與課堂互動，讓孩子逐步聽懂課堂指令、對話與重點字句。' },
+    { icon: Mic2, title: '口說表達', short: '從句型到對話，建立開口自信。', desc: '從高頻句型到主題式對話，累積敢開口、能回應、能表達的自信。' },
+    { icon: BookOpen, title: '自然發音', short: '建立拼讀、讀字與拼字基礎。', desc: '從字母聲音到拼讀規則，協助孩子建立讀字、拼字與閱讀的基礎。' },
+    { icon: LibraryBig, title: '漸進閱讀', short: '累積語感，讓閱讀成為能力。', desc: '以分級閱讀與廣泛閱讀累積語感，讓閱讀成為帶得走的能力。' }
   ];
   return (
     <>
-      <PageHero label="Prime Program" title="Prime 活用班｜聽說讀寫核心能力建構" desc="Prime 活用班是 Milton 兒童美語的核心能力課程，透過螺旋式學習架構，幫助孩子穩固聽、說、讀、寫基礎，逐步建立長期英文能力。" />
-      <section className="section course-page-section"><div className="soft-section-head"><div className="section-label">Learning Goals</div><h2>孩子會建立哪些能力？</h2><p>Prime 的重點不是短期記憶，而是讓孩子在熟悉的基礎上不斷疊加新能力，形成穩定的語言學習節奏。</p></div><div className="page-feature-grid">{abilities.map((item) => <SoftCard key={item.title} {...item} />)}</div></section>
-      <section className="section course-page-section alt-bg"><div className="two-column-content"><div><div className="section-label">Materials</div><h2>專業教材與自編學習系統</h2><p>課程選用 Oxford University Press 出版之一系列專業英語教材，並搭配分級閱讀、自編課堂練習與回家任務，讓課堂所學能延伸至家庭複習。</p><ul className="clean-list"><li><CheckCircle2 /> 國際出版社專業教材作為語言基礎</li><li><CheckCircle2 /> 分級閱讀建立語感與閱讀習慣</li><li><CheckCircle2 /> 自編練習連結課堂、家庭與親師溝通</li></ul></div><div className="soft-note"><h3>不公開教材套書細節</h3><p>網站僅呈現教材出版社與學習方向，不揭露實際採用的套書名稱，以保留 Milton 內部課程設計與教材規劃彈性。</p></div></div></section>
+      <PageHero
+        label="Prime Program"
+        title="Prime 活用班｜聽說讀寫核心能力建構"
+        desc="Prime 活用班是 Milton 兒童美語的核心能力課程，透過螺旋式學習架構，幫助孩子穩固聽、說、讀、寫基礎，逐步建立長期英文能力。"
+        className="prime-page-hero"
+        visual={<PrimeHeroVisual abilities={abilities} />}
+      />
+      <section className="section course-page-section">
+        <div className="soft-section-head">
+          <div className="section-label">Learning Goals</div>
+          <h2>孩子會建立哪些能力？</h2>
+          <p>Prime 的重點不是短期記憶，而是讓孩子在熟悉的基礎上不斷疊加新能力，形成穩定的語言學習節奏。</p>
+        </div>
+        <div className="page-feature-grid">{abilities.map((item) => <SoftCard key={item.title} icon={item.icon} title={item.title} desc={item.desc} />)}</div>
+      </section>
+      <section className="section course-page-section alt-bg">
+        <div className="two-column-content single-column-text">
+          <div>
+            <div className="section-label">Materials</div>
+            <h2>教材與學習架構</h2>
+            <p>課程選用 Oxford University Press 出版之一系列專業英語教材，並搭配分級閱讀、自編課堂練習與回家任務，讓孩子在課堂輸入、課後複習與長期能力累積之間建立穩定連結。</p>
+            <ul className="clean-list">
+              <li><CheckCircle2 /> Oxford University Press 專業教材作為語言能力建構主軸</li>
+              <li><CheckCircle2 /> 分級閱讀與廣泛閱讀，逐步建立語感與閱讀習慣</li>
+              <li><CheckCircle2 /> 自編學習系統，連結課堂練習、家庭複習與學習軌跡</li>
+            </ul>
+          </div>
+        </div>
+      </section>
       <section className="section photo-section"><div className="soft-section-head"><div className="section-label">Classroom Moments</div><h2>上課照片位置</h2><p>以下先放一般上課照片佔位圖，未來可以替換成實際孩子上課、閱讀、口說練習或教室照片。</p></div><PhotoGallery photos={primePhotos} /></section>
       <section className="section course-page-section"><div className="reading-panel"><div><div className="section-label">Prime Summary</div><h2>適合希望穩固英文基礎的孩子</h2><p>Prime 活用班以語言核心能力為主軸，讓孩子在全美語浸潤與主題練習中，逐步養成聽懂、敢說、能讀、會寫的基礎能力。</p></div><a className="primary-btn" href="#contact">了解報名資訊 <ArrowRight size={18} /></a></div></section>
       <ContactSection />

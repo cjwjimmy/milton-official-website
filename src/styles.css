@@ -1173,3 +1173,245 @@ nav a:hover::after { transform: scaleX(1); }
     padding: 26px;
   }
 }
+
+
+/* ===== Prime page hero visual restore ===== */
+.course-page-hero.has-visual {
+  grid-template-columns: minmax(0, .96fr) minmax(420px, 1.04fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.course-page-hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+.course-page-hero-visual-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.prime-page-hero {
+  min-height: 700px;
+}
+
+.prime-hero-visual {
+  position: relative;
+  min-height: 610px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 44px 10px 12px;
+}
+
+.prime-hero-halo {
+  position: absolute;
+  inset: 8% 9% 12% 10%;
+  border-radius: 42%;
+  background: radial-gradient(circle, rgba(244,197,92,.26), rgba(244,197,92,.08) 48%, transparent 72%);
+  filter: blur(8px);
+}
+
+.prime-hero-orb,
+.prime-hero-spark,
+.prime-dot-grid {
+  position: absolute;
+  pointer-events: none;
+}
+
+.prime-hero-orb {
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.92), rgba(244,197,92,.66));
+  opacity: .88;
+}
+
+.prime-orb-a { width: 24px; height: 24px; left: 10%; top: 16%; animation: driftY 5.6s ease-in-out infinite; }
+.prime-orb-b { width: 18px; height: 18px; right: 12%; top: 22%; animation: driftY 4.8s ease-in-out infinite reverse; }
+.prime-hero-spark { color: #f0b33b; font-size: 24px; }
+.prime-spark-a { left: 8%; bottom: 18%; animation: twinkle 4.4s ease-in-out infinite; }
+.prime-spark-b { right: 10%; top: 14%; animation: twinkle 4s ease-in-out infinite reverse; }
+.prime-dot-grid {
+  right: 7%;
+  bottom: 16%;
+  width: 120px;
+  height: 92px;
+  background-image: radial-gradient(circle, rgba(244,197,92,.72) 0 4px, transparent 4px);
+  background-size: 24px 24px;
+  opacity: .9;
+}
+
+.prime-mascot-shell {
+  position: relative;
+  width: min(540px, 92%);
+  height: 540px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.prime-mascot-shell::after {
+  content: "";
+  position: absolute;
+  left: 23%;
+  right: 23%;
+  bottom: 4px;
+  height: 24px;
+  border-radius: 999px;
+  background: rgba(32, 59, 104, 0.12);
+  filter: blur(12px);
+}
+
+.prime-hero-mascot {
+  position: relative;
+  z-index: 1;
+  width: min(430px, 82%);
+  transform-origin: center bottom;
+  filter: drop-shadow(0 24px 42px rgba(32, 59, 104, 0.18));
+  animation: mascotFloat 4.8s ease-in-out infinite;
+}
+
+.prime-ability-badge {
+  position: absolute;
+  z-index: 2;
+  width: min(220px, 40%);
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 16px 16px 16px 14px;
+  border-radius: 24px;
+  background: rgba(255,255,255,.92);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(8px);
+}
+
+.prime-ability-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: rgba(71,108,181,.1);
+  color: var(--blue);
+}
+
+.prime-ability-badge strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--blue-deep);
+  font-size: 1.02rem;
+}
+
+.prime-ability-badge p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .88rem;
+  line-height: 1.55;
+  font-weight: 750;
+}
+
+.prime-ability-badge.badge-1 { left: 0; top: 14%; }
+.prime-ability-badge.badge-2 { right: 2%; top: 10%; }
+.prime-ability-badge.badge-3 { left: 2%; bottom: 15%; }
+.prime-ability-badge.badge-4 { right: 0; bottom: 14%; }
+
+.single-column-text {
+  grid-template-columns: 1fr;
+  max-width: 920px;
+}
+
+.single-column-text h2 {
+  margin-top: 14px;
+}
+
+@media (max-width: 1120px) {
+  .course-page-hero.has-visual {
+    grid-template-columns: 1fr;
+  }
+
+  .course-page-hero-visual-wrap {
+    order: -1;
+  }
+
+  .prime-page-hero {
+    min-height: auto;
+  }
+
+  .prime-hero-visual {
+    min-height: 540px;
+  }
+}
+
+@media (max-width: 900px) {
+  .prime-hero-visual {
+    min-height: 660px;
+    padding-top: 30px;
+  }
+
+  .prime-mascot-shell {
+    width: min(500px, 100%);
+    height: 500px;
+  }
+
+  .prime-ability-badge {
+    width: min(240px, 47%);
+  }
+
+  .prime-ability-badge.badge-1 { left: 2%; top: 6%; }
+  .prime-ability-badge.badge-2 { right: 2%; top: 6%; }
+  .prime-ability-badge.badge-3 { left: 2%; bottom: 6%; }
+  .prime-ability-badge.badge-4 { right: 2%; bottom: 6%; }
+}
+
+@media (max-width: 720px) {
+  .prime-hero-visual {
+    min-height: 760px;
+    padding: 18px 0 8px;
+  }
+
+  .prime-mascot-shell {
+    width: 100%;
+    height: 380px;
+    align-items: flex-end;
+  }
+
+  .prime-hero-mascot {
+    width: min(290px, 78%);
+  }
+
+  .prime-ability-badge {
+    width: calc(50% - 10px);
+    padding: 14px 12px;
+    grid-template-columns: 38px 1fr;
+    gap: 10px;
+  }
+
+  .prime-ability-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 14px;
+  }
+
+  .prime-ability-badge strong {
+    font-size: .94rem;
+  }
+
+  .prime-ability-badge p {
+    font-size: .8rem;
+  }
+
+  .prime-ability-badge.badge-1 { left: 0; top: 2%; }
+  .prime-ability-badge.badge-2 { right: 0; top: 2%; }
+  .prime-ability-badge.badge-3 { left: 0; bottom: 40%; }
+  .prime-ability-badge.badge-4 { right: 0; bottom: 40%; }
+
+  .prime-dot-grid {
+    width: 86px;
+    height: 70px;
+    right: 0;
+    bottom: 28%;
+    background-size: 18px 18px;
+  }
+}
