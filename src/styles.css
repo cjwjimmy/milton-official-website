@@ -1653,3 +1653,88 @@ nav a:hover::after { transform: scaleX(1); }
     inset: 20% 6% 18% 6%;
   }
 }
+
+
+/* ===== Concise international-school style update ===== */
+.soft-section-head p,
+.hero p,
+.course-page-hero p,
+.reading-panel p,
+.after-school-panel p,
+.two-column-content p,
+.monthly-cycle p,
+.review-panel p,
+.contact-soft-card p {
+  max-width: 760px;
+}
+
+.soft-section-head p,
+.reading-panel p,
+.after-school-panel p,
+.two-column-content p,
+.monthly-cycle p {
+  font-size: clamp(18px, 1.7vw, 24px);
+  color: var(--blue);
+  font-weight: 950;
+  letter-spacing: -.02em;
+  line-height: 1.45;
+}
+
+.hero p,
+.course-page-hero p {
+  font-size: clamp(20px, 2vw, 28px);
+  color: var(--blue);
+  font-weight: 950;
+  letter-spacing: -.025em;
+  line-height: 1.38;
+}
+
+.track-card p,
+.material-card p,
+.output-card p,
+.prep-card p,
+.roadmap-card p,
+.soft-feature-card p {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.course-page-hero h1,
+.hero h1,
+.soft-section-head h2,
+.reading-panel h2,
+.after-school-panel h2,
+.two-column-content h2,
+.monthly-cycle h2 {
+  letter-spacing: -.06em;
+}
+
+.clean-list li {
+  padding: 10px 0;
+}
+
+.prime-hero-reference-image {
+  object-fit: cover;
+}
+
+.esl-domain-badge {
+  min-width: 206px;
+}
+
+.esl-domain-badge p {
+  font-size: .78rem;
+  letter-spacing: .01em;
+}
+
+@media (max-width: 720px) {
+  .soft-section-head p,
+  .hero p,
+  .course-page-hero p,
+  .reading-panel p,
+  .after-school-panel p,
+  .two-column-content p,
+  .monthly-cycle p {
+    font-size: 17px;
+    line-height: 1.55;
+  }
+}
