@@ -27,7 +27,12 @@ import {
   FlaskConical,
   Palette,
   Landmark,
-  Music4
+  Music4,
+  Volume2,
+  Pencil,
+  Brush,
+  Microscope,
+  BookMarked
 } from 'lucide-react';
 import './styles.css';
 
@@ -49,16 +54,16 @@ const roadmap = [
 const courseTracks = [
   {
     title: 'Prime 活用班',
-    tag: 'Foundational English Literacy',
+    headline: '聽・說・讀・寫',
+    subtitle: 'Build strong foundations.',
     href: '#/prime',
-    image: '/assets/prime-hero-learning-badges.png',
     visual: 'prime'
   },
   {
     title: 'ESL 實作班',
-    tag: 'Inquiry-Based Learning',
+    headline: '探索・創作・表達',
+    subtitle: 'Explore. Create. Present.',
     href: '#/esl',
-    image: '/assets/milton-3d-mascot-clean.png',
     visual: 'esl'
   }
 ];
@@ -107,22 +112,38 @@ function SoftCard({ icon: Icon, title, desc }) {
   return <article className="soft-feature-card"><Icon /><h3>{title}</h3><p>{desc}</p></article>;
 }
 
-function TrackCard({ title, href, image, visual }) {
+function TrackCard({ title, headline, subtitle, href, visual }) {
+  const primeIcons = [
+    { icon: Volume2, label: 'Listening' },
+    { icon: Mic2, label: 'Speaking' },
+    { icon: BookOpen, label: 'Reading' },
+    { icon: Pencil, label: 'Writing' }
+  ];
+  const eslIcons = [
+    { icon: Microscope, label: 'Science' },
+    { icon: Brush, label: 'Arts' },
+    { icon: Globe2, label: 'Culture' },
+    { icon: Music4, label: 'Music' }
+  ];
+  const icons = visual === 'prime' ? primeIcons : eslIcons;
+
   return (
-    <a className={`track-card track-card-link visual-track-card title-only-track-card ${visual === 'esl' ? 'esl-track-card' : 'prime-track-card'}`} href={href} aria-label={`了解 ${title}`}>
-      <div className="track-visual-area">
-        {visual === 'esl' ? (
-          <>
-            <div className="mini-domain mini-domain-a">Science</div>
-            <div className="mini-domain mini-domain-b">Arts</div>
-            <div className="mini-domain mini-domain-c">Culture</div>
-            <div className="mini-domain mini-domain-d">Music</div>
-          </>
-        ) : null}
-        <img src={image} alt={title} />
+    <a className={`track-card track-card-link visual-track-card course-focus-card ${visual === 'esl' ? 'esl-track-card' : 'prime-track-card'}`} href={href} aria-label={`了解 ${title}`}>
+      <div className="course-focus-visual">
+        <div className="course-focus-bg-word">{visual === 'prime' ? 'Prime' : 'ESL'}</div>
+        <div className="course-focus-icon-grid">
+          {icons.map(({ icon: Icon, label }) => (
+            <div className="course-focus-icon" key={label}>
+              <Icon />
+              <span>{label}</span>
+            </div>
+          ))}
+        </div>
       </div>
       <div className="track-title-area">
         <h3>{title}</h3>
+        <strong>{headline}</strong>
+        <p>{subtitle}</p>
       </div>
     </a>
   );
@@ -216,17 +237,29 @@ function PageHero({ label, title, desc, visual = null, className = '' }) {
 }
 
 function PrimeHeroVisual() {
+  const abilities = [
+    { icon: Volume2, title: 'Listening' },
+    { icon: Mic2, title: 'Speaking' },
+    { icon: BookOpen, title: 'Reading' },
+    { icon: Pencil, title: 'Writing' }
+  ];
   return (
-    <div className="prime-hero-visual prime-hero-visual-image" aria-hidden="true">
+    <div className="prime-hero-visual prime-hero-transparent-visual" aria-hidden="true">
       <div className="prime-hero-halo" />
       <div className="prime-hero-orb prime-orb-a" />
       <div className="prime-hero-orb prime-orb-b" />
       <div className="prime-hero-spark prime-spark-a">✦</div>
       <div className="prime-hero-spark prime-spark-b">✦</div>
       <div className="prime-dot-grid" />
-      <div className="prime-hero-image-shell">
-        <img className="prime-hero-reference-image" src="/assets/prime-hero-learning-badges.png" alt="Prime 活用班示意圖：3D 吉祥物搭配 Listening、Speaking、Reading、Writing 四大能力" />
+      <div className="prime-transparent-mascot-shell">
+        <img className="prime-transparent-mascot" src="/assets/prime-hero-transparent.png" alt="Prime 活用班透明背景 3D mascot" />
       </div>
+      {abilities.map(({ icon: Icon, title }, index) => (
+        <div className={`prime-floating-skill skill-${index + 1}`} key={title}>
+          <Icon size={18} />
+          <span>{title}</span>
+        </div>
+      ))}
     </div>
   );
 }
