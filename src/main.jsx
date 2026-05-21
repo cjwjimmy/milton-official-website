@@ -239,10 +239,10 @@ function PrimeHeroVisual() {
 
 function EslHeroVisual() {
   const domains = [
-    { icon: FlaskConical, title: 'Science', subtitle: '科學探索', className: 'domain-a' },
-    { icon: Palette, title: 'Arts', subtitle: '藝術創作', className: 'domain-b' },
-    { icon: Landmark, title: 'Humanities', subtitle: '人文文化', className: 'domain-c' },
-    { icon: Music4, title: 'Music', subtitle: '音樂節奏', className: 'domain-d' }
+    { icon: FlaskConical, title: 'Science Lab', subtitle: 'Explore • Observe • Discover', className: 'domain-a' },
+    { icon: Palette, title: 'Creative Arts', subtitle: 'Color • Design • Imagination', className: 'domain-b' },
+    { icon: Landmark, title: 'World Cultures', subtitle: 'People • Places • Stories', className: 'domain-c' },
+    { icon: Music4, title: 'Music & Rhythm', subtitle: 'Songs • Beats • Expression', className: 'domain-d' }
   ];
 
   return (
