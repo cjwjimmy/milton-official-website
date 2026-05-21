@@ -1738,3 +1738,336 @@ nav a:hover::after { transform: scaleX(1); }
     line-height: 1.55;
   }
 }
+
+
+/* ===== Headline-first website update ===== */
+.soft-section-head {
+  max-width: 760px;
+}
+
+.soft-section-head p,
+.hero p,
+.course-page-hero p,
+.reading-panel p,
+.after-school-panel p,
+.two-column-content p,
+.monthly-cycle p,
+.review-panel p {
+  font-size: clamp(18px, 1.7vw, 24px);
+  line-height: 1.3;
+  max-width: 560px;
+}
+
+.track-card p,
+.material-card p,
+.output-card p,
+.prep-card p,
+.roadmap-card p,
+.soft-feature-card p,
+.class-photo-card figcaption span,
+.clean-list li,
+.cycle-steps p {
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.track-card ul,
+.after-school-panel ul,
+.clean-list {
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.course-page-section {
+  padding-top: 66px;
+  padding-bottom: 66px;
+}
+
+.section {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.soft-feature-card,
+.roadmap-card,
+.track-card,
+.material-card,
+.output-card,
+.prep-card {
+  padding: 24px 22px;
+}
+
+.hero h1,
+.course-page-hero h1 {
+  max-width: 760px;
+}
+
+.course-page-actions,
+.hero-actions {
+  margin-top: 24px;
+}
+
+@media (max-width: 720px) {
+  .soft-section-head p,
+  .hero p,
+  .course-page-hero p,
+  .reading-panel p,
+  .after-school-panel p,
+  .two-column-content p,
+  .monthly-cycle p {
+    font-size: 16px;
+  }
+}
+
+
+/* ===== Course pathway: visual-only cards ===== */
+.courses-section {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(244,197,92,.18), transparent 24%),
+    linear-gradient(180deg, rgba(255,250,240,.72), rgba(255,255,255,.86));
+}
+
+.course-section-head {
+  margin-bottom: 30px;
+}
+
+.visual-track-card {
+  display: grid;
+  grid-template-rows: minmax(260px, 1fr) auto;
+  padding: 0;
+  overflow: hidden;
+  min-height: 520px;
+  color: inherit;
+}
+
+.visual-track-card::after {
+  display: none;
+}
+
+.track-visual-area {
+  position: relative;
+  min-height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 26px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 72% 20%, rgba(244,197,92,.23), transparent 28%),
+    radial-gradient(circle at 18% 72%, rgba(71,108,181,.12), transparent 28%),
+    linear-gradient(135deg, #ffffff, #fff8e8);
+}
+
+.track-visual-area::before {
+  content: "";
+  position: absolute;
+  inset: 28px;
+  border-radius: 42px;
+  background: rgba(255,255,255,.45);
+  filter: blur(2px);
+}
+
+.track-visual-area img {
+  position: relative;
+  z-index: 1;
+  width: min(460px, 92%);
+  max-height: 300px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(32,59,104,.16));
+  transition: transform .26s ease;
+}
+
+.esl-track-card .track-visual-area img {
+  width: min(330px, 72%);
+}
+
+.visual-track-card:hover .track-visual-area img {
+  transform: translateY(-8px) scale(1.03);
+}
+
+.track-title-area {
+  padding: 28px 30px 32px;
+  background: rgba(255,255,255,.92);
+}
+
+.track-title-area span {
+  margin-bottom: 10px;
+}
+
+.track-title-area h3 {
+  font-size: clamp(34px, 3.2vw, 52px);
+  letter-spacing: -.05em;
+}
+
+.visual-track-card .track-link {
+  margin-top: 18px;
+  font-size: 1.08rem;
+}
+
+.mini-domain {
+  position: absolute;
+  z-index: 2;
+  padding: 10px 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.86);
+  color: var(--blue-deep);
+  font-size: .92rem;
+  font-weight: 950;
+  box-shadow: 0 12px 28px rgba(32,59,104,.10);
+}
+
+.mini-domain-a { left: 7%; top: 12%; color: #2f75d6; transform: rotate(-5deg); }
+.mini-domain-b { right: 8%; top: 16%; color: #2ea867; transform: rotate(5deg); }
+.mini-domain-c { left: 9%; bottom: 14%; color: #f08d2b; transform: rotate(4deg); }
+.mini-domain-d { right: 9%; bottom: 12%; color: #7a56d8; transform: rotate(-4deg); }
+
+@media (max-width: 900px) {
+  .visual-track-card {
+    min-height: 460px;
+  }
+
+  .track-visual-area {
+    min-height: 260px;
+  }
+
+  .track-visual-area img {
+    max-height: 230px;
+  }
+}
+
+
+/* ===== Final homepage simplification enforcement ===== */
+.visual-track-card p,
+.visual-track-card ul {
+  display: none !important;
+}
+
+.visual-track-card {
+  display: grid;
+  grid-template-rows: minmax(260px, 1fr) auto;
+  padding: 0 !important;
+  overflow: hidden;
+  min-height: 500px;
+  color: inherit;
+}
+
+.visual-track-card::after {
+  display: none !important;
+}
+
+.track-visual-area {
+  position: relative;
+  min-height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 26px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 72% 20%, rgba(244,197,92,.23), transparent 28%),
+    radial-gradient(circle at 18% 72%, rgba(71,108,181,.12), transparent 28%),
+    linear-gradient(135deg, #ffffff, #fff8e8);
+}
+
+.track-visual-area img {
+  position: relative;
+  z-index: 1;
+  width: min(460px, 92%);
+  max-height: 300px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(32,59,104,.16));
+  transition: transform .26s ease;
+}
+
+.esl-track-card .track-visual-area img {
+  width: min(330px, 72%);
+}
+
+.visual-track-card:hover .track-visual-area img {
+  transform: translateY(-8px) scale(1.03);
+}
+
+.track-title-area {
+  padding: 28px 30px 32px;
+  background: rgba(255,255,255,.92);
+}
+
+.track-title-area h3 {
+  font-size: clamp(34px, 3.2vw, 52px);
+  letter-spacing: -.05em;
+}
+
+.mini-domain {
+  position: absolute;
+  z-index: 2;
+  padding: 10px 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.86);
+  color: var(--blue-deep);
+  font-size: .92rem;
+  font-weight: 950;
+  box-shadow: 0 12px 28px rgba(32,59,104,.10);
+}
+
+.mini-domain-a { left: 7%; top: 12%; color: #2f75d6; transform: rotate(-5deg); }
+.mini-domain-b { right: 8%; top: 16%; color: #2ea867; transform: rotate(5deg); }
+.mini-domain-c { left: 9%; bottom: 14%; color: #f08d2b; transform: rotate(4deg); }
+.mini-domain-d { right: 9%; bottom: 12%; color: #7a56d8; transform: rotate(-4deg); }
+
+.home .materials-section,
+.home .reading-section,
+.home .esl-section,
+.home .after-school-section {
+  display: none !important;
+}
+
+
+/* ===== Course Pathway title + image only ===== */
+.course-title-only {
+  margin-bottom: 28px;
+}
+
+.course-title-only p,
+.title-only-track-card span,
+.title-only-track-card p,
+.title-only-track-card ul,
+.title-only-track-card .track-link {
+  display: none !important;
+}
+
+.title-only-track-card {
+  min-height: 430px;
+  grid-template-rows: minmax(300px, 1fr) auto;
+}
+
+.title-only-track-card .track-visual-area {
+  min-height: 320px;
+}
+
+.title-only-track-card .track-title-area {
+  padding: 24px 28px 30px;
+  text-align: center;
+}
+
+.title-only-track-card .track-title-area h3 {
+  margin: 0;
+  font-size: clamp(34px, 3vw, 50px);
+  line-height: 1.05;
+}
+
+.title-only-track-card .track-visual-area img {
+  max-height: 290px;
+}
+
+.title-only-track-card.esl-track-card .track-visual-area img {
+  max-height: 270px;
+}
+
+@media (max-width: 900px) {
+  .title-only-track-card {
+    min-height: 380px;
+  }
+  .title-only-track-card .track-visual-area {
+    min-height: 250px;
+  }
+}
