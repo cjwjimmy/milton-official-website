@@ -37,7 +37,7 @@ import {
 import './styles.css';
 
 const REVIEW_APP_URL = 'https://milton-vocab-app.vercel.app/';
-const LINE_URL = '#';
+const LINE_URL = 'https://lin.ee/q0YfnGm';
 
 const philosophies = [
   { title: '看見每個孩子', desc: 'Seen. Supported. Inspired.', icon: Compass },
@@ -409,7 +409,30 @@ function ReviewSection() {
 }
 
 function ContactSection() {
-  return <section id="contact" className="section contact-section"><div className="soft-section-head compact-head"><div className="section-label">Contact</div><h2>預約了解 Milton</h2><p>Visit Milton.</p></div><div className="contact-grid"><a className="contact-soft-card" href={LINE_URL}><MessageCircle /><h3>LINE 官方帳號</h3><p>點此加入 LINE，詢問課程與試聽資訊。</p></a><div className="contact-soft-card"><Phone /><h3>電話聯絡</h3><p>請填入你的聯絡電話</p></div><div className="contact-soft-card"><MapPin /><h3>教室地址</h3><p>請填入你的教室地址</p></div></div></section>;
+  return <section id="contact" className="section contact-section">
+    <div className="soft-section-head compact-head">
+      <div className="section-label">Contact</div>
+      <h2>歡迎預約了解 Milton</h2>
+      <p>Visit Milton.</p>
+    </div>
+    <div className="contact-grid">
+      <a className="contact-soft-card" href={LINE_URL} target="_blank" rel="noreferrer">
+        <MessageCircle />
+        <h3>LINE 官方帳號</h3>
+        <p>點擊加入官方 LINE</p>
+      </a>
+      <div className="contact-soft-card">
+        <Phone />
+        <h3>03-2878335</h3>
+        <p>電話聯絡</p>
+      </div>
+      <div className="contact-soft-card">
+        <MapPin />
+        <h3>校區地址</h3>
+        <p>青園校｜桃園市大園區大勇路26號<br />青園二校｜桃園市中壢區高鐵北路二段95號</p>
+      </div>
+    </div>
+  </section>;
 }
 
 function Footer() {
