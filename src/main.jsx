@@ -440,7 +440,7 @@ function ContactSection() {
         <h2>青園國小周邊校區位置</h2>
         <div className="distance-list">
           <div><strong>青園校</strong><span>距青園國小約 260 公尺</span></div>
-          <div><strong>青園二校</strong><span>距青園國小約 650 公尺</span></div>
+          <div><strong>青園二校</strong><span>距青園國小約 350 公尺</span></div>
         </div>
         <p className="map-note">距離為相對位置示意，實際路線依現場道路與導航為準。</p>
       </div>
@@ -459,58 +459,59 @@ function ContactSection() {
 
           <rect x="0" y="0" width="760" height="470" rx="34" fill="url(#mapBgDistance)" />
 
-          <path d="M60 118 C190 86, 330 102, 456 84 C565 68, 650 82, 724 120" fill="none" stroke="#dbe6f7" strokeWidth="12" strokeLinecap="round" />
-          <path d="M92 352 C230 305, 388 322, 532 270 C626 236, 688 244, 724 264" fill="none" stroke="#dbe6f7" strokeWidth="10" strokeLinecap="round" />
-          <path d="M110 390 L688 112" fill="none" stroke="#dbe6f7" strokeWidth="10" strokeLinecap="round" />
+          <path d="M72 96 L688 96" fill="none" stroke="#a8bedf" strokeWidth="20" strokeLinecap="round" opacity=".84" />
+          <path d="M72 96 L688 96" fill="none" stroke="#ffffff" strokeWidth="5" strokeLinecap="round" opacity=".88" />
+          <text x="102" y="72" fontSize="17" fontWeight="1000" fill="#203b68">高鐵北路二段</text>
+          <text x="102" y="118" fontSize="12" fontWeight="850" fill="#667085">Gaotie North Rd. Sec. 2</text>
 
-          <path d="M92 84 C188 142, 264 178, 352 214 C438 250, 540 296, 668 380" fill="none" stroke="#a8bedf" strokeWidth="18" strokeLinecap="round" opacity=".75" />
-          <path d="M92 84 C188 142, 264 178, 352 214 C438 250, 540 296, 668 380" fill="none" stroke="#ffffff" strokeWidth="5" strokeLinecap="round" opacity=".8" />
-          <text x="146" y="82" fontSize="17" fontWeight="1000" fill="#203b68">高鐵北路／高鐵路線方向</text>
-          <text x="146" y="104" fontSize="12" fontWeight="850" fill="#667085">HSR / Gaotie North Rd.</text>
-
-          <g filter="url(#softShadowDistance)">
-            <circle cx="396" cy="236" r="30" fill="#ffffff" />
-            <circle cx="396" cy="236" r="19" fill="#f4c55c" />
-            <text x="396" y="243" textAnchor="middle" fontSize="18" fontWeight="900" fill="#203b68">小</text>
-          </g>
-          <g>
-            <rect x="322" y="270" width="150" height="50" rx="18" fill="#ffffff" opacity=".96" />
-            <text x="397" y="291" textAnchor="middle" fontSize="18" fontWeight="900" fill="#203b68">青園國小</text>
-            <text x="397" y="310" textAnchor="middle" fontSize="12" fontWeight="850" fill="#667085">參考地標</text>
-          </g>
+          <path d="M92 350 C230 305, 388 322, 532 270 C626 236, 688 244, 724 264" fill="none" stroke="#dbe6f7" strokeWidth="10" strokeLinecap="round" />
+          <path d="M115 390 L660 142" fill="none" stroke="#dbe6f7" strokeWidth="10" strokeLinecap="round" />
+          <path d="M118 202 C245 178, 382 190, 646 176" fill="none" stroke="#dbe6f7" strokeWidth="9" strokeLinecap="round" />
 
           <g filter="url(#softShadowDistance)">
-            <circle cx="250" cy="224" r="31" fill="#ffffff" />
-            <circle cx="250" cy="224" r="20" fill="#476cb5" />
-            <text x="250" y="231" textAnchor="middle" fontSize="18" fontWeight="900" fill="#ffffff">M</text>
+            <circle cx="395" cy="245" r="30" fill="#ffffff" />
+            <circle cx="395" cy="245" r="19" fill="#f4c55c" />
+            <text x="395" y="252" textAnchor="middle" fontSize="18" fontWeight="900" fill="#203b68">小</text>
           </g>
           <g>
-            <rect x="102" y="255" width="242" height="58" rx="18" fill="#ffffff" opacity=".96" />
-            <text x="223" y="278" textAnchor="middle" fontSize="18" fontWeight="900" fill="#203b68">Milton 青園校</text>
-            <text x="223" y="300" textAnchor="middle" fontSize="13" fontWeight="900" fill="#476cb5">距青園國小約 260 公尺</text>
+            <rect x="320" y="279" width="150" height="50" rx="18" fill="#ffffff" opacity=".96" />
+            <text x="395" y="300" textAnchor="middle" fontSize="18" fontWeight="900" fill="#203b68">青園國小</text>
+            <text x="395" y="319" textAnchor="middle" fontSize="12" fontWeight="850" fill="#667085">參考地標</text>
           </g>
 
           <g filter="url(#softShadowDistance)">
-            <circle cx="542" cy="142" r="31" fill="#ffffff" />
-            <circle cx="542" cy="142" r="20" fill="#476cb5" />
-            <text x="542" y="149" textAnchor="middle" fontSize="18" fontWeight="900" fill="#ffffff">M</text>
+            <circle cx="260" cy="232" r="31" fill="#ffffff" />
+            <circle cx="260" cy="232" r="20" fill="#476cb5" />
+            <text x="260" y="239" textAnchor="middle" fontSize="18" fontWeight="900" fill="#ffffff">M</text>
           </g>
           <g>
-            <rect x="492" y="175" width="232" height="58" rx="18" fill="#ffffff" opacity=".96" />
-            <text x="608" y="198" textAnchor="middle" fontSize="18" fontWeight="900" fill="#203b68">Milton 青園二校</text>
-            <text x="608" y="220" textAnchor="middle" fontSize="13" fontWeight="900" fill="#476cb5">距青園國小約 650 公尺</text>
+            <rect x="102" y="265" width="242" height="58" rx="18" fill="#ffffff" opacity=".96" />
+            <text x="223" y="288" textAnchor="middle" fontSize="18" fontWeight="900" fill="#203b68">Milton 青園校</text>
+            <text x="223" y="310" textAnchor="middle" fontSize="13" fontWeight="900" fill="#476cb5">距青園國小約 260 公尺</text>
           </g>
 
-          <path d="M280 224 C326 214, 356 220, 372 232" fill="none" stroke="#476cb5" strokeWidth="4" strokeDasharray="8 9" opacity=".62" />
-          <path d="M420 222 C452 190, 494 158, 516 146" fill="none" stroke="#476cb5" strokeWidth="4" strokeDasharray="8 9" opacity=".62" />
+          <g filter="url(#softShadowDistance)">
+            <circle cx="488" cy="96" r="31" fill="#ffffff" />
+            <circle cx="488" cy="96" r="20" fill="#476cb5" />
+            <text x="488" y="103" textAnchor="middle" fontSize="18" fontWeight="900" fill="#ffffff">M</text>
+          </g>
+          <g>
+            <rect x="520" y="124" width="214" height="58" rx="18" fill="#ffffff" opacity=".96" />
+            <text x="627" y="147" textAnchor="middle" fontSize="18" fontWeight="900" fill="#203b68">Milton 青園二校</text>
+            <text x="627" y="169" textAnchor="middle" fontSize="13" fontWeight="900" fill="#476cb5">距青園國小約 350 公尺</text>
+          </g>
+
+          <path d="M286 234 C326 224, 360 232, 370 242" fill="none" stroke="#476cb5" strokeWidth="4" strokeDasharray="8 9" opacity=".62" />
+          <path d="M410 226 C436 174, 462 128, 476 110" fill="none" stroke="#476cb5" strokeWidth="4" strokeDasharray="8 9" opacity=".62" />
 
           <g transform="translate(54 384)">
-            <rect x="0" y="0" width="300" height="44" rx="22" fill="#ffffff" opacity=".9" />
+            <rect x="0" y="0" width="320" height="44" rx="22" fill="#ffffff" opacity=".9" />
             <circle cx="26" cy="22" r="8" fill="#f4c55c" />
             <text x="44" y="27" fontSize="13" fontWeight="900" fill="#203b68">青園國小</text>
             <circle cx="132" cy="22" r="8" fill="#476cb5" />
             <text x="150" y="27" fontSize="13" fontWeight="900" fill="#203b68">Milton 校區</text>
-            <line x1="238" y1="22" x2="280" y2="22" stroke="#a8bedf" strokeWidth="7" strokeLinecap="round" />
+            <line x1="238" y1="22" x2="288" y2="22" stroke="#a8bedf" strokeWidth="8" strokeLinecap="round" />
+            <text x="302" y="27" fontSize="12" fontWeight="900" fill="#203b68">高鐵北路二段</text>
           </g>
         </svg>
       </div>
