@@ -415,6 +415,7 @@ function ContactSection() {
       <h2>歡迎預約了解 Milton</h2>
       <p>Visit Milton.</p>
     </div>
+
     <div className="contact-grid">
       <a className="contact-soft-card" href={LINE_URL} target="_blank" rel="noreferrer">
         <MessageCircle />
@@ -428,8 +429,88 @@ function ContactSection() {
       </div>
       <div className="contact-soft-card">
         <MapPin />
-        <h3>校區地址</h3>
-        <p>青園校｜桃園市大園區大勇路26號<br />青園二校｜桃園市中壢區高鐵北路二段95號</p>
+        <h3>兩校區位置</h3>
+        <p>青埔生活圈｜鄰近青園國小</p>
+      </div>
+    </div>
+
+    <div className="location-map-panel">
+      <div className="location-map-copy">
+        <div className="section-label">Campus Map</div>
+        <h2>以青園國小為中心，快速找到 Milton</h2>
+        <p>青園二校鄰近高鐵北路二段，青園校位於大勇路生活圈，家長可依接送動線選擇最方便的校區。</p>
+        <div className="location-tags">
+          <span>青園國小｜中壢區青昇路123號</span>
+          <span>青園校｜大園區大勇路26號</span>
+          <span>青園二校｜中壢區高鐵北路二段95號</span>
+        </div>
+      </div>
+
+      <div className="simple-map" aria-label="Milton 校區與青園國小相對位置示意圖">
+        <svg viewBox="0 0 760 470" role="img">
+          <defs>
+            <linearGradient id="mapBg" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stopColor="#fffaf0" />
+              <stop offset="100%" stopColor="#edf3ff" />
+            </linearGradient>
+            <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="10" stdDeviation="10" floodColor="#203b68" floodOpacity="0.14" />
+            </filter>
+          </defs>
+
+          <rect x="0" y="0" width="760" height="470" rx="34" fill="url(#mapBg)" />
+          <path d="M90 160 C210 105, 330 130, 470 95 C570 72, 650 94, 710 130" fill="none" stroke="#f4c55c" strokeWidth="18" strokeLinecap="round" opacity=".52" />
+          <path d="M80 330 C220 280, 370 300, 510 245 C610 207, 675 218, 720 245" fill="none" stroke="#476cb5" strokeWidth="14" strokeLinecap="round" opacity=".26" />
+          <path d="M145 70 L625 400" fill="none" stroke="#dbe6f7" strokeWidth="12" strokeLinecap="round" />
+          <path d="M105 390 L680 115" fill="none" stroke="#dbe6f7" strokeWidth="10" strokeLinecap="round" />
+
+          <g className="map-pin school-pin" filter="url(#softShadow)">
+            <circle cx="420" cy="228" r="28" fill="#ffffff" />
+            <circle cx="420" cy="228" r="18" fill="#f4c55c" />
+            <text x="420" y="234" textAnchor="middle" fontSize="18" fontWeight="900" fill="#203b68">小</text>
+          </g>
+          <g className="map-label">
+            <rect x="360" y="262" width="138" height="46" rx="18" fill="#ffffff" opacity=".96" />
+            <text x="429" y="282" textAnchor="middle" fontSize="17" fontWeight="900" fill="#203b68">青園國小</text>
+            <text x="429" y="300" textAnchor="middle" fontSize="11" fontWeight="800" fill="#667085">Qingyuan Elementary</text>
+          </g>
+
+          <g className="map-pin campus-pin" filter="url(#softShadow)">
+            <circle cx="250" cy="205" r="30" fill="#ffffff" />
+            <circle cx="250" cy="205" r="19" fill="#476cb5" />
+            <text x="250" y="212" textAnchor="middle" fontSize="18" fontWeight="900" fill="#ffffff">M</text>
+          </g>
+          <g className="map-label">
+            <rect x="120" y="238" width="218" height="54" rx="18" fill="#ffffff" opacity=".96" />
+            <text x="229" y="260" textAnchor="middle" fontSize="18" fontWeight="900" fill="#203b68">Milton 青園校</text>
+            <text x="229" y="280" textAnchor="middle" fontSize="12" fontWeight="800" fill="#667085">大園區大勇路26號</text>
+          </g>
+
+          <g className="map-pin campus-pin second-campus" filter="url(#softShadow)">
+            <circle cx="540" cy="150" r="30" fill="#ffffff" />
+            <circle cx="540" cy="150" r="19" fill="#476cb5" />
+            <text x="540" y="157" textAnchor="middle" fontSize="18" fontWeight="900" fill="#ffffff">M</text>
+          </g>
+          <g className="map-label">
+            <rect x="488" y="184" width="218" height="54" rx="18" fill="#ffffff" opacity=".96" />
+            <text x="597" y="206" textAnchor="middle" fontSize="18" fontWeight="900" fill="#203b68">Milton 青園二校</text>
+            <text x="597" y="226" textAnchor="middle" fontSize="12" fontWeight="800" fill="#667085">中壢區高鐵北路二段95號</text>
+          </g>
+
+          <path d="M275 203 C330 184, 365 196, 394 220" fill="none" stroke="#476cb5" strokeWidth="3" strokeDasharray="8 9" opacity=".65" />
+          <path d="M445 215 C475 188, 500 166, 518 155" fill="none" stroke="#476cb5" strokeWidth="3" strokeDasharray="8 9" opacity=".65" />
+
+          <text x="52" y="66" fontSize="22" fontWeight="1000" fill="#203b68">青埔生活圈位置示意</text>
+          <text x="52" y="92" fontSize="13" fontWeight="800" fill="#667085">Relative location map</text>
+
+          <g transform="translate(54 385)">
+            <rect x="0" y="0" width="248" height="44" rx="22" fill="#ffffff" opacity=".9" />
+            <circle cx="26" cy="22" r="8" fill="#f4c55c" />
+            <text x="44" y="27" fontSize="13" fontWeight="900" fill="#203b68">青園國小參考點</text>
+            <circle cx="148" cy="22" r="8" fill="#476cb5" />
+            <text x="166" y="27" fontSize="13" fontWeight="900" fill="#203b68">Milton 校區</text>
+          </g>
+        </svg>
       </div>
     </div>
   </section>;
