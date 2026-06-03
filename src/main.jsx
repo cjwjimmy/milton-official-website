@@ -119,6 +119,85 @@ const courseTracks = [
   }
 ];
 
+const learningPathways = [
+  {
+    title: '語言扎根',
+    english: 'Language Roots',
+    type: '兒童美語 / 自然發音 / 聽說讀寫基礎',
+    desc: '孩子的英文能力，需要從穩定的基礎開始。麋爾頓透過聽、說、讀、寫與自然發音訓練，幫助孩子建立正確語感、詞彙力與句型理解，讓英文學習不只是記憶，而是逐步內化成真正能使用的能力。',
+    quote: 'Strong roots build confident learners.',
+    icon: BookOpen,
+    href: '#/prime'
+  },
+  {
+    title: '閱讀路徑',
+    english: 'Story Paths',
+    type: '閱讀理解 / 故事閱讀 / 英文閱讀能力',
+    desc: '閱讀是孩子走進語言世界的重要路徑。透過故事、圖像、情境與引導式提問，孩子不只讀懂英文，更學會理解內容、整理想法，並從故事中培養想像力與思考力。',
+    quote: 'Stories open the way to deeper thinking.',
+    icon: LibraryBig,
+    href: '#/prime'
+  },
+  {
+    title: '口說表達',
+    english: 'Voice in the Forest',
+    type: '英文會話 / 口說練習 / 發表能力',
+    desc: '英文學習的目的，不只是聽得懂、看得懂，更要能勇敢表達。麋爾頓透過日常對話、主題討論、句型應用與發表練習，幫助孩子建立開口的自信，讓英文成為能自然使用的溝通工具。',
+    quote: 'A confident voice grows through practice.',
+    icon: Mic2,
+    href: '#/prime'
+  },
+  {
+    title: '主題探索',
+    english: 'Discovery Missions',
+    type: '主題課程 / 科學探索 / 營隊活動 / Project-based learning',
+    desc: '孩子的好奇心，是學習最好的起點。麋爾頓透過主題式探索、跨領域活動與任務挑戰，讓孩子在真實情境中使用英文，培養觀察力、合作力、思考力與解決問題的能力。',
+    quote: 'Curiosity leads every mission.',
+    icon: Compass,
+    href: '#/esl'
+  },
+  {
+    title: '課後照顧與學習陪伴',
+    english: 'Daily Growth Journey',
+    type: '課後輔導 / 作業陪伴 / 學習習慣',
+    desc: '穩定的成長，來自每天被看見與被陪伴。麋爾頓在課後時段提供有秩序、有溫度的學習支持，協助孩子完成學校任務、建立時間感與學習習慣，讓每一天都成為向前的一小步。',
+    quote: 'Small steps shape lasting growth.',
+    icon: School,
+    href: '#/afterschool'
+  }
+];
+
+const growthEvidenceItems = [
+  {
+    title: '學習歷程',
+    english: 'Learning Progress',
+    desc: '孩子的學習不只是單次表現，而是長期累積。麋爾頓透過課程紀錄、單元練習與老師回饋，讓孩子的進步被持續看見。',
+    quote: 'Progress is built step by step.',
+    icon: BookOpen
+  },
+  {
+    title: '語言自信',
+    english: 'Language Confidence',
+    desc: '從願意聽、願意說，到能自然使用英文表達，孩子在一次次練習中建立開口的勇氣與自信。',
+    quote: 'Confidence grows through meaningful practice.',
+    icon: Mic2
+  },
+  {
+    title: '課業支持',
+    english: 'Academic Support',
+    desc: '我們陪伴孩子穩定面對學校學習任務，建立讀書節奏與學習習慣，同時不只停留在短期考試，而是幫助孩子累積真正的英文能力。',
+    quote: 'Support today. Strength for tomorrow.',
+    icon: School
+  },
+  {
+    title: '階段成果',
+    english: 'Visible Outcomes',
+    desc: '透過測驗表現、課堂發表、閱讀理解、作業完成度與老師觀察，家長能看見孩子在不同階段的具體成長。',
+    quote: 'Every result tells part of the journey.',
+    icon: Presentation
+  }
+];
+
 const materials = [
   { title: 'Oxford University Press', desc: '國際教材系統' },
   { title: 'Reading Journey', desc: '分級閱讀訓練' },
@@ -156,6 +235,19 @@ const campusLifePhotos = [
   { src: '/assets/class-photo-prime-1.svg', title: 'Reading & Phonics Studio', caption: 'Focused foundations' },
   { src: '/assets/class-photo-esl-2.svg', title: 'Inquiry Workshop', caption: 'Explore through themes' },
   { src: '/assets/class-photo-esl-3.svg', title: 'Presentation Moment', caption: 'Confidence in action' }
+];
+
+const spacePreviewPhotos = [
+  {
+    src: '/images/spaces/milton-space-1f-main.png',
+    title: '一樓學習空間',
+    english: 'An Open Space for Exploration'
+  },
+  {
+    src: '/images/spaces/milton-space-consultation.png',
+    title: '接待與陪伴',
+    english: 'A Space for Guidance and Connection'
+  }
 ];
 
 function getRoute() {
@@ -242,6 +334,83 @@ function TrackCard({ title, headline, subtitle, href, visual }) {
   );
 }
 
+function CoursePathways() {
+  const [activePath, setActivePath] = useState(0);
+  const active = learningPathways[activePath];
+  const ActiveIcon = active.icon;
+
+  return (
+    <div className="forest-course-map">
+      <div className="forest-trail-list" aria-label="Milton learning pathways">
+        {learningPathways.map(({ icon: Icon, title, english }, index) => (
+          <button
+            className={`forest-trail-point ${activePath === index ? 'active' : ''}`}
+            type="button"
+            key={title}
+            onClick={() => setActivePath(index)}
+            aria-pressed={activePath === index}
+          >
+            <span className="trail-number">{String(index + 1).padStart(2, '0')}</span>
+            <Icon />
+            <span>
+              <strong>{english}</strong>
+              <em>{title}</em>
+            </span>
+          </button>
+        ))}
+      </div>
+
+      <article className="forest-pathway-detail">
+        <div className="pathway-detail-icon"><ActiveIcon /></div>
+        <div>
+          <div className="pathway-eyebrow">{active.type}</div>
+          <h3>{active.english}<span>{active.title}</span></h3>
+          <p>{active.desc}</p>
+          <strong>{active.quote}</strong>
+          <a href={active.href}>查看相關課程<ArrowRight size={16} /></a>
+        </div>
+      </article>
+    </div>
+  );
+}
+
+function GrowthEvidenceSection() {
+  return (
+    <section className="section growth-evidence-section">
+      <div className="growth-evidence-layout">
+        <div className="growth-evidence-head">
+          <div className="section-label">Growth Evidence</div>
+          <h2>看得見的學習成長</h2>
+          <p>在麋爾頓，我們重視的不只是孩子完成了多少作業，而是他是否真正理解、是否願意開口、是否逐步建立語感、自信與學習習慣。透過穩定的課程設計、老師觀察、學習紀錄與階段性成果，家長可以清楚看見孩子每一步的成長。</p>
+          <strong>Growth you can see. Confidence you can feel.</strong>
+        </div>
+
+        <div className="growth-evidence-track">
+          {growthEvidenceItems.map(({ icon: Icon, title, english, desc, quote }, index) => (
+            <article className="growth-evidence-item" key={title}>
+              <div className="growth-node">
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <Icon />
+              </div>
+              <div className="growth-copy">
+                <div className="growth-english">{english}</div>
+                <h3>{title}</h3>
+                <p>{desc}</p>
+                <strong>{quote}</strong>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div className="growth-evidence-footer">
+        <p>每一次練習、每一次開口、每一次完成任務，都是孩子走向世界的一小步。</p>
+        <span>Every small step becomes part of a bigger journey.</span>
+      </div>
+    </section>
+  );
+}
+
 function Header() {
   return (
     <header className="site-header">
@@ -317,6 +486,8 @@ function HomePage() {
         </div>
       </section>
 
+      <SpacePreviewSection />
+
       <section className="section forest-pillars-section">
         <div className="soft-section-head">
           <div className="section-label">Forest Framework</div>
@@ -364,12 +535,21 @@ function HomePage() {
       </section>
 
       <section id="courses" className="section courses-section">
-        <div className="soft-section-head course-section-head course-title-only">
-          <div className="section-label">Course Pathway</div>
-          <h2>從語言扎根到主題探索，形成孩子的學習森林路徑</h2>
+        <div className="soft-section-head course-section-head">
+          <div className="section-label">Learning Pathways in Milton Exploration Forest</div>
+          <h2>探索森林中的學習路徑</h2>
+          <p>每個孩子都有自己的學習節奏。麋爾頓透過系統化的英文課程、閱讀引導、口說表達與主題探索，陪伴孩子從基礎扎根到自信表達，逐步走向更寬廣的世界。</p>
+          <div className="course-section-english">Every pathway is designed for growth, confidence, and discovery.</div>
         </div>
-        <div className="track-grid">{courseTracks.map((track) => <TrackCard key={track.title} {...track} />)}</div>
+        <CoursePathways />
+        <div className="forest-course-cta">
+          <p>每一條學習路徑，都是孩子走向世界的一步。歡迎預約參觀麋爾頓探索森林，了解最適合孩子的英文成長方式。</p>
+          <span>Begin your child’s learning journey with Milton.</span>
+          <a className="forest-primary-link" href={LINE_URL} target="_blank" rel="noreferrer">預約參觀麋爾頓探索森林<ArrowRight size={18} /></a>
+        </div>
       </section>
+
+      <GrowthEvidenceSection />
 
       <section className="section prep-section">
         <div className="soft-section-head">
@@ -427,6 +607,41 @@ function CampusLifeSection() {
             </figure>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+function SpacePreviewSection() {
+  return (
+    <section className="section space-preview-section">
+      <div className="space-preview-head">
+        <div className="section-label">Step Into Milton Exploration Forest</div>
+        <h2>走進麋爾頓探索森林</h2>
+        <p>探索森林，不只是麋爾頓的品牌概念，也是孩子每天走進的學習空間。新點 1 樓以自然光感、森林意象與溫暖材質為設計核心，讓孩子在安全、舒適、有啟發性的環境中學習、閱讀、表達與探索。</p>
+        <strong>A learning space designed for growth, confidence, and discovery.</strong>
+      </div>
+
+      <div className="space-preview-gallery">
+        {spacePreviewPhotos.map((photo, index) => (
+          <figure className={`space-preview-image ${index === 0 ? 'main-space' : 'support-space'}`} key={photo.src}>
+            <img
+              src={photo.src}
+              alt="麋爾頓探索森林新點一樓學習空間 3D 示意圖"
+              loading="lazy"
+            />
+            <figcaption>
+              <span>{photo.title}</span>
+              <strong>{photo.english}</strong>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+
+      <div className="space-preview-cta">
+        <p>歡迎預約參觀，親自走進麋爾頓探索森林。</p>
+        <span>Visit Milton and experience the learning forest in person.</span>
+        <a className="forest-primary-link" href={LINE_URL} target="_blank" rel="noreferrer">預約參觀新點空間<ArrowRight size={18} /></a>
       </div>
     </section>
   );
