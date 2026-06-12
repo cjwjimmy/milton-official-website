@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   ArrowRight,
@@ -23,6 +23,7 @@ import {
   PenTool,
   Pencil,
   Phone,
+  PlayCircle,
   Presentation,
   School,
   Shapes,
@@ -98,8 +99,8 @@ const philosophies = [
 
 const roadmap = [
   { title: '幼兒美語', course: '故事音樂劇', subtitle: '聽覺、口說與自然語感', age: 'Age 4+', desc: '用歌曲、故事與遊戲建立美語親近感。', icon: Baby },
-  { title: '國小基礎', course: 'Prime 活用班 / ESL 實作班', subtitle: 'Prime 系統英語訓練與主題實作', age: 'Age 6-12', desc: '強化單字、閱讀、句型與書寫表達，也透過主題活動練習美語輸出。', icon: School },
-  { title: '國中銜接', course: '閱讀理解與學科表達', subtitle: '閱讀理解與學科表達', age: 'Age 13-15', desc: '提升理解力、輸出力與學校課業銜接。', icon: GraduationCap }
+  { title: '國小基礎', course: 'Prime 活用班 / ESL 全美實作班', subtitle: 'Prime 系統能力建立與主題實作', age: 'Age 6-12', desc: '累積單字、閱讀、句型與書寫表達，也透過主題活動練習美語分享。', icon: School },
+  { title: '國中銜接', course: '閱讀理解與學科表達', subtitle: '閱讀理解與學科表達', age: 'Age 13-15', desc: '提升理解力、表達力與學校課業銜接。', icon: GraduationCap }
 ];
 
 const courseTracks = [
@@ -172,6 +173,36 @@ const learningPathways = [
   }
 ];
 
+const programPathways = [
+  {
+    stage: 'Kids',
+    title: '幼兒美語音樂劇啟蒙班',
+    english: 'Kiddo Musical English Program',
+    shortDesc: '在歌曲、故事、遊戲與表演中，開啟孩子的英文第一步。',
+    quote: 'Sing. Play. Speak. Grow.',
+    icon: Baby,
+    href: '#/kids'
+  },
+  {
+    stage: 'Prime',
+    title: 'Prime 活用班',
+    english: 'Core Skills for Confident Learners',
+    shortDesc: '在全美語授課中，建立聽、說、讀、寫四大核心能力。',
+    quote: 'Build the skills. Use the language.',
+    icon: Headphones,
+    href: '#/prime'
+  },
+  {
+    stage: 'ESL',
+    title: 'ESL 全美實作班',
+    english: 'English in Action',
+    shortDesc: '在全美語主題討論中，讓孩子聽見更多，也更自然開口。',
+    quote: 'Questions. Voices. Discovery.',
+    icon: Globe2,
+    href: '#/esl'
+  }
+];
+
 const growthEvidenceItems = [
   {
     title: '學習歷程',
@@ -183,7 +214,7 @@ const growthEvidenceItems = [
   {
     title: '語言自信',
     english: 'Language Confidence',
-    desc: '從願意聽、願意說，到能自然使用英文表達，孩子在一次次練習中建立開口的勇氣與自信。',
+    desc: '從願意聽、願意說，到能自然開口分享，孩子在一次次練習中建立開口的勇氣與自信。',
     quote: 'Confidence grows through meaningful practice.',
     icon: Mic2
   },
@@ -205,7 +236,7 @@ const growthEvidenceItems = [
 
 const materials = [
   { title: 'Oxford University Press', desc: '國際教材系統' },
-  { title: 'Reading Journey', desc: '分級閱讀訓練' },
+  { title: 'Reading Journey', desc: '分級閱讀旅程' },
   { title: 'Practice & Review', desc: '單字與句型複習' }
 ];
 
@@ -215,13 +246,13 @@ const outputMethods = [
   { title: 'Presentation Time', desc: '練習站上台，用美語說出自己的想法。', icon: Presentation }
 ];
 
-const afterSchool = ['作業陪伴', '美語複習', '學校進度銜接', '生活常規建立'];
+const afterSchool = ['作業陪伴', '學科複習', '學校進度銜接', '生活常規建立'];
 
 const prepItems = [
   { title: '閱讀力', desc: '從短文理解到分級閱讀，累積穩定語感。', icon: BookOpen },
   { title: '學校銜接', desc: '協助孩子跟上校內進度，也保留美語加深練習。', icon: School },
   { title: '思考表達', desc: '用提問、討論與簡報練習完整說明。', icon: Brain },
-  { title: '創作輸出', desc: '在主題活動中把語言轉成作品與行動。', icon: Palette }
+  { title: '創作分享', desc: '在主題活動中把語言轉成作品與行動。', icon: Palette }
 ];
 
 const primePhotos = [
@@ -242,6 +273,124 @@ const campusLifePhotos = [
   { src: '/assets/class-photo-esl-3.svg', title: 'Presentation Moment', caption: 'Confidence in action' }
 ];
 
+const primeClassroomMoments = [
+  {
+    src: '/prime/classroom-interaction.png',
+    title: '課堂互動',
+    english: 'Classroom Interaction',
+    desc: '透過主題情境與同儕互動，讓孩子在課堂中自然使用英文。',
+    type: 'photo',
+    icon: UsersRound,
+    alt: 'Prime 活用班課堂互動，孩子透過情境活動練習英文表達',
+    position: 'center center'
+  },
+  {
+    src: '/images/prime/classroom-4.webp',
+    title: '口說練習',
+    english: 'Speaking Practice',
+    desc: '在課堂互動中建立開口表達的信心。',
+    type: 'video',
+    icon: Mic2,
+    alt: 'Prime 活用班口說練習課堂花絮'
+  },
+  {
+    src: '/prime/presentation-australia.png',
+    title: '成果發表',
+    english: 'Presentation Day',
+    desc: '孩子透過主題介紹與口說發表，展現學習成果與表達自信。',
+    type: 'photo',
+    icon: Presentation,
+    alt: 'Prime 活用班學生介紹 Australia 主題並練習英文口說表達',
+    position: 'center center'
+  },
+  {
+    src: '/images/prime/reading-writing-classroom.png',
+    title: '閱讀與書寫',
+    english: 'Reading & Writing',
+    desc: '從閱讀理解到書寫練習，穩定累積孩子的英文基礎。',
+    type: 'photo',
+    icon: BookOpen,
+    alt: 'Prime 活用班閱讀與書寫學習情境',
+    position: 'center center'
+  },
+  {
+    src: '/images/prime/learning-outcome-hani.png',
+    title: '成果看得見',
+    english: 'Learning Outcomes',
+    desc: '看見孩子的努力，也看見成長的自信。',
+    type: 'photo',
+    icon: CheckCircle2,
+    alt: 'Prime 活用班學生展示學習成果與升級證書',
+    position: 'center center'
+  }
+];
+
+const eslClassroomMoments = [
+  {
+    src: '/images/esl/topic-discussion-wheels.png',
+    title: '主題討論',
+    english: 'Topic Discussion',
+    desc: '從主題分享中，練習聽懂、回應與表達。',
+    type: 'photo',
+    icon: MessageCircle,
+    alt: 'ESL 課堂中的主題討論活動，學生進行 Wheels 主題發表',
+    position: 'center center'
+  },
+  { src: '/images/esl/classroom-1.webp', title: '全美語互動', english: 'English Immersion', desc: '在課堂聲音裡，熟悉英文節奏。', type: 'photo', icon: Globe2, alt: 'ESL 全美語互動課堂花絮' },
+  { src: '/images/esl/classroom-2.webp', title: '口說分享', english: 'Speaking Moment', desc: '從短句回答，到完整說出想法。', type: 'photo', icon: Mic2, alt: 'ESL 口說分享課堂花絮' },
+  { src: '/images/esl/classroom-3.webp', title: '團體任務', english: 'Group Communication', desc: '在合作與互動中增加開口機會。', type: 'video', icon: UsersRound, alt: 'ESL 團體任務課堂花絮' },
+  { src: '/images/esl/classroom-4.webp', title: '聽力浸潤', english: 'Listening in Context', desc: '在全美語主題中累積理解力。', type: 'photo', icon: Headphones, alt: 'ESL 聽力浸潤課堂花絮' }
+];
+
+const kidsClassroomMoments = [
+  {
+    src: '/images/kids/kids-classroom-04-holiday-moments.png',
+    title: '節慶體驗',
+    english: 'Holiday Moments',
+    desc: '在節慶活動中感受英文與生活的連結。',
+    type: 'photo',
+    icon: Sparkles,
+    alt: '幼兒美語課堂中的節慶文化體驗活動',
+    position: 'center center'
+  },
+  {
+    src: '/images/kids/kids-classroom-01-songs-movement.webp',
+    title: '歌曲律動',
+    english: 'Songs & Movement',
+    desc: '在節奏與動作中熟悉英文聲音。',
+    type: 'photo',
+    icon: Music4,
+    alt: '幼兒美語課堂中的歌曲律動活動'
+  },
+  {
+    src: '/images/kids/kids-classroom-02-story-time.webp',
+    title: '故事互動',
+    english: 'Story Time',
+    desc: '透過故事、聲音與想像開啟英文第一步。',
+    type: 'photo',
+    icon: BookOpen,
+    alt: '幼兒美語課堂中的故事互動學習'
+  },
+  {
+    src: '/images/kids/kids-classroom-03-playful-learning.webp',
+    title: '遊戲探索',
+    english: 'Playful Learning',
+    desc: '讓孩子在遊戲中自然接觸英文。',
+    type: 'photo',
+    icon: Shapes,
+    alt: '幼兒美語課堂中的遊戲探索活動'
+  },
+  {
+    src: '/images/kids/kids-classroom-05-first-speaking.webp',
+    title: '開口練習',
+    english: 'First Speaking',
+    desc: '從簡單回應開始，建立開口安全感。',
+    type: 'video',
+    icon: Mic2,
+    alt: '幼兒美語課堂中的開口練習活動'
+  }
+];
+
 const spacePreviewPhotos = [
   {
     src: '/images/spaces/milton-space-1f-main.png',
@@ -256,6 +405,7 @@ const spacePreviewPhotos = [
 ];
 
 function getRoute() {
+  if (window.location.hash === '#/kids') return 'kids';
   if (window.location.hash === '#/prime') return 'prime';
   if (window.location.hash === '#/esl') return 'esl';
   if (window.location.hash === '#/afterschool') return 'afterschool';
@@ -340,35 +490,26 @@ function TrackCard({ title, headline, subtitle, href, visual }) {
 }
 
 function CoursePathways() {
-  const pathwayCards = learningPathways.map((item) => ({
-    ...item,
-    shortDesc: {
-      Roots: '建立穩定英文基礎。',
-      Trunk: '培養理解與思考力。',
-      Branches: '建立開口的自信。',
-      Leaves: '用英文探索世界。',
-      Nurture: '穩定累積學習習慣。'
-    }[item.stage]
-  }));
+  const pathwayCards = programPathways;
 
   return (
     <div className="pathway-map" aria-label="Milton learning pathways">
       <div className="pathway-card-grid">
-        {pathwayCards.map(({ icon: Icon, stage, title, english, shortDesc }, index) => (
-          <article className={`pathway-card pathway-${index + 1}`} key={title}>
+        {pathwayCards.map(({ icon: Icon, title, english, shortDesc, quote, href }, index) => (
+          <a className={`pathway-card pathway-${index + 1}`} href={href} key={title}>
             <div className="pathway-card-top">
               <span className="pathway-card-icon"><Icon /></span>
               <span className="pathway-card-stage">{String(index + 1).padStart(2, '0')}</span>
             </div>
             <h3><span>{english}</span><strong>{title}</strong></h3>
             <p>{shortDesc}</p>
-          </article>
+            <em>{quote}</em>
+          </a>
         ))}
       </div>
     </div>
   );
 }
-
 function GrowthEvidenceSection() {
   return (
     <section className="section growth-evidence-section">
@@ -567,6 +708,7 @@ function Header() {
       <nav>
         <a href="#about">關於 Milton</a>
         <a href="#courses">學習路徑</a>
+        <a href="#/kids">幼兒美語</a>
         <a href="#/prime">Prime</a>
         <a href="#/esl">ESL</a>
         <a href="#/afterschool">課後照顧</a>
@@ -637,7 +779,7 @@ function HomePage() {
         <div className="soft-section-head course-section-head">
           <div className="section-label">Learning Pathways in Milton Exploration Forest</div>
           <h2>探索森林中的學習路徑</h2>
-          <p>從語言基礎、閱讀理解、口說表達，到主題探索與日常陪伴，麋爾頓以清楚的學習路徑，陪伴孩子一步步建立真正能使用的英文能力。</p>
+          <p>從幼兒美語啟蒙，到 Prime 核心能力建立與 ESL 情境應用，麋爾頓以清楚的學習路徑，陪伴孩子一步步建立真正能使用的英文能力。</p>
           <div className="course-section-english">Every pathway is designed for growth, confidence, and discovery.</div>
         </div>
         <CoursePathways />
@@ -659,6 +801,101 @@ function PhotoGallery({ photos }) {
         </figure>
       ))}
     </div>
+  );
+}
+
+function ClassroomMomentsSection({ variant, moments }) {
+  const classroomTitles = {
+    esl: 'ESL 全美實作班｜課堂影音與學習花絮'
+  };
+  const classroomDescriptions = {
+    kids: '未來將放上歌曲律動、故事互動、遊戲活動、節慶體驗與開口練習，讓家長看見孩子自然接觸英文的真實樣貌。',
+    prime: 'Prime 活用班的課堂，圍繞聽、說、讀、寫四大能力。從口說練習、閱讀書寫到課堂互動與成果表現，孩子一步步累積真正能使用的美語能力。',
+    esl: 'ESL 全美實作班的課堂，透過主題討論、全美語互動、口說分享與團體任務，讓家長看見孩子在英文聲音裡聆聽、回應與分享的真實樣貌。'
+  };
+  const title = classroomTitles[variant] || '課堂影音與學習花絮';
+  const description = classroomDescriptions[variant] || '課堂中的互動、練習與作品，讓家長更清楚看見孩子在麋爾頓的學習樣貌。';
+  const featuredMomentIndexes = { prime: 3, esl: 0, kids: 0 };
+  const defaultFeaturedIndex = featuredMomentIndexes[variant] ?? 0;
+  const [activeMomentIndex, setActiveMomentIndex] = useState(defaultFeaturedIndex);
+
+  useEffect(() => {
+    setActiveMomentIndex(defaultFeaturedIndex);
+  }, [defaultFeaturedIndex, variant, moments.length]);
+
+  const orderedMoments = moments.map((moment, index) => ({ ...moment, originalIndex: index }));
+  const featuredMoment = orderedMoments[activeMomentIndex] || orderedMoments[0];
+  const FeaturedIcon = featuredMoment?.icon;
+
+  return (
+    <section className={`section classroom-moments-section ${variant}-moments-section`}>
+      <div className="soft-section-head classroom-moments-head">
+        <div className="section-label">Classroom Moments</div>
+        <h2>{title}</h2>
+        <p>{description}</p>
+        <strong>Real moments of learning, confidence, and growth.</strong>
+      </div>
+      <div className="classroom-moments-grid">
+        {featuredMoment && (
+          <article
+            className="classroom-moment-card featured-moment-card active-moment-card"
+            key={`featured-${featuredMoment.title}`}
+          >
+            <div className="classroom-moment-media">
+              <img
+                src={featuredMoment.src}
+                alt={featuredMoment.alt || `${featuredMoment.title} ${featuredMoment.english}`}
+                loading="lazy"
+                style={{ objectPosition: featuredMoment.position || 'center center' }}
+                onLoad={(event) => event.currentTarget.classList.add('loaded')}
+                onError={(event) => { event.currentTarget.hidden = true; }}
+              />
+              <div className="classroom-media-placeholder" aria-hidden="true">
+                {FeaturedIcon && <FeaturedIcon />}
+                <span>{featuredMoment.english}</span>
+                {featuredMoment.type === 'video' && <PlayCircle className="classroom-play-icon" />}
+              </div>
+            </div>
+            <div className="classroom-moment-copy">
+              <h3>{featuredMoment.title}<span>{featuredMoment.english}</span></h3>
+              <p>{featuredMoment.desc}</p>
+            </div>
+          </article>
+        )}
+        <div className="classroom-moment-thumbnails">
+          {orderedMoments.map(({ src, title, english, desc, type, icon: Icon, alt, position, originalIndex }) => (
+            <article
+              className="classroom-moment-card"
+              key={title}
+              tabIndex={0}
+              onMouseEnter={() => setActiveMomentIndex(originalIndex)}
+              onFocus={() => setActiveMomentIndex(originalIndex)}
+              onClick={() => setActiveMomentIndex(originalIndex)}
+            >
+              <div className="classroom-moment-media">
+                <img
+                  src={src}
+                  alt={alt || `${title} ${english}`}
+                  loading="lazy"
+                  style={{ objectPosition: position || 'center center' }}
+                  onLoad={(event) => event.currentTarget.classList.add('loaded')}
+                  onError={(event) => { event.currentTarget.hidden = true; }}
+                />
+                <div className="classroom-media-placeholder" aria-hidden="true">
+                  <Icon />
+                  <span>{english}</span>
+                  {type === 'video' && <PlayCircle className="classroom-play-icon" />}
+                </div>
+              </div>
+              <div className="classroom-moment-copy">
+                <h3>{title}<span>{english}</span></h3>
+                <p>{desc}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -731,12 +968,15 @@ function SpacePreviewSection() {
   );
 }
 
-function PageHero({ label, title, desc, visual = null, className = '' }) {
+function PageHero({ label, title, subtitle, english, tagline = '', desc, visual = null, className = '' }) {
   return (
     <section className={`course-page-hero ${visual ? 'has-visual' : ''} ${className}`.trim()}>
       <div className="course-page-hero-copy">
         <div className="section-label">{label}</div>
         <h1>{title}</h1>
+        {subtitle && <strong className="course-page-subtitle">{subtitle}</strong>}
+        {english && <span className="course-page-english">{english}</span>}
+        {tagline && <span className="course-page-tagline">{tagline}</span>}
         <p>{desc}</p>
         <div className="course-page-actions">
           <a className="secondary-btn" href="#courses">回到課程</a>
@@ -756,14 +996,37 @@ function PrimeHeroVisual() {
       <div className="prime-hero-orb prime-orb-b" />
       <div className="prime-forest-canopy prime-canopy-a" />
       <div className="prime-forest-canopy prime-canopy-b" />
+      <div className="prime-forest-depth depth-a" />
+      <div className="prime-forest-depth depth-b" />
       <div className="prime-forest-branch prime-branch-a" />
       <div className="prime-forest-branch prime-branch-b" />
+      <div className="prime-forest-branch prime-branch-c" />
+      <div className="prime-learning-branches">
+        <span className="learning-branch branch-listening" />
+        <span className="learning-branch branch-speaking" />
+        <span className="learning-branch branch-reading" />
+        <span className="learning-branch branch-writing" />
+      </div>
+      <div className="prime-leaf-cluster cluster-left">
+        <span /><span /><span />
+      </div>
+      <div className="prime-leaf-cluster cluster-right">
+        <span /><span /><span />
+      </div>
       <div className="prime-forest-leaf prime-leaf-a" />
       <div className="prime-forest-leaf prime-leaf-b" />
       <div className="prime-forest-leaf prime-leaf-c" />
+      <div className="prime-forest-leaf prime-leaf-d" />
       <div className="prime-growth-sprout sprout-a" />
       <div className="prime-growth-sprout sprout-b" />
+      <div className="prime-book-growth">
+        <span /><span /><span /><span />
+      </div>
+      <div className="prime-growth-line growth-line-a" />
+      <div className="prime-growth-line growth-line-b" />
       <div className="prime-forest-ring" />
+      <div className="prime-forest-glow glow-a" />
+      <div className="prime-forest-glow glow-b" />
       <div className="prime-dot-grid" />
       <div className="prime-transparent-mascot-shell">
         <img className="prime-transparent-mascot" src="/assets/prime-hero-transparent.png" alt="Prime program visual" />
@@ -774,10 +1037,10 @@ function PrimeHeroVisual() {
 
 function EslHeroVisual() {
   const domains = [
-    { icon: FlaskConical, title: 'Science Inquiry', subtitle: 'Explore / Observe / Discover', className: 'domain-a' },
-    { icon: Palette, title: 'Creative Arts', subtitle: 'Imagine / Create / Express', className: 'domain-b' },
-    { icon: Landmark, title: 'Global Studies', subtitle: 'Culture / People / Perspectives', className: 'domain-c' },
-    { icon: Music4, title: 'Music & Movement', subtitle: 'Rhythm / Voice / Confidence', className: 'domain-d' }
+    { icon: FlaskConical, title: 'Science Inquiry', subtitle: 'Explore｜探索發現', className: 'domain-a' },
+    { icon: Palette, title: 'Creative Arts', subtitle: 'Create｜創作表達', className: 'domain-b' },
+    { icon: Landmark, title: 'Global Studies', subtitle: 'Connect｜世界視野', className: 'domain-c' },
+    { icon: Music4, title: 'Music & Movement', subtitle: 'Express｜節奏自信', className: 'domain-d' }
   ];
 
   return (
@@ -806,60 +1069,201 @@ function EslHeroVisual() {
   );
 }
 
+function KidsHeroVisual() {
+  return (
+    <div className="kids-hero-visual" aria-hidden="true">
+      <div className="kids-hero-glow" />
+      <div className="kids-canopy kids-canopy-a" />
+      <div className="kids-canopy kids-canopy-b" />
+      <div className="kids-sprout-field">
+        <span /><span /><span /><span />
+      </div>
+      <div className="kids-open-book">
+        <span />
+        <span />
+      </div>
+      <div className="kids-story-card">
+        <BookOpen />
+        <strong>Story Time</strong>
+        <span>Listen. Move. Speak.</span>
+      </div>
+      <div className="kids-floating-token token-rhythm">
+        <Music4 />
+        <span>Rhythm</span>
+      </div>
+      <div className="kids-floating-token token-play">
+        <Shapes />
+        <span>Play</span>
+      </div>
+      <div className="kids-floating-token token-speak">
+        <Mic2 />
+        <span>First Words</span>
+      </div>
+      <div className="kids-speech-bubble">Hello</div>
+      <div className="kids-letter-block block-a">A</div>
+      <div className="kids-letter-block block-b">B</div>
+      <div className="kids-music-note note-a">♪</div>
+      <div className="kids-music-note note-b">♫</div>
+      <div className="kids-star kids-star-a" />
+      <div className="kids-star kids-star-b" />
+      <div className="kids-rhythm-curve curve-a" />
+      <div className="kids-rhythm-curve curve-b" />
+      <div className="kids-leaf kids-leaf-a" />
+      <div className="kids-leaf kids-leaf-b" />
+      <div className="kids-leaf kids-leaf-c" />
+      <div className="kids-rings" />
+    </div>
+  );
+}
+
+function KidsPage() {
+  const focuses = [
+    { icon: Music4, english: 'Songs & Movement', title: '歌曲律動', desc: '在節奏、韻文與動作中熟悉英文聲音。' },
+    { icon: BookOpen, english: 'Stories & Reading', title: '故事閱讀', desc: '透過故事情境，建立理解力、想像力與語感。' },
+    { icon: Presentation, english: 'Show & Tell', title: '日常表達', desc: '從生活會話與簡單分享開始，陪伴孩子願意開口。' },
+    { icon: Shapes, english: 'Playful Learning', title: '遊戲互動', desc: '在遊戲、操作與主題活動中，自然參與英文。' }
+  ];
+
+  const themePoints = [
+    { title: '生活主題', desc: '從孩子熟悉的日常經驗開始。' },
+    { title: '節慶文化', desc: '在活動與儀式感中感受不同文化。' },
+    { title: '自然使用', desc: '在互動中聽英文、說英文、用英文。' }
+  ];
+
+  return (
+    <>
+      <PageHero
+        label="YOUNG LEARNERS PROGRAM"
+        title="幼兒美語音樂劇啟蒙班"
+        subtitle="在歌曲、故事與表演中，開啟孩子的英文第一步。"
+        english="Kiddo Musical English Program"
+        tagline="Sing. Play. Speak. Grow."
+        desc="我們透過歌曲律動、故事閱讀、遊戲互動與 Show & Tell，讓孩子在安全、愉快的環境中自然接觸英文，慢慢建立語音節奏、參與感與開口的自信。"
+        className="kids-page-hero"
+        visual={<KidsHeroVisual />}
+      />
+
+      <section className="section course-page-section kids-core-section">
+        <div className="soft-section-head">
+          <div className="section-label">A joyful first step into English.</div>
+          <h2>不是急著學會，而是安心開始</h2>
+          <p>幼兒階段最重要的，不是背了多少單字，而是孩子是否喜歡英文、願意參與、敢嘗試開口。</p>
+          <strong className="kids-section-note">當孩子喜歡英文，學習就會開始發芽。</strong>
+        </div>
+        <div className="page-feature-grid kids-focus-grid">
+          {focuses.map(({ icon: Icon, english, title, desc }) => (
+            <article className="soft-feature-card kids-focus-card" key={title}>
+              <Icon />
+              <span>{english}</span>
+              <h3>{title}</h3>
+              <p>{desc}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section course-page-section kids-theme-section">
+        <div className="kids-theme-panel">
+          <div className="kids-theme-copy">
+            <div className="section-label">English through everyday themes.</div>
+            <h2>英文，從生活裡開始</h2>
+            <p>課程以孩子熟悉的生活主題出發，結合節慶文化、故事活動與互動任務，讓英文不只出現在課本裡，也出現在孩子期待參與的活動中。</p>
+          </div>
+          <div className="kids-theme-points">
+            {themePoints.map((item) => (
+              <article key={item.title}>
+                <CheckCircle2 />
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section course-page-section alt-bg kids-experience-section">
+        <div className="kids-digital-panel">
+          <Brain />
+          <div>
+            <div className="section-label">Interactive learning moments.</div>
+            <h2>讓孩子更願意參與的互動學習</h2>
+            <p>透過互動白板與數位學習資源，結合聲音、圖像與操作，讓幼兒更容易投入課堂。</p>
+          </div>
+        </div>
+      </section>
+
+      <ClassroomMomentsSection variant="kids" moments={kidsClassroomMoments} />
+
+      <section className="section course-page-section alt-bg kids-outcome-section">
+        <div className="reading-panel kids-outcome-panel">
+          <div>
+            <div className="section-label">From first sounds to confident learning.</div>
+            <h2>從喜歡英文，到準備好學英文</h2>
+            <p>幼兒美語音樂劇啟蒙班，是孩子進入麋爾頓學習路徑的第一步。先建立興趣、語音節奏與開口安全感，未來再銜接 Prime 活用班，發展更完整的聽、說、讀、寫能力。</p>
+            <strong>先喜歡英文，再走進更深的學習。</strong>
+          </div>
+          <div className="program-cta-card">
+            <h3>想為孩子開啟英文的第一步？</h3>
+            <p>歡迎預約諮詢，讓我們了解孩子的年齡、個性與學習狀態，協助安排適合的啟蒙方式。</p>
+            <a className="primary-btn" href={LINE_URL} target="_blank" rel="noreferrer">預約幼兒美語諮詢 <ArrowRight size={18} /></a>
+          </div>
+        </div>
+      </section>
+
+      <ContactSection />
+    </>
+  );
+}
+
 function PrimePage() {
   const abilities = [
-    { icon: Headphones, title: '聽力理解', desc: '從聲音辨識、自然語調到短文理解，建立穩定的美語輸入。' },
-    { icon: Mic2, title: '口說表達', desc: '透過句型替換、情境問答與短講，讓孩子敢開口。' },
-    { icon: BookOpen, title: '閱讀能力', desc: '從自然發音到分級閱讀，培養理解文章的能力。' },
-    { icon: LibraryBig, title: '字彙句型', desc: '用規律複習和任務練習，把單字與句型真正留住。' }
+    { icon: Headphones, english: 'Listening', title: '聽得懂', desc: '從自然發音開始，聽出單字、音節與課堂情境。' },
+    { icon: Mic2, english: 'Speaking', title: '說得出', desc: '在聲音與句型練習中，建立開口表達的自信。' },
+    { icon: BookOpen, english: 'Reading', title: '讀得進', desc: '透過自然發音解碼，逐步讀懂單字、句子與故事。' },
+    { icon: Pencil, english: 'Writing', title: '寫得穩', desc: '從聽音、拼字到句型書寫，穩定表達想法。' }
   ];
   return (
     <>
       <PageHero
-        label="Prime Program"
-        title="Prime 基礎英語"
-        desc="Prime 以聽、說、讀、寫為核心，適合正在建立美語基礎的孩子，讓學習有方向也有成就感。"
+        label="PRIME PROGRAM"
+        title="Prime 活用班"
+        subtitle="在全美語課堂中，建立聽、說、讀、寫四大核心能力。"
+        english="Build the skills. Use the language."
+        desc="Prime 活用班以全美語授課為基礎，循序建立孩子聽、說、讀、寫四大核心能力，幫助孩子逐步累積真正能使用的英文實力。"
         className="prime-page-hero"
         visual={<PrimeHeroVisual />}
       />
       <section className="section course-page-section">
         <div className="soft-section-head">
-          <div className="section-label">Learning Goals</div>
-          <h2>把美語基本功練穩，孩子才有自信往前走</h2>
-          <p>Build. Practice. Grow.</p>
+          <div className="section-label">Core Abilities</div>
+          <h2>聽、說、讀、寫，建立真正能使用的能力</h2>
+          <p>Prime 活用班以全美語授課為基礎，透過系統化課程與有效練習，幫助孩子在四大面向穩定累積。</p>
         </div>
-        <div className="page-feature-grid">{abilities.map((item) => <SoftCard key={item.title} icon={item.icon} title={item.title} desc={item.desc} />)}</div>
+        <div className="page-feature-grid prime-ability-grid">
+          {abilities.map(({ icon: Icon, english, title, desc }) => (
+            <article className="soft-feature-card prime-ability-card" key={title}>
+              <Icon />
+              <span>{english}</span>
+              <h3>{title}</h3>
+              <p>{desc}</p>
+            </article>
+          ))}
+        </div>
       </section>
-      <section className="section reading-section prime-reading-section">
-        <div className="reading-panel">
+      <ClassroomMomentsSection variant="prime" moments={primeClassroomMoments} />
+      <section className="section course-page-section alt-bg prime-outcome-section">
+        <div className="reading-panel prime-outcome-panel">
           <div>
-            <div className="section-label">Reading Journey</div>
-            <h2>用分級閱讀養成美語理解力</h2>
-            <p>Read. Think. Grow.</p>
+            <div className="section-label">Learning Outcomes</div>
+            <h2>有效建立能力，不只是增加上課時間</h2>
+            <p>Prime 活用班重視學習成效與階段累積。孩子會透過日常練習、課堂表現與階段檢核，逐步建立下一階段英文學習所需的基礎能力。</p>
+            <strong>在麋爾頓，英文學習不是堆疊時間，而是有效建立能力。</strong>
           </div>
-          <div className="reading-keywords"><span>分級閱讀</span><span>自然發音</span><span>閱讀理解</span></div>
-        </div>
-      </section>
-      <section className="section course-page-section alt-bg">
-        <div className="two-column-content single-column-text">
-          <div>
-            <div className="section-label">Materials</div>
-            <h2>教材與練習搭配，讓學習更有系統</h2>
-            <p>Professional materials. Clear pathway.</p>
-            <ul className="clean-list">
-              {materials.map((item) => <li key={item.title}><CheckCircle2 /> {item.title} - {item.desc}</li>)}
-            </ul>
+          <div className="program-cta-card">
+            <h3>想了解孩子適合的 Prime 學習階段？</h3>
+            <p>歡迎預約諮詢，讓我們協助評估孩子目前的美語能力與學習方向。</p>
+            <a className="primary-btn" href={LINE_URL} target="_blank" rel="noreferrer">預約 Prime 課程諮詢 <ArrowRight size={18} /></a>
           </div>
-        </div>
-      </section>
-      <section className="section photo-section">
-        <div className="soft-section-head"><div className="section-label">Classroom Moments</div><h2>Prime 課堂日常</h2><p>Practice in action.</p></div>
-        <PhotoGallery photos={primePhotos} />
-      </section>
-      <section className="section course-page-section">
-        <div className="reading-panel">
-          <div><div className="section-label">Prime Summary</div><h2>扎實基礎，穩定進步</h2><p>Strong foundations.</p></div>
-          <a className="primary-btn" href="#contact">預約 Prime 諮詢 <ArrowRight size={18} /></a>
         </div>
       </section>
       <ContactSection />
@@ -868,40 +1272,77 @@ function PrimePage() {
 }
 
 function EslPage() {
-  const features = [
-    { icon: Globe2, title: '主題式學習', desc: '以科學、文化、藝術與生活主題延伸美語使用情境。' },
-    { icon: Shapes, title: 'CLIL 課程', desc: '把美語和內容學習結合，讓孩子用美語理解世界。' },
-    { icon: UsersRound, title: '合作討論', desc: '透過小組任務練習聆聽、回應與表達想法。' },
-    { icon: Presentation, title: 'PBL 發表', desc: '用作品與簡報呈現學習成果，培養台風與自信。' }
+  const eslQuestions = [
+    {
+      question: '和 Prime 活用班有什麼不同？',
+      answer: 'Prime 活用班著重建立聽、說、讀、寫四大核心能力。ESL 全美實作班則提供更多全美語互動與主題討論，讓孩子有更多聽英文、回應英文與自然開口的機會。'
+    },
+    {
+      question: '孩子會不會聽不懂？',
+      answer: '孩子不需要一開始就完全聽懂。老師會透過主題情境、肢體引導、同儕互動與重複輸入，幫助孩子慢慢熟悉英文聲音與課堂節奏。'
+    },
+    {
+      question: '這堂課主要練什麼？',
+      answer: '重點放在聽力浸潤與口說互動。孩子會在主題討論、分享與小組活動中，練習聽懂問題、簡短回應，並逐步說出更多想法。'
+    },
+    {
+      question: '孩子怎麼從聽懂，到敢回應？',
+      answer: 'ESL 全美實作班透過主題情境、老師引導與同儕互動，讓孩子先熟悉英文聲音，再從簡短回答開始，慢慢累積回應與分享的信心。'
+    },
+    {
+      question: '家長可以期待什麼改變？',
+      answer: '我們希望孩子慢慢變得更熟悉英文、更願意回應，也更敢在互動中開口。成長不是一次完成，而是在每一次聽見、理解與分享中累積。'
+    }
   ];
   return (
     <>
-      <PageHero label="ESL Program" title="ESL 主題探索" desc="ESL 讓孩子在跨領域主題中使用美語，從理解、討論到創作發表，把美語變成真正的工具。" className="esl-page-hero" visual={<EslHeroVisual />} />
-      <section className="section course-page-section">
-        <div className="soft-section-head"><div className="section-label">Learning in Action</div><h2>在有內容的活動裡，自然練習美語輸出</h2><p>Think. Create. Share.</p></div>
-        <div className="page-feature-grid">{features.map((item) => <SoftCard key={item.title} {...item} />)}</div>
-      </section>
-      <section className="section course-page-section alt-bg">
-        <div className="monthly-cycle">
-          <div><div className="section-label">Inquiry Cycle</div><h2>每個主題都有清楚的學習循環</h2><p>Input. Practice. Output.</p></div>
-          <div className="cycle-steps">
-            <article><span>01</span><h3>Input 輸入</h3><p>透過閱讀、影片、圖片與教師引導建立主題背景。</p></article>
-            <article><span>02</span><h3>Practice 練習</h3><p>用句型、討論與任務練習把美語說出來。</p></article>
-            <article><span>03</span><h3>Output 輸出</h3><p>以作品、短講或簡報整理想法並分享成果。</p></article>
+      <PageHero
+        label="ESL PROGRAM"
+        title="ESL 全美實作班"
+        subtitle="全美語主題討論，讓孩子在互動中自然開口。"
+        english="Questions. Voices. Discovery."
+        desc="透過全美語授課與主題式團體討論，孩子在聆聽、回應、分享與合作中，累積更多真實使用英文的機會。"
+        className="esl-page-hero"
+        visual={<EslHeroVisual />}
+      />
+      <section className="section course-page-section esl-parent-section">
+        <div className="soft-section-head">
+          <div className="section-label">More moments to listen. More chances to speak.</div>
+          <h2>家長最在意的，不只是孩子有沒有上英文課</h2>
+          <span className="course-page-english">More moments to listen. More chances to speak.</span>
+          <p>我們更在意孩子是否真的聽見英文、理解英文，也有機會在安全的課堂中慢慢開口。</p>
+        </div>
+        <div className="esl-parent-layout">
+          <aside className="esl-parent-promise">
+            <p>不是多上一堂英文，<br />而是創造更多使用英文的時刻。</p>
+            <span>English lives in the classroom.</span>
+          </aside>
+          <div className="esl-question-grid">
+            {eslQuestions.map(({ question, answer }, index) => (
+              <article className={`esl-question-card esl-question-card-${index + 1}`} key={question}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <h3>{question}</h3>
+              <p>{answer}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
-      <section className="section photo-section">
-        <div className="soft-section-head"><div className="section-label">Classroom Moments</div><h2>ESL 課堂日常</h2><p>Collaborate. Create. Present.</p></div>
-        <PhotoGallery photos={eslPhotos} />
-      </section>
-      <section className="section course-page-section">
-        <div className="output-grid">{outputMethods.map(({ icon: Icon, title, desc }) => <article className="output-card" key={title}><Icon /><h3>{title}</h3><p>{desc}</p></article>)}</div>
-      </section>
-      <section className="section course-page-section">
-        <div className="reading-panel">
-          <div><div className="section-label">ESL Summary</div><h2>用美語探索，也用美語表達</h2><p>English in action.</p></div>
-          <a className="primary-btn" href="#contact">預約 ESL 諮詢 <ArrowRight size={18} /></a>
+      <ClassroomMomentsSection variant="esl" moments={eslClassroomMoments} />
+      <section className="section course-page-section alt-bg esl-outcome-section">
+        <div className="reading-panel esl-outcome-panel">
+          <div>
+            <div className="section-label">Learning Outcomes</div>
+            <h2>聽得更多，說得更自然</h2>
+            <span className="course-page-english">More listening. More speaking. More confidence.</span>
+            <p>ESL 全美實作班讓孩子在全美語主題討論中，接觸更多英文聲音，也有更多機會開口回應。能力不是一次完成，而是在每一次聽見、理解、嘗試與分享中慢慢累積。</p>
+            <strong>每一次互動，都是孩子更敢開口的一步。</strong>
+          </div>
+          <div className="program-cta-card">
+            <h3>想了解孩子是否適合 ESL 全美實作班？</h3>
+            <p>歡迎預約諮詢，讓我們協助了解孩子目前的英文能力與適合的學習方向。</p>
+            <a className="primary-btn" href={LINE_URL} target="_blank" rel="noreferrer">預約 ESL 課程諮詢 <ArrowRight size={18} /></a>
+          </div>
         </div>
       </section>
       <ContactSection />
@@ -915,7 +1356,9 @@ function AfterSchoolPage() {
       <PageHero
         label="After School Care"
         title="課後照顧"
-        desc="放學後的時間也很重要。Milton 協助孩子完成作業、複習美語、建立穩定的學習與生活節奏。"
+        subtitle=""
+        english=""
+        desc="放學後的時間也很重要。Milton 協助孩子完成作業、進行學科複習，建立穩定的學習與生活節奏。"
         className="after-school-page-hero"
       />
       <section className="section after-school-section">
@@ -987,10 +1430,7 @@ function ContactSection() {
         </div>
 
         <div className="simple-map distance-map final-map-image-wrap" aria-label="Milton 校區位置地圖">
-          <img src="/assets/milton-campus-final-map.png" alt="Milton 校區周邊地圖" />
-          <div className="map-kindergarten-marker" aria-label="青園非營利幼兒園位置">
-            <strong>青園非營利幼兒園</strong>
-          </div>
+          <img src="/images/campus/campus-location-map.png" alt="校區位置與青園國小距離參考圖，標示 Milton 青園校與青園二校位置" loading="lazy" />
         </div>
       </div>
     </section>
@@ -1021,7 +1461,7 @@ function App() {
   return (
     <main>
       <Header />
-      {route === 'prime' ? <PrimePage /> : route === 'esl' ? <EslPage /> : route === 'afterschool' ? <AfterSchoolPage /> : <HomePage />}
+      {route === 'kids' ? <KidsPage /> : route === 'prime' ? <PrimePage /> : route === 'esl' ? <EslPage /> : route === 'afterschool' ? <AfterSchoolPage /> : <HomePage />}
       <Footer />
     </main>
   );
