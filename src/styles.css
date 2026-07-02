@@ -1875,6 +1875,31 @@ nav a:hover::after { transform: scaleX(1); }
   font-weight: 740;
 }
 
+.course-page-hero p span {
+  display: block;
+}
+
+.esl-page-hero .course-page-subtitle {
+  font-size: clamp(25px, 2.6vw, 40px);
+  line-height: 1.22;
+}
+
+.esl-page-hero .course-page-hero-copy > p {
+  max-width: 720px;
+  margin-top: 18px;
+  color: #4f635f;
+  font-size: clamp(15px, 1.15vw, 18px);
+  line-height: 1.72;
+  font-weight: 760;
+}
+
+.hero-desc-english {
+  margin-bottom: 6px;
+  color: var(--blue-deep);
+  font-weight: 900;
+  line-height: 1.5;
+}
+
 .course-page-subtitle {
   display: block;
   max-width: 720px;

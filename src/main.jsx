@@ -968,7 +968,7 @@ function PageHero({ label, title, subtitle, english, tagline = '', desc, visual 
         {subtitle && <strong className="course-page-subtitle">{subtitle}</strong>}
         {english && <span className="course-page-english">{english}</span>}
         {tagline && <span className="course-page-tagline">{tagline}</span>}
-        <p>{desc}</p>
+        {desc && <p>{desc}</p>}
         <div className="course-page-actions">
           <a className="secondary-btn" href="#courses">回到課程</a>
           <a className="accent-btn" href="#contact">預約諮詢 <ArrowRight size={18} /></a>
@@ -1290,9 +1290,9 @@ function EslPage() {
       <PageHero
         label="ESL PROGRAM"
         title="ESL 全美實作班"
-        subtitle="All-English theme discussions that help children speak naturally through interaction."
-        english="Questions. Voices. Discovery."
-        desc="透過全美語授課與主題式團體討論，孩子在聆聽、回應、分享與合作中，累積更多真實使用英文的機會。"
+        subtitle="Questions. Voices. Discovery."
+        english=""
+        desc={<><span className="hero-desc-english">All-English theme discussions that help children speak naturally through interaction.</span><span>透過全美語授課與主題式團體討論，孩子在聆聽、回應、分享與合作中，累積更多真實使用英文的機會。</span></>}
         className="esl-page-hero"
         visual={<EslHeroVisual />}
       />
