@@ -285,15 +285,6 @@ const primeClassroomMoments = [
     position: 'center center'
   },
   {
-    src: '/images/prime/classroom-4.webp',
-    title: '口說練習',
-    english: 'Speaking Practice',
-    desc: '在課堂互動中建立開口表達的信心。',
-    type: 'video',
-    icon: Mic2,
-    alt: 'Prime 活用班口說練習課堂花絮'
-  },
-  {
     src: '/prime/presentation-australia.png',
     title: '成果發表',
     english: 'Presentation Day',
@@ -857,7 +848,7 @@ function ClassroomMomentsSection({ variant, moments }) {
               </div>
             </div>
             <div className="classroom-moment-copy">
-              <h3>{featuredMoment.title}<span>{featuredMoment.english}</span></h3>
+              <h3>{featuredMoment.english}<span>{featuredMoment.title}</span></h3>
               <p>{featuredMoment.desc}</p>
             </div>
           </article>
@@ -888,7 +879,7 @@ function ClassroomMomentsSection({ variant, moments }) {
                 </div>
               </div>
               <div className="classroom-moment-copy">
-                <h3>{title}<span>{english}</span></h3>
+                <h3>{english}<span>{title}</span></h3>
                 <p>{desc}</p>
               </div>
             </article>
@@ -1290,7 +1281,7 @@ function EslPage() {
       answer: 'ESL 全美實作班透過主題情境、老師引導與同儕互動，讓孩子先熟悉英文聲音，再從簡短回答開始，慢慢累積回應與分享的信心。'
     },
     {
-      question: '家長可以期待什麼改變？',
+      question: '可以期待什麼改變？',
       answer: '我們希望孩子慢慢變得更熟悉英文、更願意回應，也更敢在互動中開口。成長不是一次完成，而是在每一次聽見、理解與分享中累積。'
     }
   ];
@@ -1299,7 +1290,7 @@ function EslPage() {
       <PageHero
         label="ESL PROGRAM"
         title="ESL 全美實作班"
-        subtitle="全美語主題討論，讓孩子在互動中自然開口。"
+        subtitle="All-English theme discussions that help children speak naturally through interaction."
         english="Questions. Voices. Discovery."
         desc="透過全美語授課與主題式團體討論，孩子在聆聽、回應、分享與合作中，累積更多真實使用英文的機會。"
         className="esl-page-hero"
@@ -1308,7 +1299,7 @@ function EslPage() {
       <section className="section course-page-section esl-parent-section">
         <div className="soft-section-head">
           <div className="section-label">More moments to listen. More chances to speak.</div>
-          <h2>家長最在意的，不只是孩子有沒有上英文課</h2>
+          <h2>不是多上一堂英文，<br />而是創造更多使用英文的時刻。</h2>
           <span className="course-page-english">More moments to listen. More chances to speak.</span>
           <p>我們更在意孩子是否真的聽見英文、理解英文，也有機會在安全的課堂中慢慢開口。</p>
         </div>

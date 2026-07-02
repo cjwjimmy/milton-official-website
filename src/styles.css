@@ -2422,10 +2422,12 @@ nav a:hover::after { transform: scaleX(1); }
 }
 
 .classroom-moment-copy h3 {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   color: var(--blue-deep);
-  font-size: clamp(18px, 1.22vw, 22px);
-  line-height: 1.22;
+  font-size: clamp(22px, 1.7vw, 30px);
+  font-weight: 1000;
+  letter-spacing: -.02em;
+  line-height: 1.05;
 }
 
 .featured-moment-card .classroom-moment-copy {
@@ -2433,23 +2435,26 @@ nav a:hover::after { transform: scaleX(1); }
 }
 
 .featured-moment-card .classroom-moment-copy h3 {
-  font-size: clamp(24px, 2.1vw, 34px);
+  font-size: clamp(32px, 3.2vw, 48px);
+  letter-spacing: -.035em;
 }
 
 .classroom-moment-copy h3 span {
   display: block;
-  margin-top: 4px;
+  margin-top: 8px;
   color: #4f635f;
-  font-size: .78rem;
-  font-weight: 950;
+  font-size: clamp(14px, 1vw, 17px);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.35;
 }
 
 .classroom-moment-copy p {
   margin: 0;
   color: var(--muted);
-  font-size: clamp(15px, 1vw, 17px);
-  font-weight: 740;
-  line-height: 1.6;
+  font-size: clamp(14px, .95vw, 16px);
+  font-weight: 720;
+  line-height: 1.55;
 }
 
 .two-column-content,
