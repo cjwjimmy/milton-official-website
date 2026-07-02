@@ -1126,10 +1126,9 @@ function KidsPage() {
       <PageHero
         label="YOUNG LEARNERS PROGRAM"
         title="幼兒美語音樂劇啟蒙班"
-        subtitle="在歌曲、故事與表演中，開啟孩子的英文第一步。"
-        english="Kiddo Musical English Program"
-        tagline="Sing. Play. Speak. Grow."
-        desc="我們透過歌曲律動、故事閱讀、遊戲互動與 Show & Tell，讓孩子在安全、愉快的環境中自然接觸英文，慢慢建立語音節奏、參與感與開口的自信。"
+        subtitle="Sing. Play. Speak. Grow."
+        english=""
+        desc={<><span className="hero-desc-english">Kiddo Musical English Program for a joyful first step into English.</span><span>我們透過歌曲律動、故事閱讀、遊戲互動與 Show & Tell，讓孩子在安全、愉快的環境中自然接觸英文，慢慢建立語音節奏、參與感與開口的自信。</span></>}
         className="kids-page-hero"
         visual={<KidsHeroVisual />}
       />
@@ -1218,9 +1217,9 @@ function PrimePage() {
       <PageHero
         label="PRIME PROGRAM"
         title="Prime 活用班"
-        subtitle="在全美語課堂中，建立聽、說、讀、寫四大核心能力。"
-        english="Build the skills. Use the language."
-        desc="Prime 活用班以全美語授課為基礎，循序建立孩子聽、說、讀、寫四大核心能力，幫助孩子逐步累積真正能使用的英文實力。"
+        subtitle="Build the skills. Use the language."
+        english=""
+        desc={<><span className="hero-desc-english">All-English classes that build listening, speaking, reading, and writing skills.</span><span>Prime 活用班以全美語授課為基礎，循序建立孩子聽、說、讀、寫四大核心能力，幫助孩子逐步累積真正能使用的英文實力。</span></>}
         className="prime-page-hero"
         visual={<PrimeHeroVisual />}
       />

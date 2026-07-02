@@ -1879,12 +1879,16 @@ nav a:hover::after { transform: scaleX(1); }
   display: block;
 }
 
-.esl-page-hero .course-page-subtitle {
+.prime-page-hero .course-page-subtitle,
+.esl-page-hero .course-page-subtitle,
+.kids-page-hero .course-page-subtitle {
   font-size: clamp(25px, 2.6vw, 40px);
   line-height: 1.22;
 }
 
-.esl-page-hero .course-page-hero-copy > p {
+.prime-page-hero .course-page-hero-copy > p,
+.esl-page-hero .course-page-hero-copy > p,
+.kids-page-hero .course-page-hero-copy > p {
   max-width: 720px;
   margin-top: 18px;
   color: #4f635f;
