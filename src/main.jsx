@@ -900,13 +900,13 @@ function ClassroomMomentsSection({ variant, moments }) {
   );
 }
 
-function PrimeHeroMoments() {
+function CourseHeroMoments({ moments, label }) {
   const [activeMomentIndex, setActiveMomentIndex] = useState(0);
-  const featuredMoment = primeClassroomMoments[activeMomentIndex] || primeClassroomMoments[0];
+  const featuredMoment = moments[activeMomentIndex] || moments[0];
   const FeaturedIcon = featuredMoment?.icon;
 
   return (
-    <div className="prime-hero-moments" aria-label="Prime 活用班課堂照片">
+    <div className="prime-hero-moments" aria-label={label}>
       {featuredMoment && (
         <article className="prime-hero-moment-main">
           <div className="prime-hero-moment-media">
@@ -929,8 +929,8 @@ function PrimeHeroMoments() {
           </div>
         </article>
       )}
-      <div className="prime-hero-moment-thumbs" aria-label="Prime 活用班課堂照片選單">
-        {primeClassroomMoments.map((moment, index) => (
+      <div className="prime-hero-moment-thumbs" aria-label={`${label}選單`}>
+        {moments.map((moment, index) => (
           <button
             type="button"
             className={`prime-hero-moment-thumb ${index === activeMomentIndex ? 'is-active' : ''}`}
@@ -954,6 +954,14 @@ function PrimeHeroMoments() {
       </div>
     </div>
   );
+}
+
+function PrimeHeroMoments() {
+  return <CourseHeroMoments moments={primeClassroomMoments} label="Prime 活用班課堂照片" />;
+}
+
+function EslHeroMoments() {
+  return <CourseHeroMoments moments={eslClassroomMoments} label="ESL 全美實作班課堂照片" />;
 }
 
 function CampusLifeSection() {
@@ -1363,7 +1371,7 @@ function EslPage() {
         english=""
         desc={<><span className="hero-desc-english">All-English theme discussions that help children speak naturally through interaction</span><span>透過全美語授課與主題式團體討論，孩子在聆聽、回應、分享與合作中，累積更多真實使用英文的機會</span></>}
         className="esl-page-hero"
-        visual={<EslHeroVisual />}
+        visual={<EslHeroMoments />}
       />
       <section className="section course-page-section esl-parent-section">
         <div className="soft-section-head">
@@ -1376,6 +1384,9 @@ function EslPage() {
           <aside className="esl-parent-promise">
             <p>不是多上一堂英文，<br />而是創造更多使用英文的時刻</p>
             <span>English lives in the classroom</span>
+            <div className="esl-parent-visual-card">
+              <EslHeroVisual />
+            </div>
           </aside>
           <div className="esl-question-grid">
             {eslQuestions.map(({ question, answer }, index) => (
@@ -1388,7 +1399,6 @@ function EslPage() {
           </div>
         </div>
       </section>
-      <ClassroomMomentsSection variant="esl" moments={eslClassroomMoments} />
       <section className="section course-page-section alt-bg esl-outcome-section">
         <div className="reading-panel esl-outcome-panel">
           <div>
