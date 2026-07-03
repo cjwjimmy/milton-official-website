@@ -356,7 +356,7 @@ const kidsClassroomMoments = [
     position: 'center center'
   },
   {
-    src: '/images/kids/kids-classroom-01-songs-movement.webp',
+    src: '/images/kids/kids-classroom-01-songs-movement.jpg',
     title: '歌曲律動',
     english: 'Songs & Movement',
     desc: '在節奏與動作中熟悉英文聲音',
@@ -383,7 +383,7 @@ const kidsClassroomMoments = [
     alt: '幼兒美語課堂中的遊戲探索活動'
   },
   {
-    src: '/images/kids/kids-classroom-05-first-speaking.webp',
+    src: '/images/kids/kids-classroom-05-first-speaking.jpg',
     title: '開口練習',
     english: 'First Speaking',
     desc: '從簡單回應開始，建立開口安全感',
