@@ -594,14 +594,14 @@ const growthEvidenceTrustItems = [
   {
     title: '劍橋兒童英檢認證',
     english: 'Cambridge English Qualification',
-    desc: '透過劍橋兒童英檢認證，確認孩子的美語學習能對接國際標準',
+    desc: '透過 Starters、Movers、Flyers 等階段認證，讓孩子的美語學習對接國際標準',
     type: 'certificate',
     image: '/images/growth/cambridge-qualification.webp',
     placeholder: 'certificate',
     placeholderLabel: 'International Certificate Placeholder',
     icon: Globe2,
     detail: {
-      body: '麋爾頓鼓勵孩子參與劍橋兒童英檢認證，讓學習成果不只停留在課堂內，也能透過國際認證標準檢視聽、說、讀、寫等能力的發展這幫助家長更清楚了解孩子目前的英文程度，也讓孩子在階段性挑戰中建立成就感與自信',
+      body: '麋爾頓鼓勵孩子參與劍橋兒童英檢認證，透過 Starters、Movers、Flyers 等階段檢視孩子在聽力、口說、閱讀與寫作上的發展讓學習成果不只停留在課堂內，也能透過國際認證標準建立成就感與自信',
       english: 'Learning aligned with international standards'
     }
   }
@@ -652,6 +652,35 @@ function GrowthEvidenceTrustSection() {
                           <span style={{ '--bar': '86%' }}><em>完成度</em></span>
                           <span style={{ '--bar': '72%' }}><em>練習紀錄</em></span>
                           <span style={{ '--bar': '64%' }}><em>老師查看進度</em></span>
+                        </div>
+                      </div>
+                    ) : placeholder === 'certificate' ? (
+                      <div className="growth-certificate-mockup">
+                        <div className="certificate-stack">
+                          <article>
+                            <span>Certificate</span>
+                            <strong>Young Learners</strong>
+                            <em>Starters</em>
+                          </article>
+                          <article>
+                            <span>Certificate</span>
+                            <strong>English Progress</strong>
+                            <em>Movers</em>
+                          </article>
+                        </div>
+                        <div className="certificate-content">
+                          <strong>Cambridge English Pathway</strong>
+                          <div>
+                            <span>Starters</span>
+                            <span>Movers</span>
+                            <span>Flyers</span>
+                          </div>
+                          <ul>
+                            <li>Listening</li>
+                            <li>Speaking</li>
+                            <li>Reading</li>
+                            <li>Writing</li>
+                          </ul>
                         </div>
                       </div>
                     ) : (
