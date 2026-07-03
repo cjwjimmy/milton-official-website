@@ -345,7 +345,7 @@ const eslClassroomMoments = [
 
 const kidsClassroomMoments = [
   {
-    src: '/images/kids/kids-classroom-04-holiday-moments.png',
+    src: '/images/kids/kids-classroom-04-holiday-moments.jpg',
     title: '節慶體驗',
     english: 'Holiday Moments',
     desc: '在節慶活動中感受英文與生活的連結',
@@ -364,7 +364,7 @@ const kidsClassroomMoments = [
     alt: '幼兒美語課堂中的歌曲律動活動'
   },
   {
-    src: '/images/kids/kids-classroom-02-story-time.webp',
+    src: '/images/kids/kids-classroom-02-story-time.jpg',
     title: '故事互動',
     english: 'Story Time',
     desc: '透過故事、聲音與想像開啟英文第一步',
@@ -373,7 +373,7 @@ const kidsClassroomMoments = [
     alt: '幼兒美語課堂中的故事互動學習'
   },
   {
-    src: '/images/kids/kids-classroom-03-playful-learning.webp',
+    src: '/images/kids/kids-classroom-03-playful-learning.jpg',
     title: '遊戲探索',
     english: 'Playful Learning',
     desc: '讓孩子在遊戲中自然接觸英文',
@@ -964,6 +964,10 @@ function EslHeroMoments() {
   return <CourseHeroMoments moments={eslClassroomMoments} label="ESL 全美實作班課堂照片" />;
 }
 
+function KidsHeroMoments() {
+  return <CourseHeroMoments moments={kidsClassroomMoments} label="幼兒美語音樂劇啟蒙班課堂照片" />;
+}
+
 function CampusLifeSection() {
   return (
     <section className="section campus-life-section">
@@ -1200,11 +1204,11 @@ function KidsPage() {
       <PageHero
         label="YOUNG LEARNERS PROGRAM"
         title="幼兒美語音樂劇啟蒙班"
-        subtitle="Sing Play Speak Grow"
+        subtitle="Kiddo Musical English Program"
         english=""
-        desc={<><span className="hero-desc-english">Kiddo Musical English Program for a joyful first step into English</span><span>我們透過歌曲律動、故事閱讀、遊戲互動與 Show & Tell，讓孩子在安全、愉快的環境中自然接觸英文，慢慢建立語音節奏、參與感與開口的自信</span></>}
+        desc={<><span className="hero-desc-english">Sing Play Speak Grow</span><span>我們透過歌曲律動、故事閱讀、遊戲互動與 Show & Tell，讓孩子在安全、愉快的環境中自然接觸英文，慢慢建立語音節奏、參與感與開口的自信</span></>}
         className="kids-page-hero"
-        visual={<KidsHeroVisual />}
+        visual={<KidsHeroMoments />}
       />
 
       <section className="section course-page-section kids-core-section">
@@ -1214,15 +1218,20 @@ function KidsPage() {
           <p>幼兒階段最重要的，不是背了多少單字，而是孩子是否喜歡英文、願意參與、敢嘗試開口</p>
           <strong className="kids-section-note">當孩子喜歡英文，學習就會開始發芽</strong>
         </div>
-        <div className="page-feature-grid kids-focus-grid">
-          {focuses.map(({ icon: Icon, english, title, desc }) => (
-            <article className="soft-feature-card kids-focus-card" key={title}>
-              <Icon />
-              <span>{english}</span>
-              <h3>{title}</h3>
-              <p>{desc}</p>
-            </article>
-          ))}
+        <div className="kids-core-layout">
+          <div className="kids-core-visual-panel">
+            <KidsHeroVisual />
+          </div>
+          <div className="page-feature-grid kids-focus-grid">
+            {focuses.map(({ icon: Icon, english, title, desc }) => (
+              <article className="soft-feature-card kids-focus-card" key={title}>
+                <Icon />
+                <span>{english}</span>
+                <h3>{title}</h3>
+                <p>{desc}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -1255,8 +1264,6 @@ function KidsPage() {
           </div>
         </div>
       </section>
-
-      <ClassroomMomentsSection variant="kids" moments={kidsClassroomMoments} />
 
       <section className="section course-page-section alt-bg kids-outcome-section">
         <div className="reading-panel kids-outcome-panel">

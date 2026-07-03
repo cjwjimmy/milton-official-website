@@ -8046,6 +8046,37 @@ nav,
   border-radius: 18px;
 }
 
+.kids-core-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, .9fr) minmax(0, 1.1fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+  margin-top: 34px;
+}
+
+.kids-core-layout .kids-focus-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 0;
+}
+
+.kids-core-visual-panel {
+  position: relative;
+  min-height: clamp(430px, 40vw, 540px);
+  overflow: hidden;
+  border-radius: 28px 38px 24px 34px;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(244,197,92,.18), transparent 34%),
+    linear-gradient(135deg, rgba(255,255,255,.86), rgba(221,232,223,.52));
+  border: 1px solid rgba(65,105,177,.12);
+  box-shadow: 0 24px 58px rgba(36,63,115,.1);
+}
+
+.kids-core-visual-panel .kids-hero-visual {
+  min-height: clamp(410px, 38vw, 520px);
+  transform: scale(.92);
+  transform-origin: center center;
+}
+
 .kids-hero-glow,
 .kids-canopy,
 .kids-rings,
@@ -8710,6 +8741,15 @@ nav,
     grid-template-columns: 1fr;
   }
 
+  .kids-core-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .kids-core-layout .kids-focus-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .kids-theme-panel {
     grid-template-columns: 1fr;
   }
@@ -8728,6 +8768,20 @@ nav,
 }
 
 @media (max-width: 720px) {
+  .kids-core-layout .kids-focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kids-core-visual-panel {
+    min-height: clamp(340px, 92vw, 480px);
+    border-radius: 22px 30px 20px 26px;
+  }
+
+  .kids-core-visual-panel .kids-hero-visual {
+    min-height: clamp(340px, 88vw, 460px);
+    transform: scale(.9);
+  }
+
   .kids-hero-visual {
     min-height: 430px;
   }
