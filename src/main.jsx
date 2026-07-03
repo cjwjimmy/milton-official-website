@@ -1375,15 +1375,15 @@ function EslPage() {
       />
       <section className="section course-page-section esl-parent-section">
         <div className="soft-section-head">
-          <div className="section-label">More moments to listen More chances to speak</div>
-          <h2>不是多上一堂英文，<br />而是創造更多使用英文的時刻</h2>
-          <span className="course-page-english">More moments to listen More chances to speak</span>
-          <p>我們更在意孩子是否真的聽見英文、理解英文，也有機會在安全的課堂中慢慢開口</p>
+          <div className="section-label">All-English Discussion</div>
+          <h2>聽得懂，才敢回應<br />有安全感，才願意開口</h2>
+          <span className="course-page-english">More listening More speaking More confidence</span>
+          <p>ESL 全美實作班讓孩子在主題討論與同儕互動中，慢慢熟悉英文聲音，也累積願意開口的安全感</p>
         </div>
         <div className="esl-parent-layout">
           <aside className="esl-parent-promise">
-            <p>不是多上一堂英文，<br />而是創造更多使用英文的時刻</p>
-            <span>English lives in the classroom</span>
+            <p>在互動裡聽見英文<br />在回應中建立自信</p>
+            <span>Questions Voices Confidence</span>
             <div className="esl-parent-visual-card">
               <EslHeroVisual />
             </div>
