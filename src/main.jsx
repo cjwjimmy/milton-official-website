@@ -1221,26 +1221,30 @@ function PrimePage() {
         english=""
         desc={<><span className="hero-desc-english">All-English classes that build listening, speaking, reading, and writing skills</span><span>Prime 活用班以全美語授課為基礎，循序建立孩子聽、說、讀、寫四大核心能力，幫助孩子逐步累積真正能使用的英文實力</span></>}
         className="prime-page-hero"
-        visual={<PrimeHeroVisual />}
       />
+      <ClassroomMomentsSection variant="prime" moments={primeClassroomMoments} />
       <section className="section course-page-section">
         <div className="soft-section-head">
           <div className="section-label">Core Abilities</div>
           <h2>聽、說、讀、寫，建立真正能使用的能力</h2>
           <p>Prime 活用班以全美語授課為基礎，透過系統化課程與有效練習，幫助孩子在四大面向穩定累積</p>
         </div>
-        <div className="page-feature-grid prime-ability-grid">
-          {abilities.map(({ icon: Icon, english, title, desc }) => (
-            <article className="soft-feature-card prime-ability-card" key={title}>
-              <Icon />
-              <span>{english}</span>
-              <h3>{title}</h3>
-              <p>{desc}</p>
-            </article>
-          ))}
+        <div className="prime-ability-layout">
+          <div className="prime-ability-visual-panel">
+            <PrimeHeroVisual />
+          </div>
+          <div className="page-feature-grid prime-ability-grid">
+            {abilities.map(({ icon: Icon, english, title, desc }) => (
+              <article className="soft-feature-card prime-ability-card" key={title}>
+                <Icon />
+                <span>{english}</span>
+                <h3>{title}</h3>
+                <p>{desc}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
-      <ClassroomMomentsSection variant="prime" moments={primeClassroomMoments} />
       <section className="section course-page-section alt-bg prime-outcome-section">
         <div className="reading-panel prime-outcome-panel">
           <div>

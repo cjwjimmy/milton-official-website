@@ -1951,6 +1951,38 @@ nav a:hover::after { transform: scaleX(1); }
   align-items: stretch;
 }
 
+.prime-ability-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, .92fr) minmax(0, 1.08fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+  margin-top: 34px;
+}
+
+.prime-ability-layout .prime-ability-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 0;
+}
+
+.prime-ability-visual-panel {
+  position: relative;
+  min-height: clamp(460px, 42vw, 560px);
+  overflow: hidden;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 52% 34%, rgba(244,197,92,.22), transparent 34%),
+    linear-gradient(135deg, rgba(255,255,255,.86), rgba(221,232,223,.52));
+  border: 1px solid rgba(65,105,177,.12);
+  box-shadow: 0 24px 58px rgba(36,63,115,.1);
+}
+
+.prime-ability-visual-panel .prime-hero-visual {
+  min-height: clamp(440px, 40vw, 540px);
+  padding: 22px 0 0;
+  transform: scale(.94);
+  transform-origin: center bottom;
+}
+
 .esl-focus-grid {
   align-items: stretch;
 }
@@ -2682,6 +2714,25 @@ nav a:hover::after { transform: scaleX(1); }
   .classroom-moment-card:not(.featured-moment-card) .classroom-moment-media {
     min-height: clamp(240px, 62vw, 320px);
   }
+
+  .prime-ability-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .prime-ability-layout .prime-ability-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prime-ability-visual-panel {
+    min-height: clamp(360px, 96vw, 500px);
+    border-radius: 22px;
+  }
+
+  .prime-ability-visual-panel .prime-hero-visual {
+    min-height: clamp(360px, 92vw, 480px);
+    transform: scale(.9);
+  }
 }
 
 
@@ -2704,7 +2755,7 @@ nav a:hover::after { transform: scaleX(1); }
 }
 
 .prime-page-hero {
-  min-height: 700px;
+  min-height: 560px;
 }
 
 .prime-hero-visual {
