@@ -285,6 +285,16 @@ const primeClassroomMoments = [
     position: 'center center'
   },
   {
+    src: '/images/prime/classroom-4.webp',
+    title: '口說練習',
+    english: 'Speaking Practice',
+    desc: '在課堂互動中建立開口表達的信心',
+    type: 'photo',
+    icon: Mic2,
+    alt: 'Prime 活用班口說練習情境',
+    position: 'center center'
+  },
+  {
     src: '/prime/presentation-australia.png',
     title: '成果發表',
     english: 'Presentation Day',
@@ -890,6 +900,62 @@ function ClassroomMomentsSection({ variant, moments }) {
   );
 }
 
+function PrimeHeroMoments() {
+  const [activeMomentIndex, setActiveMomentIndex] = useState(0);
+  const featuredMoment = primeClassroomMoments[activeMomentIndex] || primeClassroomMoments[0];
+  const FeaturedIcon = featuredMoment?.icon;
+
+  return (
+    <div className="prime-hero-moments" aria-label="Prime 活用班課堂照片">
+      {featuredMoment && (
+        <article className="prime-hero-moment-main">
+          <div className="prime-hero-moment-media">
+            <img
+              src={featuredMoment.src}
+              alt={featuredMoment.alt || `${featuredMoment.title} ${featuredMoment.english}`}
+              loading="eager"
+              style={{ objectPosition: featuredMoment.position || 'center center' }}
+              onLoad={(event) => event.currentTarget.classList.add('loaded')}
+              onError={(event) => { event.currentTarget.hidden = true; }}
+            />
+            <div className="classroom-media-placeholder" aria-hidden="true">
+              {FeaturedIcon && <FeaturedIcon />}
+              <span>{featuredMoment.english}</span>
+            </div>
+          </div>
+          <div className="prime-hero-moment-copy">
+            <h3>{featuredMoment.english}<span>{featuredMoment.title}</span></h3>
+            <p>{featuredMoment.desc}</p>
+          </div>
+        </article>
+      )}
+      <div className="prime-hero-moment-thumbs" aria-label="Prime 活用班課堂照片選單">
+        {primeClassroomMoments.map((moment, index) => (
+          <button
+            type="button"
+            className={`prime-hero-moment-thumb ${index === activeMomentIndex ? 'is-active' : ''}`}
+            key={moment.title}
+            aria-label={`顯示 ${moment.title}`}
+            onMouseEnter={() => setActiveMomentIndex(index)}
+            onFocus={() => setActiveMomentIndex(index)}
+            onClick={() => setActiveMomentIndex(index)}
+          >
+            <img
+              src={moment.src}
+              alt={moment.alt || `${moment.title} ${moment.english}`}
+              loading="lazy"
+              style={{ objectPosition: moment.position || 'center center' }}
+              onLoad={(event) => event.currentTarget.classList.add('loaded')}
+              onError={(event) => { event.currentTarget.hidden = true; }}
+            />
+            <span>{moment.english}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function CampusLifeSection() {
   return (
     <section className="section campus-life-section">
@@ -1220,9 +1286,9 @@ function PrimePage() {
         subtitle="Build the skills Use the language"
         english=""
         desc={<><span className="hero-desc-english">All-English classes that build listening, speaking, reading, and writing skills</span><span>Prime 活用班以全美語授課為基礎，循序建立孩子聽、說、讀、寫四大核心能力，幫助孩子逐步累積真正能使用的英文實力</span></>}
+        visual={<PrimeHeroMoments />}
         className="prime-page-hero"
       />
-      <ClassroomMomentsSection variant="prime" moments={primeClassroomMoments} />
       <section className="section course-page-section">
         <div className="soft-section-head">
           <div className="section-label">Core Abilities</div>
