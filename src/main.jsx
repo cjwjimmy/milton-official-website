@@ -35,6 +35,7 @@ import './styles.css';
 
 const REVIEW_APP_URL = 'https://milton-vocab-app.vercel.app/';
 const LINE_URL = 'https://lin.ee/q0YfnGm';
+const CAMPUS_GOOGLE_MAP_URL = 'https://www.google.com/maps/dir/?api=1&origin=桃園市大園區大勇路26號&destination=桃園市中壢區高鐵北路二段95號&travelmode=driving';
 
 const heroHighlights = ['Language Roots', 'Discovery Pathways', 'Global Horizons'];
 
@@ -1530,7 +1531,7 @@ function ContactSection() {
           </div>
           <div className="campus-map-actions">
             <a className="forest-primary-link" href={LINE_URL} target="_blank" rel="noreferrer">預約參觀探索森林校區<ArrowRight size={18} /></a>
-            <a className="forest-secondary-link" href="https://www.google.com/maps/search/?api=1&query=桃園市大園區大勇路26號" target="_blank" rel="noreferrer">查看 Google 地圖</a>
+            <a className="forest-secondary-link" href={CAMPUS_GOOGLE_MAP_URL} target="_blank" rel="noreferrer">查看 Google 地圖</a>
           </div>
           <p className="map-note">讓孩子在語言中扎根，在探索中成長<br />Rooted in language Growing through exploration</p>
         </div>
