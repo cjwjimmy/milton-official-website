@@ -186,18 +186,18 @@ const programPathways = [
   {
     stage: 'Prime',
     title: 'Prime 活用班',
-    english: 'Core Skills for Confident Learners',
+    english: 'Prime Core English Program',
     shortDesc: '在全美語授課中，建立聽、說、讀、寫四大核心能力',
-    quote: 'Build the skills Use the language',
+    quote: 'Prime Core English Program',
     icon: Headphones,
     href: '#/prime'
   },
   {
     stage: 'ESL',
     title: 'ESL 全美實作班',
-    english: 'English in Action',
+    english: 'ESL All-English Practice Program',
     shortDesc: '在全美語主題討論中，讓孩子聽見更多，也更自然開口',
-    quote: 'Questions Voices Discovery',
+    quote: 'ESL All-English Practice Program',
     icon: Globe2,
     href: '#/esl'
   }
@@ -1291,7 +1291,7 @@ function PrimePage() {
       <PageHero
         label="PRIME PROGRAM"
         title="Prime 活用班"
-        subtitle="Build the skills Use the language"
+        subtitle="Prime Core English Program"
         english=""
         desc={<><span className="hero-desc-english">All-English classes that build listening, speaking, reading, and writing skills</span><span>Prime 活用班以全美語授課為基礎，循序建立孩子聽、說、讀、寫四大核心能力，幫助孩子逐步累積真正能使用的英文實力</span></>}
         visual={<PrimeHeroMoments />}
@@ -1367,7 +1367,7 @@ function EslPage() {
       <PageHero
         label="ESL PROGRAM"
         title="ESL 全美實作班"
-        subtitle="Questions Voices Discovery"
+        subtitle="ESL All-English Practice Program"
         english=""
         desc={<><span className="hero-desc-english">All-English theme discussions that help children speak naturally through interaction</span><span>透過全美語授課與主題式團體討論，孩子在聆聽、回應、分享與合作中，累積更多真實使用英文的機會</span></>}
         className="esl-page-hero"
