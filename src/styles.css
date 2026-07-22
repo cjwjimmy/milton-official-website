@@ -8958,3 +8958,130 @@ nav,
     opacity: .55;
   }
 }
+
+/* ===== Homepage responsive polish ===== */
+.hero-copy,
+.hero h1,
+.hero p {
+  min-width: 0;
+}
+
+.hero h1 {
+  overflow-wrap: normal;
+  word-break: keep-all;
+  text-wrap: balance;
+}
+
+.hero-visual {
+  isolation: isolate;
+}
+
+@media (max-width: 1120px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    min-height: auto;
+  }
+
+  .hero-copy {
+    width: 100%;
+  }
+
+  .hero-visual {
+    width: min(620px, 100%);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 34px 20px 46px;
+    gap: 24px;
+    overflow: hidden;
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: none;
+  }
+
+  .section-kicker {
+    gap: 10px;
+    font-size: .92rem;
+    line-height: 1.35;
+  }
+
+  .section-kicker .kicker-line {
+    width: 34px;
+  }
+
+  .hero h1 {
+    width: 100%;
+    max-width: 340px;
+    margin: 18px 0 16px;
+    font-size: clamp(42px, 12vw, 50px);
+    line-height: 1.08;
+    letter-spacing: -.045em;
+  }
+
+  .hero h1 span {
+    display: block;
+    white-space: normal;
+  }
+
+  .hero p {
+    width: 100%;
+    max-width: 340px;
+    font-size: 17px;
+    line-height: 1.65;
+    letter-spacing: -.01em;
+  }
+
+  .hero-english-line {
+    max-width: 340px;
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+
+  .hero-forest-actions {
+    width: 100%;
+    max-width: 340px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .hero-forest-actions a {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-highlight-list {
+    max-width: 340px;
+    gap: 10px;
+  }
+
+  .hero-highlight-list span {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 12px 14px;
+  }
+
+  .hero-visual {
+    min-height: 300px;
+    width: min(340px, 100%);
+    margin-top: 4px;
+    place-items: center;
+    transform: scale(.9);
+    transform-origin: top center;
+  }
+
+  .hero-bg-mark {
+    right: -26vw;
+    top: 170px;
+    font-size: 118px;
+    letter-spacing: -.07em;
+    opacity: .62;
+  }
+}
