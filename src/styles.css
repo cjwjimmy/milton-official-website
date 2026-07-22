@@ -9121,3 +9121,16 @@ nav,
     line-height: 1.25;
   }
 }
+
+/* ===== LINE CTA color ===== */
+.header-cta {
+  background: #06C755;
+  color: #ffffff;
+  box-shadow: 0 14px 30px rgba(6, 199, 85, .22);
+}
+
+.header-cta:hover {
+  background: #05b64d;
+  color: #ffffff;
+  box-shadow: 0 16px 34px rgba(6, 199, 85, .28);
+}
