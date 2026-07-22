@@ -1534,7 +1534,8 @@ function ContactSection() {
           </div>
           <div className="campus-contact-list" aria-label="Milton 聯絡資訊">
             <a href={LINE_URL} target="_blank" rel="noreferrer"><MessageCircle />官方 LINE</a>
-            <a href="tel:032878335"><Phone />03-2878335</a>
+            <a href="tel:032878335"><Phone />青園校 03-2878335</a>
+            <a href="tel:032878345"><Phone />青園二校 03-2878345</a>
           </div>
           <div className="campus-map-actions">
             <a className="forest-primary-link" href={LINE_URL} target="_blank" rel="noreferrer">預約參觀探索森林校區<ArrowRight size={18} /></a>
