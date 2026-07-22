@@ -9085,3 +9085,39 @@ nav,
     opacity: .62;
   }
 }
+
+/* ===== Mobile header polish ===== */
+@media (max-width: 720px) {
+  .site-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px 14px;
+    padding: 12px 18px 14px;
+  }
+
+  .brand {
+    min-width: 0;
+  }
+
+  .brand img {
+    width: min(178px, 48vw);
+  }
+
+  .header-cta {
+    width: auto;
+    min-height: 42px;
+    padding: 10px 16px;
+    font-size: .9rem;
+    box-shadow: 0 10px 22px rgba(65,105,177,.18);
+  }
+
+  nav {
+    grid-column: 1 / -1;
+    order: 3;
+    justify-content: center;
+    gap: 12px 16px;
+    font-size: .92rem;
+    line-height: 1.25;
+  }
+}
