@@ -4678,6 +4678,30 @@ nav a:hover::after { transform: scaleX(1); }
   line-height: 1.45;
 }
 
+.campus-card-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-top: 2px;
+  color: var(--milton-deep-blue);
+  font-size: .98rem;
+  font-weight: 950;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.campus-card-phone svg {
+  width: 17px;
+  height: 17px;
+  color: var(--milton-blue);
+}
+
+.campus-card-phone:hover,
+.campus-card-phone:focus-visible {
+  color: var(--milton-blue);
+}
+
 .distance-list em {
   display: block;
   color: #4f635f;
