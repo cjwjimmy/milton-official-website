@@ -591,20 +591,6 @@ const growthEvidenceTrustItems = [
       body: '每一期結束時，麋爾頓會邀請家長參加成果發表會孩子透過口說、閱讀、表演、作品展示或主題任務，展現本期學到的英文能力這讓家長不只是看見分數，也能看見孩子的表達力、自信與成長',
       english: 'Learning becomes visible when children share their voice'
     }
-  },
-  {
-    title: '劍橋兒童英檢認證',
-    english: 'Cambridge English Qualification',
-    desc: '透過 Starters、Movers、Flyers 等階段認證，讓孩子的美語學習對接國際標準',
-    type: 'certificate',
-    image: '/images/growth/cambridge-qualification.webp',
-    placeholder: 'certificate',
-    placeholderLabel: 'International Certificate Placeholder',
-    icon: Globe2,
-    detail: {
-      body: '麋爾頓鼓勵孩子參與劍橋兒童英檢認證，透過 Starters、Movers、Flyers 等階段檢視孩子在聽力、口說、閱讀與寫作上的發展讓學習成果不只停留在課堂內，也能透過國際認證標準建立成就感與自信',
-      english: 'Learning aligned with international standards'
-    }
   }
 ];
 
@@ -618,7 +604,7 @@ function GrowthEvidenceTrustSection() {
           <div className="section-label">Growth Evidence</div>
           <h2>看得見的學習成長</h2>
           <strong>Growth you can see Confidence you can feel</strong>
-          <p>孩子的成長，在麋爾頓是被看見、被記錄、被檢核，也能對接國際標準透過日常學習紀錄、期末 Final Test、成果發表會與劍橋兒童英檢認證，家長能清楚看見孩子在理解力、表達力、自信與學習階段上的穩定成長</p>
+          <p>孩子的成長，在麋爾頓是被看見、被記錄、被檢核的透過日常學習紀錄、期末 Final Test 與成果發表會，家長能清楚看見孩子在理解力、表達力、自信與學習階段上的穩定成長</p>
         </div>
 
         <div className="growth-summary-list">
@@ -655,35 +641,6 @@ function GrowthEvidenceTrustSection() {
                           <span style={{ '--bar': '64%' }}><em>老師查看進度</em></span>
                         </div>
                       </div>
-                    ) : placeholder === 'certificate' ? (
-                      <div className="growth-certificate-mockup">
-                        <div className="certificate-stack">
-                          <article>
-                            <span>Certificate</span>
-                            <strong>Young Learners</strong>
-                            <em>Starters</em>
-                          </article>
-                          <article>
-                            <span>Certificate</span>
-                            <strong>English Progress</strong>
-                            <em>Movers</em>
-                          </article>
-                        </div>
-                        <div className="certificate-content">
-                          <strong>Cambridge English Pathway</strong>
-                          <div>
-                            <span>Starters</span>
-                            <span>Movers</span>
-                            <span>Flyers</span>
-                          </div>
-                          <ul>
-                            <li>Listening</li>
-                            <li>Speaking</li>
-                            <li>Reading</li>
-                            <li>Writing</li>
-                          </ul>
-                        </div>
-                      </div>
                     ) : (
                       <div className={`growth-photo-placeholder-copy ${placeholder}`}>
                         <div className="growth-placeholder-art">
@@ -692,7 +649,7 @@ function GrowthEvidenceTrustSection() {
                           <span />
                         </div>
                         <strong>{placeholderLabel}</strong>
-                        <span>{placeholder === 'certificate' ? 'Certificate placeholder' : 'Photo placeholder'}</span>
+                        <span>Photo placeholder</span>
                       </div>
                     )}
                   </div>
