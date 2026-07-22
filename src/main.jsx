@@ -595,7 +595,9 @@ const growthEvidenceTrustItems = [
 ];
 
 function GrowthEvidenceTrustSection() {
-  const [activeEvidence, setActiveEvidence] = useState(null);
+  const [activeEvidence, setActiveEvidence] = useState(growthEvidenceTrustItems[0]?.type ?? null);
+  const selectedEvidence = growthEvidenceTrustItems.find((item) => item.type === activeEvidence) ?? growthEvidenceTrustItems[0];
+  const SelectedEvidenceIcon = selectedEvidence?.icon;
 
   return (
     <section className="section growth-summary-section" id="growth-evidence">
@@ -606,6 +608,70 @@ function GrowthEvidenceTrustSection() {
           <strong>Growth you can see Confidence you can feel</strong>
           <p>孩子的成長，在麋爾頓是被看見、被記錄、被檢核的透過日常學習紀錄、期末 Final Test 與成果發表會，家長能清楚看見孩子在理解力、表達力、自信與學習階段上的穩定成長</p>
         </div>
+
+        {selectedEvidence && (
+          <div className="growth-portfolio-layout">
+            <article className={`growth-portfolio-feature ${selectedEvidence.type}`}>
+              <div className={`growth-card-media growth-portfolio-media ${selectedEvidence.placeholder}`}>
+                <img
+                  key={selectedEvidence.image}
+                  src={selectedEvidence.image}
+                  alt={`${selectedEvidence.title} evidence`}
+                  loading="lazy"
+                  onLoad={(event) => event.currentTarget.classList.add('loaded')}
+                  onError={(event) => { event.currentTarget.hidden = true; }}
+                />
+                <div className="growth-media-placeholder" aria-hidden="true">
+                  {SelectedEvidenceIcon && <SelectedEvidenceIcon />}
+                  <div className={`growth-photo-placeholder-copy ${selectedEvidence.placeholder}`}>
+                    <div className="growth-placeholder-art">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                    <strong>{selectedEvidence.placeholderLabel}</strong>
+                    <span>Photo placeholder</span>
+                  </div>
+                </div>
+              </div>
+              <div className="growth-portfolio-caption">
+                <span>{selectedEvidence.english}</span>
+                <h3>{selectedEvidence.title}</h3>
+                <p>{selectedEvidence.desc}</p>
+                {selectedEvidence.detail && (
+                  <div className="growth-portfolio-detail">
+                    <p>{selectedEvidence.detail.body}</p>
+                    <strong>{selectedEvidence.detail.english}</strong>
+                  </div>
+                )}
+              </div>
+            </article>
+
+            <div className="growth-portfolio-tabs" aria-label="Growth evidence portfolio">
+              {growthEvidenceTrustItems.map(({ icon: Icon, title, english, desc, type }, index) => {
+                const isActive = activeEvidence === type;
+
+                return (
+                  <button
+                    className={`growth-portfolio-tab ${isActive ? 'active' : ''}`}
+                    type="button"
+                    key={type}
+                    aria-pressed={isActive}
+                    onClick={() => setActiveEvidence(type)}
+                  >
+                    <span className="growth-tab-number">0{index + 1}</span>
+                    <span className="growth-tab-icon"><Icon /></span>
+                    <span className="growth-tab-copy">
+                      <strong>{english}</strong>
+                      <b>{title}</b>
+                      <em>{desc}</em>
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         <div className="growth-summary-list">
           {growthEvidenceTrustItems.map(({ icon: Icon, title, english, desc, type, image, placeholder, placeholderLabel, detail }) => {
