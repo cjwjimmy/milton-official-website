@@ -9134,3 +9134,141 @@ nav,
   color: #ffffff;
   box-shadow: 0 16px 34px rgba(6, 199, 85, .28);
 }
+
+/* ===== Homepage photo hero visual ===== */
+.forest-hero-visual {
+  width: min(650px, 100%);
+  min-height: 610px;
+  display: grid;
+  place-items: center;
+}
+
+.forest-hero-visual .forest-light,
+.forest-hero-visual .forest-canopy,
+.forest-hero-visual .forest-path {
+  display: none;
+}
+
+.forest-hero-photo-frame {
+  position: relative;
+  z-index: 2;
+  width: min(610px, 94%);
+  aspect-ratio: 4 / 3;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 34px 18px 46px 22px;
+  background: linear-gradient(135deg, rgba(255,255,255,.76), rgba(221,232,223,.34));
+  border: 1px solid rgba(65,105,177,.12);
+  box-shadow: 0 28px 70px rgba(36,63,115,.16);
+}
+
+.forest-hero-photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(251,250,245,.16), transparent 38%),
+    linear-gradient(0deg, rgba(24,50,46,.18), transparent 48%);
+  pointer-events: none;
+}
+
+.forest-hero-photo-frame::after {
+  content: "";
+  position: absolute;
+  right: -46px;
+  bottom: -48px;
+  z-index: 2;
+  width: 170px;
+  height: 170px;
+  border-radius: 999px;
+  background: repeating-radial-gradient(circle, rgba(247,243,232,.32) 0 2px, transparent 2px 16px);
+  opacity: .7;
+  pointer-events: none;
+}
+
+.forest-hero-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 56% center;
+  filter: saturate(.96) contrast(.98) brightness(1.02);
+}
+
+.forest-hero-visual .forest-rings {
+  z-index: 3;
+  right: 1%;
+  bottom: 8%;
+  opacity: .32;
+}
+
+.forest-hero-visual .forest-visual-panel {
+  z-index: 4;
+  align-self: end;
+  justify-self: start;
+  width: min(440px, 80%);
+  margin: 0 0 34px 4px;
+  padding: 26px 30px 28px 34px;
+  border-radius: 30px 16px 42px 18px;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(65,105,177,.08), transparent 28%),
+    linear-gradient(135deg, rgba(255,255,255,.93), rgba(251,250,245,.84));
+  box-shadow:
+    0 24px 58px rgba(36,63,115,.16),
+    inset 0 0 0 1px rgba(255,255,255,.74);
+}
+
+.forest-hero-visual .forest-visual-panel strong {
+  font-size: clamp(32px, 3vw, 46px);
+}
+
+@media (max-width: 1120px) {
+  .forest-hero-visual {
+    min-height: 560px;
+  }
+}
+
+@media (max-width: 720px) {
+  .forest-hero-visual {
+    min-height: 430px;
+    width: min(350px, 100%);
+    transform: none;
+  }
+
+  .forest-hero-photo-frame {
+    width: 100%;
+    aspect-ratio: 4 / 3.35;
+    border-radius: 24px 14px 32px 16px;
+  }
+
+  .forest-hero-photo-frame img {
+    object-position: 58% center;
+  }
+
+  .forest-hero-visual .forest-rings {
+    width: 110px;
+    height: 110px;
+    right: -6%;
+    bottom: 7%;
+  }
+
+  .forest-hero-visual .forest-visual-panel {
+    width: calc(100% - 30px);
+    margin: 0 auto 18px;
+    padding: 20px 20px 22px 24px;
+    border-radius: 24px 14px 32px 16px;
+  }
+
+  .forest-hero-visual .forest-visual-panel span {
+    font-size: .7rem;
+    letter-spacing: .12em;
+  }
+
+  .forest-hero-visual .forest-visual-panel strong {
+    font-size: clamp(28px, 8.5vw, 34px);
+  }
+
+  .forest-hero-visual .forest-visual-panel p {
+    font-size: 15px;
+  }
+}

@@ -760,6 +760,13 @@ function HeroVisual() {
       <div className="forest-canopy canopy-b" aria-hidden="true" />
       <div className="forest-path" aria-hidden="true" />
       <div className="forest-rings" aria-hidden="true" />
+      <figure className="forest-hero-photo-frame">
+        <img
+          src="/images/spaces/milton-space-consultation.png"
+          alt="Milton Kids Academy learning space"
+          loading="eager"
+        />
+      </figure>
       <div className="forest-visual-panel">
         <span>MILTON KIDS ACADEMY</span>
         <strong>Confidence Starts Here</strong>
