@@ -569,7 +569,7 @@ const growthEvidenceTrustItems = [
     english: 'Final Test & Level Readiness',
     desc: '每一期結束前，透過 Final Test 檢核孩子是否具備升級到下一級的能力',
     type: 'assessment',
-    image: '/images/growth/final-test.webp',
+    image: '/images/growth/final-test.png',
     placeholder: 'assessment',
     placeholderLabel: 'Assessment / Checklist Placeholder',
     icon: CheckCircle2,
