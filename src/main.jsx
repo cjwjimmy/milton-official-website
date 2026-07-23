@@ -1306,7 +1306,8 @@ function KidsPage() {
           <div>
             <div className="section-label">From first sounds to confident learning</div>
             <h2>從喜歡英文，到準備好學英文</h2>
-            <p>幼兒美語音樂劇啟蒙班，是孩子進入麋爾頓學習路徑的第一步先建立興趣、語音節奏與開口安全感，未來再銜接 Prime 活用班，發展更完整的聽、說、讀、寫能力</p>
+            <p>幼兒美語音樂劇啟蒙班，是孩子進入麋爾頓學習路徑的第一步</p>
+            <p>先建立興趣、語音節奏與開口安全感，未來再銜接兒童美語班，發展更完整的聽、說、讀、寫能力</p>
             <strong>先喜歡英文，再走進更深的學習</strong>
           </div>
           <div className="program-cta-card">
