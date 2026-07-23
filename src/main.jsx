@@ -846,7 +846,6 @@ function HomePage() {
         <CoursePathways />
       </section>
 
-      <GrowthEvidenceTrustSection />
       <ContactSection />
     </>
   );
