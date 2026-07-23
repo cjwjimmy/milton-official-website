@@ -47,8 +47,7 @@ const trustMetrics = [
 
 const parentPromises = [
   { title: '孩子敢開口', desc: '從聽說讀寫建立穩定基礎，讓孩子在課堂中自然練習、安心表達' },
-  { title: '學習看得見', desc: '課程有清楚路徑與練習節奏，家長能理解孩子正在累積什麼能力' },
-  { title: '放學也安心', desc: '銜接學校作息與課後照顧，協助孩子完成作業、複習與生活常規' }
+  { title: '學習看得見', desc: '課程有清楚路徑與練習節奏，家長能理解孩子正在累積什麼能力' }
 ];
 
 const philosophies = [
@@ -161,16 +160,6 @@ const learningPathways = [
     quote: 'Curiosity helps every learner grow',
     icon: Compass,
     href: '#/esl'
-  },
-  {
-    stage: 'Nurture',
-    title: '課後陪伴',
-    english: 'Daily Growth Journey',
-    type: '課後輔導 / 作業陪伴 / 學習習慣',
-    desc: '透過日常陪伴與學習支持，幫助孩子穩定累積與持續成長',
-    quote: 'Daily support shapes lasting growth',
-    icon: School,
-    href: '#/afterschool'
   }
 ];
 
@@ -246,8 +235,6 @@ const outputMethods = [
   { title: 'Hands-on Discovery', desc: '透過觀察、實作與討論理解主題內容', icon: Microscope },
   { title: 'Presentation Time', desc: '練習站上台，用美語說出自己的想法', icon: Presentation }
 ];
-
-const afterSchool = ['作業陪伴', '學科複習', '學校進度銜接', '生活常規建立'];
 
 const prepItems = [
   { title: '閱讀力', desc: '從短文理解到分級閱讀，累積穩定語感', icon: BookOpen },
@@ -410,7 +397,6 @@ function getRoute() {
   if (window.location.hash === '#/kids') return 'kids';
   if (window.location.hash === '#/prime') return 'prime';
   if (window.location.hash === '#/esl') return 'esl';
-  if (window.location.hash === '#/afterschool') return 'afterschool';
   return 'home';
 }
 
@@ -765,7 +751,6 @@ function Header() {
         <a href="#/kids">幼兒美語</a>
         <a href="#/prime">Prime</a>
         <a href="#/esl">ESL</a>
-        <a href="#/afterschool">課後照顧</a>
         <a href="#campus-info">校區資訊</a>
         <a href="#contact">聯絡我們</a>
       </nav>
@@ -1463,38 +1448,6 @@ function EslPage() {
   );
 }
 
-function AfterSchoolPage() {
-  return (
-    <>
-      <PageHero
-        label="After School Care"
-        title="課後照顧"
-        subtitle=""
-        english=""
-        desc="放學後的時間也很重要Milton 協助孩子完成作業、進行學科複習，建立穩定的學習與生活節奏"
-        className="after-school-page-hero"
-      />
-      <section className="section after-school-section">
-        <div className="soft-section-head">
-          <div className="section-label">Care & Growth</div>
-          <h2>照顧生活，也照顧學習</h2>
-          <p>Learn with support Grow with confidence</p>
-        </div>
-        <div className="prep-grid">
-          {afterSchool.map((item) => (
-            <article className="prep-card" key={item}>
-              <CheckCircle2 />
-              <h3>{item}</h3>
-              <p>Steady care</p>
-            </article>
-          ))}
-        </div>
-      </section>
-      <ContactSection />
-    </>
-  );
-}
-
 function ReviewSection() {
   return (
     <section id="review" className="section review-section">
@@ -1575,7 +1528,7 @@ function App() {
   return (
     <main>
       <Header />
-      {route === 'kids' ? <KidsPage /> : route === 'prime' ? <PrimePage /> : route === 'esl' ? <EslPage /> : route === 'afterschool' ? <AfterSchoolPage /> : <HomePage />}
+      {route === 'kids' ? <KidsPage /> : route === 'prime' ? <PrimePage /> : route === 'esl' ? <EslPage /> : <HomePage />}
       <Footer />
     </main>
   );
