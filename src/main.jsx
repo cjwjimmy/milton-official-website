@@ -100,7 +100,7 @@ const philosophies = [
 
 const roadmap = [
   { title: '幼兒美語', course: '故事音樂劇', subtitle: '聽覺、口說與自然語感', age: 'Age 4+', desc: '用歌曲、故事與遊戲建立美語親近感', icon: Baby },
-  { title: '國小基礎', course: 'Prime 活用班 / ESL 全美實作班', subtitle: 'Prime 系統能力建立與主題實作', age: 'Age 6-12', desc: '累積單字、閱讀、句型與書寫表達，也透過主題活動練習美語分享', icon: School },
+  { title: '國小基礎', course: 'Prime 全美活用班 / ESL 全美實作班', subtitle: 'Prime 系統能力建立與主題實作', age: 'Age 6-12', desc: '累積單字、閱讀、句型與書寫表達，也透過主題活動練習美語分享', icon: School },
   { title: '國中銜接', course: '閱讀理解與學科表達', subtitle: '閱讀理解與學科表達', age: 'Age 13-15', desc: '提升理解力、表達力與學校課業銜接', icon: GraduationCap }
 ];
 
@@ -186,7 +186,7 @@ const programPathways = [
   },
   {
     stage: 'Prime',
-    title: 'Prime 活用班',
+    title: 'Prime 全美活用班',
     english: 'Prime Core English Program',
     shortDesc: '在穩定陪伴中，把美語慢慢變成能聽、能說、能讀、能寫的能力',
     quote: 'Prime Core English Program',
@@ -282,7 +282,7 @@ const primeClassroomMoments = [
     desc: '透過主題情境與同儕互動，讓孩子在課堂中自然使用英文',
     type: 'photo',
     icon: UsersRound,
-    alt: 'Prime 活用班課堂互動，孩子透過情境活動練習英文表達',
+    alt: 'Prime 全美活用班課堂互動，孩子透過情境活動練習英文表達',
     position: 'center center'
   },
   {
@@ -292,7 +292,7 @@ const primeClassroomMoments = [
     desc: '在課堂互動中建立開口表達的信心',
     type: 'photo',
     icon: Mic2,
-    alt: 'Prime 活用班口說練習情境',
+    alt: 'Prime 全美活用班口說練習情境',
     position: 'center center'
   },
   {
@@ -302,7 +302,7 @@ const primeClassroomMoments = [
     desc: '孩子透過主題介紹與口說發表，展現學習成果與表達自信',
     type: 'photo',
     icon: Presentation,
-    alt: 'Prime 活用班學生介紹 Australia 主題並練習英文口說表達',
+    alt: 'Prime 全美活用班學生介紹 Australia 主題並練習英文口說表達',
     position: 'center center'
   },
   {
@@ -312,7 +312,7 @@ const primeClassroomMoments = [
     desc: '從閱讀理解到書寫練習，穩定累積孩子的英文基礎',
     type: 'photo',
     icon: BookOpen,
-    alt: 'Prime 活用班閱讀與書寫學習情境',
+    alt: 'Prime 全美活用班閱讀與書寫學習情境',
     position: 'center center'
   },
   {
@@ -322,7 +322,7 @@ const primeClassroomMoments = [
     desc: '看見孩子的努力，也看見成長的自信',
     type: 'photo',
     icon: CheckCircle2,
-    alt: 'Prime 活用班學生展示學習成果與升級證書',
+    alt: 'Prime 全美活用班學生展示學習成果與升級證書',
     position: 'center center'
   }
 ];
@@ -870,7 +870,7 @@ function ClassroomMomentsSection({ variant, moments }) {
   };
   const classroomDescriptions = {
     kids: '未來將放上歌曲律動、故事互動、遊戲活動、節慶體驗與開口練習，讓家長看見孩子自然接觸英文的真實樣貌',
-    prime: 'Prime 活用班的課堂，圍繞聽、說、讀、寫四大能力從口說練習、閱讀書寫到課堂互動與成果表現，孩子一步步累積真正能使用的美語能力',
+    prime: 'Prime 全美活用班的課堂，圍繞聽、說、讀、寫四大能力從口說練習、閱讀書寫到課堂互動與成果表現，孩子一步步累積真正能使用的美語能力',
     esl: 'ESL 全美實作班的課堂，透過主題討論、全美語互動、口說分享與團體任務，讓家長看見孩子在英文聲音裡聆聽、回應與分享的真實樣貌'
   };
   const title = classroomTitles[variant] || '課堂影音與學習花絮';
@@ -1016,7 +1016,7 @@ function CourseHeroMoments({ moments, label }) {
 }
 
 function PrimeHeroMoments() {
-  return <CourseHeroMoments moments={primeClassroomMoments} label="Prime 活用班課堂照片" />;
+  return <CourseHeroMoments moments={primeClassroomMoments} label="Prime 全美活用班課堂照片" />;
 }
 
 function EslHeroMoments() {
@@ -1333,10 +1333,10 @@ function PrimePage() {
     <>
       <PageHero
         label="PRIME PROGRAM"
-        title="Prime 活用班"
+        title="Prime 全美活用班"
         subtitle="Prime Core English Program"
         english=""
-        desc={<><span className="hero-desc-english">All-English classes that build listening, speaking, reading, and writing skills</span><span>Prime 活用班以全美語授課為基礎，循序建立孩子聽、說、讀、寫四大核心能力，幫助孩子逐步累積真正能使用的英文實力</span></>}
+        desc={<><span className="hero-desc-english">All-English classes that build listening, speaking, reading, and writing skills</span><span>Prime 全美活用班以全美語授課為基礎，循序建立孩子聽、說、讀、寫四大核心能力，幫助孩子逐步累積真正能使用的英文實力</span></>}
         visual={<PrimeHeroMoments />}
         className="prime-page-hero"
       />
@@ -1344,7 +1344,7 @@ function PrimePage() {
         <div className="soft-section-head">
           <div className="section-label">Core Abilities</div>
           <h2>聽、說、讀、寫，建立真正能使用的能力</h2>
-          <p>Prime 活用班以全美語授課為基礎，透過系統化課程與有效練習，幫助孩子在四大面向穩定累積</p>
+          <p>Prime 全美活用班以全美語授課為基礎，透過系統化課程與有效練習，幫助孩子在四大面向穩定累積</p>
         </div>
         <div className="prime-ability-layout">
           <div className="prime-ability-visual-panel">
@@ -1367,7 +1367,7 @@ function PrimePage() {
           <div>
             <div className="section-label">Learning Outcomes</div>
             <h2>有效建立能力，不只是增加上課時間</h2>
-            <p>Prime 活用班重視學習成效與階段累積孩子會透過日常練習、課堂表現與階段檢核，逐步建立下一階段英文學習所需的基礎能力</p>
+            <p>Prime 全美活用班重視學習成效與階段累積孩子會透過日常練習、課堂表現與階段檢核，逐步建立下一階段英文學習所需的基礎能力</p>
             <strong>在麋爾頓，英文學習不是堆疊時間，而是有效建立能力</strong>
           </div>
           <div className="program-cta-card">
@@ -1385,8 +1385,8 @@ function PrimePage() {
 function EslPage() {
   const eslQuestions = [
     {
-      question: '和 Prime 活用班有什麼不同？',
-      answer: 'Prime 活用班著重建立聽、說、讀、寫四大核心能力ESL 全美實作班則提供更多全美語互動與主題討論，讓孩子有更多聽英文、回應英文與自然開口的機會'
+      question: '和 Prime 全美活用班有什麼不同？',
+      answer: 'Prime 全美活用班著重建立聽、說、讀、寫四大核心能力ESL 全美實作班則提供更多全美語互動與主題討論，讓孩子有更多聽英文、回應英文與自然開口的機會'
     },
     {
       question: '孩子會不會聽不懂？',
