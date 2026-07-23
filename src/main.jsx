@@ -1271,30 +1271,6 @@ function KidsPage() {
         visual={<KidsHeroMoments />}
       />
 
-      <section className="section course-page-section kids-core-section">
-        <div className="soft-section-head">
-            <div className="section-label">A joyful first step into English</div>
-          <h2>不是急著學會，而是安心開始</h2>
-          <p>幼兒階段最重要的，不是背了多少單字，而是孩子是否喜歡英文、願意參與、敢嘗試開口</p>
-          <strong className="kids-section-note">當孩子喜歡英文，學習就會開始發芽</strong>
-        </div>
-        <div className="kids-core-layout">
-          <div className="kids-core-visual-panel">
-            <KidsHeroVisual />
-          </div>
-          <div className="page-feature-grid kids-focus-grid">
-            {focuses.map(({ icon: Icon, english, title, desc }) => (
-              <article className="soft-feature-card kids-focus-card" key={title}>
-                <Icon />
-                <span>{english}</span>
-                <h3>{title}</h3>
-                <p>{desc}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section course-page-section kids-theme-section">
         <div className="kids-theme-panel">
           <div className="kids-theme-copy">
