@@ -179,7 +179,7 @@ const programPathways = [
     stage: 'Kids',
     title: '幼兒美語音樂劇啟蒙班',
     english: 'Kiddo Musical English Program',
-    shortDesc: '在歌曲、故事、遊戲與表演中，開啟孩子的英文第一步',
+    shortDesc: '在歌曲、故事與表演裡，讓孩子安心靠近美語',
     quote: 'Sing Play Speak Grow',
     icon: Baby,
     href: '#/kids'
@@ -188,7 +188,7 @@ const programPathways = [
     stage: 'Prime',
     title: 'Prime 活用班',
     english: 'Prime Core English Program',
-    shortDesc: '在全美語授課中，建立聽、說、讀、寫四大核心能力',
+    shortDesc: '在穩定陪伴中，把美語慢慢變成能聽、能說、能讀、能寫的能力',
     quote: 'Prime Core English Program',
     icon: Headphones,
     href: '#/prime'
@@ -197,7 +197,7 @@ const programPathways = [
     stage: 'ESL',
     title: 'ESL 全美實作班',
     english: 'ESL All-English Practice Program',
-    shortDesc: '在全美語主題討論中，讓孩子聽見更多，也更自然開口',
+    shortDesc: '在主題討論與互動裡，讓孩子更自然聽見、回應與分享',
     quote: 'ESL All-English Practice Program',
     icon: Globe2,
     href: '#/esl'
@@ -807,8 +807,8 @@ function HomePage() {
         <div className="hero-copy">
           <div className="section-kicker"><span className="kicker-line" /><span>麋爾頓美語 Milton Kids Academy</span><span className="kicker-line" /></div>
           <h1><span>走進探索森林</span><span>走向更大的世界</span></h1>
-          <p>在麋爾頓，英文不只是學科，而是一段讓孩子建立語言力、自信與國際視野的成長旅程</p>
-          <div className="hero-english-line">Step into the forest Grow into the world</div>
+          <p>在麋爾頓，我們希望孩子感受到美語是可以親近、可以開口，也可以自在參與的學習經驗</p>
+          <div className="hero-english-line">A place to feel safe curious and ready to speak</div>
           <div className="hero-forest-actions">
             <a className="forest-primary-link" href="#contact">預約參觀探索森林校區<ArrowRight size={18} /></a>
             <a className="forest-secondary-link" href="#courses">探索學習路徑</a>
@@ -829,8 +829,8 @@ function HomePage() {
           <p>Rooted in language<br />Growing through exploration</p>
         </div>
         <div className="brand-story-content">
-          <p>麋爾頓探索森林，是青園二校的空間理念，<br />也是麋爾頓對孩子學習環境的想像<br />森林象徵扎根與成長，探索代表好奇、表達與看見世界的能力</p>
-          <p>在這裡，孩子透過英文學習，<br />逐步建立自信、思考力與真正能使用的語言能力</p>
+          <p>麋爾頓探索森林，是青園二校為孩子打造的美語學習空間<br />我們在意的不只是孩子學了多少，而是他是否能安心走進課堂，慢慢喜歡聽、喜歡說、願意參與</p>
+          <p>在這裡，歌曲、故事、討論、作品與分享，<br />都成為孩子靠近美語、感受美語，也願意用美語表達自己的時刻</p>
         </div>
       </section>
 
@@ -839,9 +839,9 @@ function HomePage() {
       <section id="courses" className="section courses-section">
         <div className="soft-section-head course-section-head">
           <div className="section-label">Learning Pathways in Milton Exploration Forest</div>
-          <h2>探索森林中的學習路徑</h2>
-          <p>從幼兒美語啟蒙，到 Prime 核心能力建立與 ESL 情境應用，麋爾頓以清楚的學習路徑，陪伴孩子一步步建立真正能使用的英文能力</p>
-          <div className="course-section-english">Every pathway is designed for growth, confidence, and discovery</div>
+          <h2>在探索森林裡，慢慢喜歡美語</h2>
+          <p>從歌曲故事、閱讀書寫，到主題討論與日常陪伴，每一段安排都不是急著推進課程，而是讓孩子在舒服的節奏裡靠近美語、使用美語</p>
+          <div className="course-section-english">A gentle path into language confidence and joy</div>
         </div>
         <CoursePathways />
       </section>
