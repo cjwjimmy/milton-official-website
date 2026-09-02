@@ -4759,6 +4759,24 @@ nav a:hover::after { transform: scaleX(1); }
   color: var(--milton-blue);
 }
 
+.campus-contact-list .facebook-contact-link {
+  border-color: rgba(24, 119, 242, .24);
+}
+
+.facebook-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #1877f2;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+}
+
 .campus-map-actions {
   display: flex;
   flex-wrap: wrap;

@@ -35,6 +35,7 @@ import './styles.css';
 
 const REVIEW_APP_URL = 'https://milton-vocab-app.vercel.app/';
 const LINE_URL = 'https://lin.ee/q0YfnGm';
+const FACEBOOK_URL = 'https://www.facebook.com/MiltonkidsAcademy26/';
 const CAMPUS_GOOGLE_MAP_URL = 'https://www.google.com/maps/dir/?api=1&origin=桃園市大園區大勇路26號&destination=桃園市中壢區高鐵北路二段95號&travelmode=driving';
 
 const heroHighlights = ['Language Roots', 'Discovery Pathways', 'Global Horizons'];
@@ -1488,6 +1489,10 @@ function ContactSection() {
           </div>
           <div className="campus-contact-list" aria-label="Milton 聯絡資訊">
             <a href={LINE_URL} target="_blank" rel="noreferrer"><MessageCircle />官方 LINE</a>
+            <a className="facebook-contact-link" href={FACEBOOK_URL} target="_blank" rel="noreferrer">
+              <span className="facebook-mark" aria-hidden="true">f</span>
+              官方 Facebook
+            </a>
           </div>
           <div className="campus-map-actions">
             <a className="forest-primary-link" href={LINE_URL} target="_blank" rel="noreferrer">預約參觀探索森林校區<ArrowRight size={18} /></a>
