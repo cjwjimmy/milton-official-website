@@ -273,16 +273,6 @@ const primeClassroomMoments = [
     position: 'center center'
   },
   {
-    src: '/images/prime/classroom-4.webp',
-    title: '口說練習',
-    english: 'Speaking Practice',
-    desc: '在課堂互動中建立開口表達的信心',
-    type: 'photo',
-    icon: Mic2,
-    alt: 'Prime 全美活用班口說練習情境',
-    position: 'center center'
-  },
-  {
     src: '/prime/presentation-australia.png',
     title: '成果發表',
     english: 'Presentation Day',
