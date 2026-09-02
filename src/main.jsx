@@ -1491,7 +1491,7 @@ function ContactSection() {
             <a href={LINE_URL} target="_blank" rel="noreferrer"><MessageCircle />官方 LINE</a>
             <a className="facebook-contact-link" href={FACEBOOK_URL} target="_blank" rel="noreferrer">
               <span className="facebook-mark" aria-hidden="true">f</span>
-              官方 Facebook
+              更多課堂影音
             </a>
           </div>
           <div className="campus-map-actions">
