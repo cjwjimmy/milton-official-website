@@ -798,14 +798,24 @@ function HomePage() {
       </section>
 
       <section id="about" className="section about-section brand-story-section">
-        <div className="soft-section-head">
-          <div className="section-label">Milton Exploration Forest Campus</div>
-          <h2>青園二校｜麋爾頓探索森林校</h2>
-          <p>Rooted in language<br />Growing through exploration</p>
-        </div>
-        <div className="brand-story-content">
-          <p>麋爾頓探索森林，是青園二校為孩子打造的美語學習空間<br />我們在意的不只是孩子學了多少，而是他是否能安心走進課堂，慢慢喜歡聽、喜歡說、願意參與</p>
-          <p>在這裡，歌曲、故事、討論、作品與分享，<br />都成為孩子靠近美語、感受美語，也願意用美語表達自己的時刻</p>
+        <div className="brand-story-layout">
+          <div className="brand-story-copy">
+            <div className="soft-section-head">
+              <div className="section-label">Milton Exploration Forest Campus</div>
+              <h2>青園二校｜麋爾頓探索森林校</h2>
+              <p>Rooted in language<br />Growing through exploration</p>
+            </div>
+            <div className="brand-story-content">
+              <p>麋爾頓探索森林，是青園二校為孩子打造的美語學習空間<br />我們在意的不只是孩子學了多少，而是他是否能安心走進課堂，慢慢喜歡聽、喜歡說、願意參與</p>
+              <p>在這裡，歌曲、故事、討論、作品與分享，<br />都成為孩子靠近美語、感受美語，也願意用美語表達自己的時刻</p>
+            </div>
+          </div>
+          <figure className="brand-story-photo">
+            <img
+              src="/images/campus/milton-exploration-classroom.jpg"
+              alt="麋爾頓探索森林校課堂中，孩子參與美語字母學習活動"
+            />
+          </figure>
         </div>
       </section>
 
