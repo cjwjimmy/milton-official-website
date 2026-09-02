@@ -1342,7 +1342,7 @@ function PrimePage() {
           <div>
             <div className="section-label">Learning Outcomes</div>
             <h2>有效建立能力，不只是增加上課時間</h2>
-            <p>Prime 全美活用班重視學習成效與階段累積孩子會透過日常練習、課堂表現與階段檢核，逐步建立下一階段英文學習所需的基礎能力</p>
+            <p>Prime 全美活用班重視學習成效與階段累積，孩子會透過日常練習、課堂表現與階段檢核，逐步建立下一階段英文學習所需的基礎能力</p>
             <strong>在麋爾頓，英文學習不是堆疊時間，而是有效建立能力</strong>
           </div>
           <div className="program-cta-card">
