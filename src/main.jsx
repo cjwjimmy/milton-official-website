@@ -815,7 +815,7 @@ function HomePage() {
         <div className="soft-section-head course-section-head">
           <div className="section-label">Learning Pathways in Milton Exploration Forest</div>
           <h2>在探索森林裡，慢慢喜歡美語</h2>
-          <p>從歌曲故事、閱讀書寫，到主題討論與日常陪伴，每一段安排都不是急著推進課程，而是讓孩子在舒服的節奏裡靠近美語、使用美語</p>
+          <p>從歌曲故事、閱讀書寫，到主題討論與日常陪伴，每一段安排都不是急著推進課程，而是讓孩子在舒服的節奏裡認識美語學習</p>
           <div className="course-section-english">A gentle path into language confidence and joy</div>
         </div>
         <CoursePathways />
